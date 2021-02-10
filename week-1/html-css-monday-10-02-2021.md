@@ -6,7 +6,8 @@ Why are we even talking about html and css??
 
 ## Overview
 
-- Difference between HTML and css (https://www.reddit.com/)'
+- Difference between HTML and css
+  - Disable css for https://www.reddit.com/
 - HTML
   - What is html?
   - Tags

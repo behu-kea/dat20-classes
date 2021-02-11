@@ -2,6 +2,8 @@
 
 This document can be found online here: https://github.com/behu-kea/dat20-classes/blob/master/week-1/html-css-monday-10-02-2021.md
 
+
+
 **Why are we even talking about html and css?**
 
 Html and css is 2 or 3 building blocks of all websites which are html, css and javascript. 
@@ -130,7 +132,7 @@ An html document is divided into different parts:
 
 
 
-![HTML layout](/Users/benjamin-hughes/Documents/projects/dat20-classes/week-1/assets/layout.png)
+![HTML layout](./assets/layout.png)
 
 
 
@@ -161,7 +163,7 @@ usernameDomNode.innerHTML = "Heriette Hansen";
 
 
 
-![document object model - DOM in JavaScript](/Users/benjamin-hughes/Documents/projects/dat20-classes/week-1/assets/dom.png)
+![document object model - DOM in JavaScript](./assets/dom.png)
 
 
 

@@ -26,7 +26,7 @@ Simply create a new file with the file ending `.html` fx `index.html` or `about.
 
 In this file you can write html. To open the rendered html file, open the file in a browser (usually you can just double click the file)
 
-Create 
+*Teacher note*: Create a simple html file and add some simple tags
 
 
 

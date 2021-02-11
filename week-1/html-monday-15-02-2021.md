@@ -132,7 +132,7 @@ An html document is divided into different parts:
 
 
 
-![HTML layout](./assets/layout.png)
+![Image not loaded go to https://github.com/behu-kea/dat20-classes/blob/master/week-1/assets/layout.png to see image](./assets/layout.png)
 
 
 
@@ -163,7 +163,7 @@ usernameDomNode.innerHTML = "Heriette Hansen";
 
 
 
-![document object model - DOM in JavaScript](./assets/dom.png)
+![Image not loaded go to https://github.com/behu-kea/dat20-classes/blob/master/week-1/assets/dom.png to see image](./assets/dom.png)
 
 
 

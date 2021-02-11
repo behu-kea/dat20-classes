@@ -1,6 +1,6 @@
 # CSS
 
-Dokumentet kan findes onlin her: https://github.com/behu-kea/dat20-classes/blob/master/week-1/html-css-monday-10-02-2021.md
+Dokumentet kan findes onlin her: https://github.com/behu-kea/dat20-classes/blob/master/week-1/css.md
 
 Hvorfor snakker vi overhovedet om CSS?
 

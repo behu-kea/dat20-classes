@@ -2,20 +2,11 @@
 
 This document can be found online here: https://github.com/behu-kea/dat20-classes/blob/master/week-1/html-css-monday-10-02-2021.md
 
-Why are we even talking about html and css??
+**Why are we even talking about html and css?**
 
-## Overview
+Html and css is 2 or 3 building blocks of all websites which are html, css and javascript. 
 
-- Difference between HTML and css
-  - Disable css for https://www.reddit.com/
-- HTML
-  - What is html?
-  - Tags
-  - Attributes
-  - Elements
-  - Exercise 1
-- HTML DOM
-- Naming html elements
+it is hugely important and writing good html can save a company millions! 
 
 
 
@@ -35,6 +26,8 @@ Simply create a new file with the file ending `.html` fx `index.html` or `about.
 
 In this file you can write html. To open the rendered html file, open the file in a browser (usually you can just double click the file)
 
+Create 
+
 
 
 #### Whats up with the index.html file??
@@ -45,6 +38,12 @@ The `index.html` file has always been used as the default html page. So usually 
 
 ### HTML tags
 
+To write open a tag, you you write this: `<p>` where `p` is the tag name. To close the `p` tag write this `</p>`. What you write inbetween is the content of the tag. `<p>this is the content of the p tag</p>`
+
+There are a few tags that are **self closing** like fx a line break tag: `<br/>` or an image tag `<img src="https://someurl.dk" />`
+
+
+
 There are lots of different html tags! Here are a few:
 
 - `h1` defines a header tag - `<h1>Buy okay products</h1>`
@@ -52,22 +51,6 @@ There are lots of different html tags! Here are a few:
 - `footer` defines a footer element - `<footer>Adress: copenhagen street 1, 2300 Copenhagen</footer>`
 
 Find more tags by googling somthing like `html tags`. This site i can generally recommend: https://developer.mozilla.org/en-US/docs/Web/HTML/Element 
-
-
-
-#### Standard tags (non-semantic)
-
-These are more "basic" tags like `div`, `p`, `span`
-
-The tags tell nothing about the content
-
-
-
-#### Semantic tags
-
-`header`, `footer`, `nav`, `section`. These tags describes the content more. Both for the user but also for the computer. 
-
-Writing good semantic html should always be the goal!
 
 
 
@@ -89,7 +72,7 @@ An html element is the tag together with the content. So fx `<p></p>` is just th
 
 *Exercise*
 
-Spend 5 min in a breakout room. investigating a specific tag. Investigate these things:
+Spend 10 min in a breakout room. investigating a specific tag. Investigate these things:
 
 1. What the tag does
 2. When to use it
@@ -100,13 +83,58 @@ Spend 5 min in a breakout room. investigating a specific tag. Investigate these 
 Here are the tags for each group
 
 - Group 1 - header tag
-- Group 2 - ul and li tag
+- Group 2 - ul and ol tag
 - Group 3 - img tag
 - Group 4 - section tag
 - Group 5 - head tag
 - Group 6 - nav tag
 
 I will pick two groups to present their findings for the class
+
+
+
+### HTML document structure
+
+An html document is divided into different parts:
+
+```html
+<html>
+    <!-- inside of the html tag is where all your html will go -->
+    <head>
+        <!-- This is where you put meta information about the page: favicon, title, social media tags etc -->
+    </head>
+    <body>
+        <!-- In the body is where you put the content of your website -->
+        <main>
+            <header>
+                <!-- In the header you have things like the logo and navigation-->
+                <a href="/">Ebai</a>
+            </header>
+            <section class="intro">
+                <h1>Welcome to our wonderful site</h1>
+            </section>
+            <section class="products">
+                <ul>
+                    <li>Tv</li>
+                    <li>Mobile</li>
+                    <li>Washing machine</li>
+                </ul>
+            </section>
+        </main>
+        <footer>
+            <!-- In the footer you have things like contact information, links, address-->
+        </footer>
+    </body>
+</html>
+```
+
+
+
+![HTML layout](/Users/benjamin-hughes/Documents/projects/dat20-classes/week-1/assets/layout.png)
+
+
+
+Let's go to https://www.amsiq.com/da and see if we can identify the different areas. 
 
 
 
@@ -177,18 +205,21 @@ Use hyphen between names (https://google.github.io/styleguide/htmlcssguide.html#
 
 *Exercise*
 
-Lets create a portfolio! You are more than welcome to add css but please focus on writing good clean html!
+Lets create a portfolio! I would encourage you to use this portfolio as your actual portfolio that you can show interested employeers.
 
-I want these tags in the portfolio! 
+You are more than welcome to add css but please focus on writing good clean html! Thursday we will be working with styling your portfolio. 
+
+I want **at least** these tags in the portfolio! 
 
 - Head
   - Title
 - Header
   - Nav
 - Main
-- Secion
+- Section
 - Footer
-- Image
+- Img
+- Ul or Ol
 
 
 
@@ -211,6 +242,10 @@ Here are some amazing examples of portfolios you can get inspired from
 
 
 
+To check the html of some website. Right click on the mouse and go to `inspect elements`. On safari you need tto enable it. Google something like `safari inspect elements`.  
+
+
+
 Try use this checklist for writing good html!
 
 - [ ] Are the class names and id’s semantic and do they describe the content of the tag?
@@ -221,3 +256,22 @@ Try use this checklist for writing good html!
 - [ ] Has kebab-case been used?
 - [ ] Has alt tags been written for images.
 
+
+
+### Deploy your website to the web
+
+- Create a new repository on GitHub. 
+- Add your `index.html` to that repo. 
+- Go to `settings` for that repo. 
+- Scroll down to where it says `GitHub Pages`. 
+- Where it says `source`, select `master` and then save. 
+- If you scroll back down you can see the url for your new portfolio! it should be called `https://YOUR_GITHUB_USERNAME.github.io/YOUR_REPO_NAME/    `
+
+Now everytime you push changes to `master` your website will be updated!
+
+
+
+### What we did not have time for
+
+- Aria
+- Forms (this we will get into later)

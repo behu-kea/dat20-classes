@@ -1,10 +1,10 @@
-# Html/css
+# Html
 
-This document can be found online here: https://github.com/behu-kea/dat20-classes/blob/master/week-1/html-css-monday-10-02-2021.md
+This document can be found online here: https://github.com/behu-kea/dat20-classes/blob/master/week-1/html-monday-15-02-2021.md
 
 
 
-**Why are we even talking about html and css?**
+**Why are we even talking about html?**
 
 Html and css is 2 or 3 building blocks of all websites which are html, css and javascript. 
 

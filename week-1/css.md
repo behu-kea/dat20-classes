@@ -363,15 +363,41 @@ on the right hand side you can see the styles applied to the element you have in
 
 
 
+
+
+## How to deconstruct a layout
+
+https://www.amsiq.com/da
+
+
+
 ## *Exercise*
 
+Try and recreate the layout below with the code found [here](https://github.com/behu-kea/dat20-classes/tree/master/week-1/exercises/flexbox). You can clone the project and open the files in IntelliJ or just copy the files to your computer. Thats up to you. 
+
+![hyf-exercise](./assets/hyf-flexbox-mockup.png)
 
 
 
+## Exercise - Style your portfolio
 
-## Portfolio
+Style your portfolio! 
+
+We want to see you doing some layouting on your portfolio. How you do the layouting is up to you! You can use flex, Bootstrap or whatever you feel like. 
 
 
+
+#### CSS checklist
+
+- [ ] Is the css imported using the style tag.
+- [ ] Are there unused selectors.
+- [ ] Are there lots of fixed pixel values. This could affect responsive layouts.
+- [ ] Try to avoid absolute positioning as this tends to break responsive layouts.
+- [ ] Use flexbox over floats.
+- [ ] Avoid using `!important` statements.
+- [ ] Avoid inline styles
+- [ ] Consistent naming and grouping of css-classes (see naming conventions below)
+- [ ] CSS selectors are only as specific as they need to be
 
 
 
@@ -380,9 +406,10 @@ on the right hand side you can see the styles applied to the element you have in
 - Responsive
   - Mobile first
   - Media queries
+- Animation
 - Boxmodel
 - Grid
 - Floating
-- Specificity (maybe)
+- Specificity
 
 - External, inline element styles

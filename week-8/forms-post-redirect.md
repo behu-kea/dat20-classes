@@ -32,7 +32,7 @@ HTML forms is used for sending data to the server. it comes from physical forms 
 Here is an example of a form
 
 ```html
-<form action="https://telmore.dk" method="GET">
+<form action="/sign-up" method="POST">
     <label for="name">Write your name</label>
     <input type="text" name="name" id="name" />
 
@@ -74,7 +74,7 @@ There are a few things going on. Lets disect it:
 
 `<label for="gender">Gender</label>` This is a label that is connected to some field (`input`, `textarea` or `select`). It helps the user figuring out what to put into the connected field. The connection between `label` and field happens with the `for` attribute and the `id` on the field. 
 
-`type="text"` -  `input` fields can have a type. There are quite a lot of types. it can help the user and also do a bit of validation on the frontend. So fx if you specify `type="number"` then the number keyboard will come up on the users mobile. 
+`type="text"` -  `input` fields can have a type. There are quite a lot of [types](https://www.w3schools.com/html/html_form_input_types.asp). it can help the user and also do a bit of validation on the frontend. So fx if you specify `type="number"` then the number keyboard will come up on the users mobile. 
 
 ` name="description"` - When we send the data to a server, then name decides the key of that field. See below. Here is the `POST` request 
 
@@ -88,23 +88,59 @@ There are a few things going on. Lets disect it:
 
 ## PostMapping
 
+![Image for post](./assets/client-server.png)
+
+
+
 Now we have figured out how to send the `POST` request (with data) to the server using forms. Now we need to figure out how to get that data in our `@controller`
 
 ```java
 @PostMapping(value = "/sign-up")
 @ResponseBody
-public String createNewUser(@RequestParam("name") String name, @RequestParam("age") int age) {
-    return "User created with name: " + name + " and age: " + age;
+public String createNewUser(@RequestParam("name") String name, @RequestParam("mobile") int age) {
+    return "User created with name: " + name + " and mobile: " + mobile;
 }
 ```
 
 using the `@PostMapping` notation we can use it just like the `@GetMapping` specifying a `value` that will be the endpoint. 
 
-
-
 To get data out of the `POST` request use  `@RequestParam("name") String name`. `@RequestParam` specifies the key  you are looking for. Remember that the `name` attribute on the field decided the key!
 
 
+
+## Forward and redirect
+
+
+
+Some times we are interested in making the user go to another website than the one he put in the url or was directed to. For this we use forwards and redirects
+
+
+
+### Forward
+
+Simply returns another view. Look at the url which stays the same!
+
+
+
+### Redirect
+
+There are two ways of doing a redirect in spring boot.
+
+
+
+#### RedirectView
+
+
+
+
+
+#### Prefix
+
+
+
+
+
+## Post, redirect, get pattern
 
 
 

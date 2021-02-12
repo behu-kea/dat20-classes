@@ -206,9 +206,13 @@ CSS layouting is hard!
 
 CSS layouting decides how elements are layouts. What comes on top/to the left of what. 
 
+
+
 ### Flow
 
 CSS flow decides how  elements are layed out. The flow can be changed with the `display` css property *show*. 
+
+
 
 #### Block flow
 
@@ -316,36 +320,6 @@ https://css-tricks.com/snippets/css/a-guide-to-flexbox/
 Bootstrap is a css framework that helps you develop nice layouts and styling quickly. It basiscally works by adding specific elements with specific Bootstrap classes. 
 
 https://getbootstrap.com
-
-
-
-### Install Bootstrap
-
-Add this line in your `head` tag in the html file: `<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">`
-
-This will load the bootstrap styles. 
-
-
-
-### Try it out!
-
-Here is how to create a bootstrap button:
-
-```html
-<button class="btn btn-primary">Bootstrap button</button>
-```
-
-Here is how to create a `card` in Bootstrap
-
-```html
-<div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
-</div>
-```
 
 
 

@@ -8,6 +8,10 @@ This document can be found online here: https://github.com/behu-kea/dat20-classe
 
 Html and css is 2 or 3 building blocks of all websites which are html, css and javascript. 
 
+- HTML is structure and content
+- CSS is styling
+- JS is interactivity
+
 it is hugely important and writing good html can save a company millions! 
 
 
@@ -66,6 +70,28 @@ HTML attributes is used for adding information to a tag. There are **tons** of h
 
 
 
+#### Naming HTML elements
+
+Why should we even name our html elements? Mostly it's for targeting when writing css and javascript. So fx if we wanted to change the text color of a `h2` tag. Then we would need to tell for what tag the text color should be changed. The same with js, if we wanted to change the text of an h2 we would need to select that element first. Here namin is super useful!
+
+There are 2 main ways of naming:
+
+1. **Class** - `<p class="user-name">Pernille Høegh</p>`
+   - The same class can be used for multiple elements
+   - You can use multiple classes on a single element
+2. **Id** - `<p id="user-name">Pernille Høegh</p>`
+   - Id's should be used for unique elements
+   - The same id should not be used for an element
+   - `id`'s should be very rarely used! 
+
+
+
+Use hyphen between names (https://google.github.io/styleguide/htmlcssguide.html#ID_and_Class_Name_Delimiters) and always lowercase! So not `UserName` but `user-name`, `productList` to `product-list`
+
+
+
+
+
 ### HTML elements
 
 An html element is the tag together with the content. So fx `<p></p>` is just the `p` tag. `<p>This is the content</p>` this would be a `p` html element.
@@ -93,7 +119,7 @@ Here are the tags for each group
 
 I will pick two groups to present their findings for the class
 
-
+1.5
 
 ### HTML document structure
 
@@ -178,30 +204,14 @@ If all of this is a bit confusing i get it! Try go [here](https://software.hixie
 
 
 
-## Naming HTML elements
-
-Why should we even name our html elements? Mostly it's for targeting when writing css and javascript. So fx if we wanted to change the text color of a `h2` tag. Then we would need to tell for what tag the text color should be changed. The same with js, if we wanted to change the text of an h2 we would need to select that element first. Here namin is super useful!
-
-There are 2 main ways of naming:
-
-1. **Class** - `<p class="alert-message">SOMETHING WENT WRONG!!!</p>`. 
-   - The same class can be used for multiple elements
-   - You can use multiple classes on a single element
-2. **Id** - `<p id="alert-message">SOMETHING WENT WRONG!!!</p>`.
-   - Id's should be used for unique elements
-   - The same id should not be used for an element
-   - `id`'s should be very rarely used! 
-
-
-
-Use hyphen between names (https://google.github.io/styleguide/htmlcssguide.html#ID_and_Class_Name_Delimiters) and always lowercase! So not `UserName` but `user-name`, `productList` to `product-list`
-
-
-
 ### How to write good html
 
 - Write semantic html. Try and really think about what tag you are using
 - Give good names to the element where naming makes sense
+
+
+
+
 
 
 
@@ -238,9 +248,10 @@ Content:
 Here are some amazing examples of portfolios you can get inspired from
 
 - https://benna100.github.io/portfolio/ 😆
-- http://findmatthew.com/
+- https://marcodecara.com
 - https://ejosue.com/
 - https://kyleledbetter.com/
+- https://bruno-simon.com/
 
 
 
@@ -273,7 +284,6 @@ Now everytime you push changes to `master` your website will be updated!
 
 
 
-### What we did not have time for
+### If you want to continue your learning
 
 - Aria
-- Forms (this we will get into later)

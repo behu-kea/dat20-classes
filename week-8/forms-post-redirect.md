@@ -319,6 +319,7 @@ Remember to structure your application properly with
 - Models
 - Services
 - Repositories
-- 
+
+
 
 Focus on creating the post, sending the post and doin the redirects. 

@@ -116,10 +116,6 @@ Some times we are interested in making the user go to another website than the o
 
 
 
-### Forward
-
-Simply returns another view. Look at the url which stays the same!
-
 
 
 ### Redirect
@@ -130,17 +126,147 @@ There are two ways of doing a redirect in spring boot.
 
 #### RedirectView
 
+Use the `RedirectView` class. To add query parameters use the `RedirectAttributes` class as a parameter to the redirect method. 
 
+```java
+@GetMapping("redirect-test")
+public RedirectView redirectView(RedirectAttributes attributes) {
+  // adding query parameters to the redirected page
+  attributes.addAttribute("name", "Charlotte");
+  return new RedirectView("/sign-up");
+}
+```
+
+
+
+Below is how the redirect will work behind the scenes. What does the 302 mean? 
+
+![Screenshot 2021-02-12 at 13.50.10](./assets/redirect.png)
+
+
+
+So the redirect says : "Hey browser i have actually moved this url by sending the  `302` response code". 
+
+Now the browser asks: "Sound good server, but where have you moved the url to???". 
+
+The server responds: "Just look at the `response header` called `Location`. Thats where the url has been moved to!". 
+
+The browser now loads the new url found under the `Location` header!
+
+
+
+##### Disadvantages
+
+1.  we're now coupled to the Spring API because we're using the *RedirectView* directly in our code. 
+
+2. We now need to know from the start, when implementing that controller – that the result will always be a redirect – which may not always be the case. Maybe we have a check. Fx 
+
+```java
+if(user.loggedIn()) {
+  return "dashboard"
+} else {
+  // Redirect to /sign-in
+}
+```
+
+In this example we could not use the `RedirectView` because we return different things based on an `if` sentence
 
 
 
 #### Prefix
 
+The result is **exactly** the same as above! Server sends a `302` with the `Location` header set. **But** we are not dependent on `RedirectView`!
 
+```java
+// Redirect with prefix redirect
+@GetMapping("redirect-prefix-test-simple")
+public String redirectViewPrefixSimple() {
+    // adding query parameters to the redirected page
+    return new String("redirect:/sign-up");
+}
+```
+
+
+
+Using query parameters
+
+```java
+// Redirect with prefix redirect
+@GetMapping("redirect-prefix-test")
+public ModelAndView redirectViewprefix(ModelMap model) {
+    // adding query parameters to the redirected page
+    model.addAttribute("name", "Louise");
+    return new ModelAndView("redirect:/sign-up", model);
+}
+```
+
+
+
+### Forward
+
+So far we have used `302` to redirect a page
+
+Now let's try and do a redirect with the server. First a simple version
+
+```java
+// Redirect using forward simple
+@GetMapping("redirect-forward-test-simple")
+public String redirectForwardSimple() {
+    // adding query parameters to the redirected page
+    return new String("forward:/sign-up");
+}
+```
+
+
+
+Adding query parameters to the forward
+
+```java
+// Redirect using forward
+@GetMapping("redirect-forward-test")
+public ModelAndView redirectForward(ModelMap model) {
+    // adding query parameters to the redirected page
+    model.addAttribute("name", "Charlotte");
+    return new ModelAndView("forward:/sign-up", model);
+}
+```
+
+Now keep attention to the url! It does not change and only one request happens. Basiscally Spring boot just serves the `/sign-up` view and nothing else
 
 
 
 ## Post, redirect, get pattern
+
+Imagine a user submits a form and reloads the page. Now that form request will be sent twice. Resulting in two database instances.
+
+With this new pattern a server receives a request, saves the data (`createProduct`) and then redirects the user to a confirmation page using `GET` not `POST` (`createProductPageSuccess`)
+
+ 
+
+```java
+@Controller
+public class PostRedirectGet {
+    @GetMapping("create-product")
+    public String createProductPage() {
+        return "create-new-product";
+    }
+
+    @PostMapping("create-product")
+    public String createProduct(@RequestParam String title, @RequestParam int price, RedirectAttributes attributes) {
+        attributes.addAttribute("title", title);
+        attributes.addAttribute("price", price);
+
+        return "redirect:/create-product-success";
+    }
+
+    @GetMapping("create-product-success")
+    @ResponseBody
+    public String createProductPageSuccess(@RequestParam String title, @RequestParam int price) {
+
+        return "Created product: " + title + " " + price;
+    }
+}
+```
 
 
 

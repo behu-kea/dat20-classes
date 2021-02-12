@@ -1,11 +1,14 @@
 # Forms, post and redirect
 
+
+
 ## Overview
 
 - HTML forms
 - `@PostMapping`
 - `forward`, `redirect`
 - PRG pattern
+- Exercise
 
 
 
@@ -83,6 +86,10 @@ There are a few things going on. Lets disect it:
 
 
 ` button type="submit"` - When the button is clicked submit the form. 
+
+### If you want to continue your learning
+
+- Form validation
 
 
 
@@ -262,17 +269,56 @@ public class PostRedirectGet {
     @GetMapping("create-product-success")
     @ResponseBody
     public String createProductPageSuccess(@RequestParam String title, @RequestParam int price) {
-
         return "Created product: " + title + " " + price;
     }
 }
 ```
 
+Notice how the `POST` parameters are sent to the `create-product-success` using `RedirectAttributes`.
 
 
 
+## Exercise time 🎉
+
+We would like to create a new social media! 
+
+Therefore create a website where users can create a new social media post and see a list of all posts that were created. The site should have these url's:
+
+| Url          | Description                                                  |
+| ------------ | ------------------------------------------------------------ |
+| `/dashboard` | See a list of the public social media posts on the site      |
+| `/submit`    | Is where a user can create a new social media post using a form |
+| `/success`   | Show that the social media post was successfully created. Maybe you want to add the post information. Fx this is the post that you created: title: "I love sunshine", Description... Should contain a link to go to `/dashboard` |
+| `/`          | Shows the main page. Should include a title, description and a button to create a new post. *optional* |
 
 
 
+This is what a post should include
+
+- Title
+- Content
+- Date
+- Public/private
+- Something that you come up with!
 
 
+
+To give this new social media a bit of edge, add something to the social media post. 
+
+Maybe it's a site for dog lovers, so you add Dog name to the post
+
+Maybe its a Dice lovers so you add their favorite dice number from 1-6
+
+I would love to see a bit of creativity here :) 
+
+
+
+Remember to structure your application properly with
+
+- Controllers
+- Models
+- Services
+- Repositories
+- 
+
+Focus on creating the post, sending the post and doin the redirects. 

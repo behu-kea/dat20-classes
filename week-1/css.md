@@ -37,18 +37,34 @@ Lets see a concrete example of that!
 
 
 
+![Screenshot 2021-02-16 at 09.44.11](./assets/css-overview.png)
+
+
+
 ## Adding css to your site
 
-Create a css file. Fx `main.css`. To add the css to your html, add this line in the `head` of your html: `<link rel="stylesheet" href="main.css">`. Now the css is connected to the html. 
+Create a css file. Fx `main.css`. To add the css to your html, add this line in the `head` of your html: `<link rel="stylesheet" href="main.css">`. Now the css file called `main.css` is connected to the html. 
+
+```html
+<head>
+    <link rel="stylesheet" href="main.css">
+</head>
+```
 
 
 
 ## CSS selectors and properties
 
+
+
+
+
 CSS has two parts:
 
 1. The selector - specifies what html elements to style
 2. The properties - specifies what style the html elements should get
+
+![Screenshot 2021-02-16 at 09.44.34](./assets/css-rule.png)
 
 It goes kind of like this: First we find the elements to style (the selector) then we tell how those selected elements should be be styled. Here is an example:
 
@@ -262,7 +278,7 @@ section .user-name {
 }
 ```
 
-
+Exercise: https://www.w3schools.com/css/exercise.asp?filename=exercise_positioning5
 
 #### Fixed
 
@@ -274,6 +290,8 @@ section .user-name {
     left: 10px;
 }
 ```
+
+
 
 ![Diagram: comparison of static, relative, absolute, and fixed positioning schemes](/Users/benjamin-hughes/Documents/projects/dat20-classes/week-1/assets/css-positioning.png)
 
@@ -289,8 +307,6 @@ Flex is a relative new way of layouting things in the browser.
 
 Is where the `display: flex;` is applied. This will make all the **immediate children** flex items.  
 
-
-
 ```html
 <div class="flex-container">
     <div class="box box-1">Flex item 1</div>
@@ -303,15 +319,15 @@ Is where the `display: flex;` is applied. This will make all the **immediate chi
 
 When applying `display:flex;` the default direction of the flex items is row, meaning they will be positioned next to each other. 
 
-
+We can use the `justfy-content` to decide the spacing between the element in the flex direction. We can use `align-items` to decide the spacing in the other direction. 
 
 Now try and play around with `flex-direction` and with `justify-content` and `align-items`
-
-
 
 https://marina-ferreira.github.io/tutorials/css/flexbox/
 
 https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+
+*Practical example*
 
 
 
@@ -320,6 +336,20 @@ https://css-tricks.com/snippets/css/a-guide-to-flexbox/
 Bootstrap is a css framework that helps you develop nice layouts and styling quickly. It basiscally works by adding specific elements with specific Bootstrap classes. 
 
 https://getbootstrap.com
+
+
+
+## How to deconstruct a layout
+
+https://www.amsiq.com/da
+
+
+
+## *Exercise*
+
+Try and recreate the layout below with the code found [here](https://github.com/behu-kea/dat20-classes/tree/master/week-1/exercises/flexbox). You can clone the project and open the files in IntelliJ or just copy the files to your computer. Thats up to you. 
+
+![hyf-exercise](./assets/hyf-flexbox-mockup.png)
 
 
 
@@ -338,18 +368,6 @@ on the right hand side you can see the styles applied to the element you have in
 
 
 
-
-## How to deconstruct a layout
-
-https://www.amsiq.com/da
-
-
-
-## *Exercise*
-
-Try and recreate the layout below with the code found [here](https://github.com/behu-kea/dat20-classes/tree/master/week-1/exercises/flexbox). You can clone the project and open the files in IntelliJ or just copy the files to your computer. Thats up to you. 
-
-![hyf-exercise](./assets/hyf-flexbox-mockup.png)
 
 
 

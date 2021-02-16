@@ -116,10 +116,11 @@ Here are the tags for each group
 - Group 4 - section tag
 - Group 5 - head tag
 - Group 6 - nav tag
+- Group 7 - div tag
 
-I will pick two groups to present their findings for the class
+I will pick three groups to present their findings for the class
 
-1.5
+
 
 ### HTML document structure
 
@@ -136,12 +137,17 @@ An html document is divided into different parts:
         <main>
             <header>
                 <!-- In the header you have things like the logo and navigation-->
-                <a href="/">Ebai</a>
+              	<nav>
+                  <ul>
+                    <li><a href="/">Ebai</a></li>
+                    <li><a href="#products">Products</a></li>
+                  </ul>
+              	</nav>
             </header>
             <section class="intro">
                 <h1>Welcome to our wonderful site</h1>
             </section>
-            <section class="products">
+            <section id="products" class="products">
                 <ul>
                     <li>Tv</li>
                     <li>Mobile</li>
@@ -157,6 +163,8 @@ An html document is divided into different parts:
 ```
 
 
+
+An example of some sections on a page. 
 
 ![Image not loaded go to https://github.com/behu-kea/dat20-classes/blob/master/week-1/assets/layout.png to see image](./assets/layout.png)
 
@@ -184,7 +192,7 @@ const dom = window.document;
 // Here we are grabbing a specific node (the html element div with the class of user-name)
 const usernameDomNode = dom.querySelector('div.user-name');
 // Now we are changing the text inside of the node
-usernameDomNode.innerHTML = "Heriette Hansen";
+usernameDomNode.innerText = "Heriette Hansen";
 ```
 
 
@@ -208,10 +216,6 @@ If all of this is a bit confusing i get it! Try go [here](https://software.hixie
 
 - Write semantic html. Try and really think about what tag you are using
 - Give good names to the element where naming makes sense
-
-
-
-
 
 
 
@@ -266,8 +270,8 @@ Try use this checklist for writing good html!
 - [ ] Has the correct tag been used. Fx is main, header, footer, section, nav used properly.
 - [ ] Is the html correctly implemented. 
 - [ ] Are there unnecessary wrappers?
-- [ ] Has kebab-case been used?
-- [ ] Has alt tags been written for images.
+- [ ] Has kebab-case been used? `product-list`
+- [ ] Has alt attributes been written for `img` tags?
 
 
 

@@ -278,7 +278,11 @@ Notice how the `POST` parameters are sent to the `create-product-success` using 
 
 
 
-## Exercise time 🎉
+
+
+
+
+## Exercise time 🎉 Måske vente til torsdag!
 
 We would like to create a new social media! 
 

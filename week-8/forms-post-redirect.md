@@ -28,8 +28,6 @@ HTML forms is used for sending data to the server. it comes from physical forms 
 
 
 
-
-
 ### Creating a form
 
 Here is an example of a form
@@ -117,11 +115,7 @@ To get data out of the `POST` request use  `@RequestParam("name") String name`. 
 
 ## Forward and redirect
 
-
-
 Some times we are interested in making the user go to another website than the one he put in the url or was directed to. For this we use forwards and redirects
-
-
 
 
 
@@ -278,22 +272,19 @@ Notice how the `POST` parameters are sent to the `create-product-success` using 
 
 
 
-
-
-
-
-## Exercise time 🎉 Måske vente til torsdag!
+## Exercise time 🎉 
 
 We would like to create a new social media! 
 
-Therefore create a website where users can create a new social media post and see a list of all posts that were created. The site should have these url's:
+Therefore create a website where users can create a new social media post and see a list of all posts that were created. Use this repo as a starter for your project: https://github.com/behu-kea/new-social-media
+
+The site should have these url's:
 
 | Url          | Description                                                  |
 | ------------ | ------------------------------------------------------------ |
-| `/dashboard` | See a list of the public social media posts on the site      |
-| `/submit`    | Is where a user can create a new social media post using a form |
-| `/success`   | Show that the social media post was successfully created. Maybe you want to add the post information. Fx this is the post that you created: title: "I love sunshine", Description... Should contain a link to go to `/dashboard` |
-| `/`          | Shows the main page. Should include a title, description and a button to create a new post. *optional* |
+| `/dashboard` | Return the json for all the social media posts (Thursday we will render these posts using html templates). In the starter example there is an example of how to return json from a list. |
+| `/submit`    | Is where a user can create a new social media post using a form. You need to create the html `form`. In the starter there is an example of how to return an html template for a specific route. |
+| `/success`   | Return the json for the Social media post that was just created! <br /><br />Thursday we will be showing that the social media post was successfully created. Maybe you want to add the post information. Fx this is the post that you created: title: "I love sunshine", Description... Should contain a link to go to `/dashboard` |
 
 
 
@@ -326,4 +317,4 @@ Remember to structure your application properly with
 
 
 
-Focus on creating the post, sending the post and doin the redirects. 
+Focus on creating the post, sending the post and doing the redirects. Thursday we will focus on creating the html templates and rendering the different pages. 

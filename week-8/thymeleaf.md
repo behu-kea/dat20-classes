@@ -33,7 +33,6 @@ This is where Thymeleaf comes in, it helps us with working in html files even th
 - Understand what Thymeleaf does and why we use it
 - Writing your first template
 - Accessing data in templates
-- Rendering list in ThymeLeaf
 
 
 
@@ -116,11 +115,60 @@ You can also create folders in the `templates` folder. Then in the controller yo
 
 Now we have created a simple example that renders some html. But what if we wanted to send some data from the controller into the view. What we will be looking at now:
 
-
-
 We send data to the template using the `Model` class. 
 
 
 
-* https://www.thymeleaf.org/doc/articles/springmvcaccessdata.html     
-* https://springframework.guru/displaying-list-of-objects-in-table-using-thymeleaf/
+**View**
+
+```html
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Product</title>
+</head>
+  <body>
+    <main>
+        <h1 th:text="${title}">Default title</h1>
+        <span th:text="${price}">Default title</span>
+        <ul th:each="feature : ${features}">
+            <li th:text="${feature}"></li>
+        </ul>
+    </main>
+  </body>
+</html>
+```
+
+
+
+**Controller**
+
+```java
+@GetMapping(value = "/product")
+public String renderProduct(Model model) {
+    String title = "Television";
+    int price = 1000;
+    ArrayList<String> features = new ArrayList<>();
+    features.add("HD");
+    features.add("Smart TV");
+    features.add("Netflix");
+
+    model.addAttribute("title", title);
+    model.addAttribute("price", price);
+    model.addAttribute("features", features);
+
+    return "product.html";
+}
+```
+
+
+
+*Exercise*
+
+You have to create the model for the product. We have now added the television as simple variables directly in the controller. But that is not following proper MVC structure. It is your task now to create a `Produt` class that has the attributes `title`,  `price`,  `features`, `isOnSale`. 
+
+Using the new `Product` class, create a product in the controller and add that to the view. Now render the view using the new class. 
+
+**Optional** add `reviews` to the `Product` class and render the reviews.
+

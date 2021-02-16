@@ -172,3 +172,16 @@ Using the new `Product` class, create a product in the controller and add that t
 
 **Optional** add `reviews` to the `Product` class and render the reviews.
 
+
+
+## Continue on Social media exercise
+
+Today we will be continuing work on the social media we started creating Monday. 
+
+| Url          | Description                                                  |
+| ------------ | ------------------------------------------------------------ |
+| `/dashboard` | Render all the public posts                                  |
+| `/submit`    | Is where a user can create a new social media post using a form. (should be created by now. Otherwise go to monday file) |
+| `/success`   | Render that the social media post was successfully created. Maybe you want to add the post information. Fx this is the post that you created: title: "I love sunshine", Description... Should contain a link to go to `/dashboard` |
+| /            | Add a home page for your site. Add a header, title, h1, and a good description |
+

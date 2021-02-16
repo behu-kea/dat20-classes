@@ -282,7 +282,7 @@ The site should have these url's:
 
 | Url          | Description                                                  |
 | ------------ | ------------------------------------------------------------ |
-| `/dashboard` | Return the json for all the social media posts (Thursday we will render these posts using html templates). In the starter example there is an example of how to return json from a list. |
+| `/dashboard` | Return the json for all the public social media posts (Thursday we will render these posts using html templates). In the starter example there is an example of how to return json from a list. |
 | `/submit`    | Is where a user can create a new social media post using a form. You need to create the html `form`. In the starter there is an example of how to return an html template for a specific route. |
 | `/success`   | Return the json for the Social media post that was just created! <br /><br />Thursday we will be showing that the social media post was successfully created. Maybe you want to add the post information. Fx this is the post that you created: title: "I love sunshine", Description... Should contain a link to go to `/dashboard` |
 

@@ -8,6 +8,10 @@ CSS bliver brugt til at style en hjemmeside. HTML er selve strukturen og indhold
 
 
 
+Obligatorisk opgave Cache forklar!
+
+
+
 ## Overview
 
 - Adding css to your site

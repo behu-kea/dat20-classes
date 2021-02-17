@@ -136,3 +136,13 @@ Remember to initialize the Cache in the controller. Then at a given endpoint
 - If it is, return the value
 - If not, get the value using the slow method, then store the result in the cache
 
+
+
+## Handing in your homework
+
+This exercise has to be **handed in the 15/3**
+
+
+
+Please create a new Github repository and add your code there. Submit the link for the Github repo. 
+

@@ -4,13 +4,17 @@ Last week we familarized ourselves with Thymeleaf. We can use Thymeleaf for more
 
 
 
-## Overview
+## Why are we even continuing talking about Thymeleaf
+
+
+
+
+
+## Learning goals
 
 - Thymelear syntax (variable, expressions)
 - Thymeleaf fragments
 - Iterating a list of objects
-
-
 
 
 

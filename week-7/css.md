@@ -1,8 +1,10 @@
 # CSS
 
-Dokumentet kan findes onlin her: https://behu.gitbook.io/kea/week-1/css
+This document can be found online here: https://behu.gitbook.io/kea/week-7/css
 
-Hvorfor snakker vi overhovedet om CSS?
+
+
+## Why are we even talking about html?
 
 CSS bliver brugt til at style en hjemmeside. HTML er selve strukturen og indholdet. CSS er farverne, layout, animationer, skrifttyper etc. 
 
@@ -23,27 +25,6 @@ CSS bliver brugt til at style en hjemmeside. HTML er selve strukturen og indhold
   - Flow
   - Positioning
   - Flexbox
-
-
-
-## Overview
-
-- Adding css to your site
-- Css selectors: 
-  - Id, class, type
-  - Child `.red-color .text` and `.red-color, .text`
-  - Pseudo selector `.red-color:hover
-  - *exercise*
-- Properties 
-- Layout
-  - Flow
-    - Block flow
-    - Inline flow
-  - Positioning
-    - Static, relative, absolute, fixed
-    - Flexbox
-- Bootstrap
-- Inspector
 
 
 

@@ -15,8 +15,6 @@ This problem is solved using sessions. Session management can be acheived multip
 
 
 
-
-
 ## Learning objectives
 
 - What is a session and why do we use it?

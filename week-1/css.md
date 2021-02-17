@@ -12,6 +12,17 @@ Obligatorisk opgave Cache forklar!
 
 
 
+## Learning objectives
+
+- Adding css to a site
+- CSS selectors, properties and values
+- CSS layout
+  - Flow
+  - Positioning
+  - Flexbox
+
+
+
 ## Overview
 
 - Adding css to your site
@@ -59,14 +70,11 @@ Create a css file. Fx `main.css`. To add the css to your html, add this line in 
 
 ## CSS selectors and properties
 
-
-
-
-
-CSS has two parts:
+CSS has three parts:
 
 1. The selector - specifies what html elements to style
-2. The properties - specifies what style the html elements should get
+2. The property - specifies what sproperty we are changing (`color`, `width`, `font-size`)
+3. Value - The value of the property. `20px`, `red` etc.
 
 ![Screenshot 2021-02-16 at 09.44.34](./assets/css-rule.png)
 
@@ -200,14 +208,6 @@ There are **a lot** more but these are the most important ones. You can find mor
 
 
 
-## CSS properties
-
-https://developer.mozilla.org/en-US/docs/Web/CSS/Reference
-
-A property in css is the styling you want to apply to an element. You write a property with the property name then `:` and then the value.
-
-
-
 *Exercise - selecting elements - 20 min*
 
 https://flukeout.github.io/
@@ -217,6 +217,36 @@ Hopefully we can do it as pair programming exercise. One drives, one supports.
 The driver shares his/her screen. Halfway switch. 
 
 The html tags are not standard html tags like `div`, `p` and `section`. But the concept of selecting is the same. 
+
+
+
+## CSS properties
+
+https://developer.mozilla.org/en-US/docs/Web/CSS/Reference
+
+A property in css is the styling you want to apply to an element. You write a property with the property name then `:` and then the value.
+
+
+
+*Exercise*
+
+Give the button with the text `Signup` a `green` background color
+
+All buttons in the page should have a padding of `12px` and a rounded corners
+
+```html
+<body>
+    <main>
+        <section class="intro">
+            <h1></h1>
+            <h2></h2>
+            <p></p>
+            <button class="call-to-action">Signup</button>
+            <button>See pricing</button>
+        </section>
+    </main>
+</body>
+```
 
 
 
@@ -284,6 +314,8 @@ section .user-name {
 
 Exercise: https://www.w3schools.com/css/exercise.asp?filename=exercise_positioning5
 
+
+
 #### Fixed
 
 A fixed element always appear at the same place on the screen no matter of someone scrolls! Imagine a cookie accept box. 
@@ -313,12 +345,12 @@ Is where the `display: flex;` is applied. This will make all the **immediate chi
 
 ```html
 <div class="flex-container">
-    <div class="box box-1">Flex item 1</div>
-    <div class="box box-2">Flex item 2</div>
-    <div class="box box-3">Flex item 3</div>
-    <div class="box box-4">Flex item 4</div>
-    <div class="box box-5">Flex item 5</div>
-  </div>
+    <div>Flex item 1</div>
+    <div>Flex item 2</div>
+    <div>Flex item 3</div>
+    <div>Flex item 4</div>
+    <div>Flex item 5</div>
+</div>
 ```
 
 When applying `display:flex;` the default direction of the flex items is row, meaning they will be positioned next to each other. 
@@ -331,7 +363,15 @@ https://marina-ferreira.github.io/tutorials/css/flexbox/
 
 https://css-tricks.com/snippets/css/a-guide-to-flexbox/
 
+
+
 *Practical example*
+
+Using Flex, recreate the following mockups using the html above with the `flex-container`
+
+![Screenshot 2021-02-17 at 14.33.03](./assets/flex-mockup-1.png)
+
+![Screenshot 2021-02-17 at 14.35.33](./assets/flex-mockup-2.png)
 
 
 

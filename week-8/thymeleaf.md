@@ -2,6 +2,10 @@
 
 # Thymeleaf
 
+Go here for online version: https://behu.gitbook.io/kea/week-8/thymeleaf
+
+
+
 Why are we even talking about thymeleaf?
 
 Writing html directly in `Java` is very bad practice. Its also just not a pleasant experience. Like look at this:
@@ -28,6 +32,14 @@ This is where Thymeleaf comes in, it helps us with working in html files even th
 
 
 
+## Learning goals
+
+- Understand what Thymeleaf does and why we use it
+- Create a simple template and use that te at an endpoint
+- Sending data from the controller into the template using  `Model`
+
+
+
 ## Overview
 
 - Understand what Thymeleaf does and why we use it
@@ -49,7 +61,7 @@ There are other templating engines out there, but Thymeleaf is well supported an
 
 ### Installing Thymeleaf
 
-Then initializing your new project, add the `spring-boot-starter-thymeleaf` using the Spring Initializr.
+Then initializing your new project, add the `spring-boot-starter-thymeleaf` using the Spring Initializr
 
 
 

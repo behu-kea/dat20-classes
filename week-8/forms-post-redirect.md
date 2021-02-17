@@ -2,6 +2,16 @@
 
 Go here for online version: https://behu.gitbook.io/kea/week-8/forms-post-redirect
 
+**Why are we even talking about forms and post?**
+
+Sending data to a server is essential for interacting with a website user. Create a new user, booking online flight tickets, ordering a product online. 
+
+
+
+
+
+
+
 ## Overview
 
 - HTML forms
@@ -9,12 +19,6 @@ Go here for online version: https://behu.gitbook.io/kea/week-8/forms-post-redire
 - `forward`, `redirect`
 - PRG pattern
 - Exercise
-
-
-
-**Why are we even talking about forms and post?**
-
-Sending data to a server is essential for interacting with a website user. Create a new user, booking online flight tickets, ordering a product online. 
 
 
 

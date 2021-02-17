@@ -16,7 +16,14 @@ it is hugely important and writing good html can save a company millions!
 
 
 
-## HTML
+## Learning goals
+
+- Understand what html is used for
+- Create an html page
+- Knows how to create a tag and when to use certain tags () 
+- Knows the structure of a html document (`body`, `head`, `header`, `footer`, `section`) etc
+- Can identify different visual parts of a website (`section`, `header`, `footer`)
+- Can explain what the DOM is and convert an html document to a DOM tree
 
 
 

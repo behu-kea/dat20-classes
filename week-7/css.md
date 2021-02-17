@@ -1,6 +1,6 @@
 # CSS
 
-Dokumentet kan findes onlin her: https://github.com/behu-kea/dat20-classes/blob/master/week-1/css.md
+Dokumentet kan findes onlin her: https://behu.gitbook.io/kea/week-1/css
 
 Hvorfor snakker vi overhovedet om CSS?
 
@@ -8,7 +8,10 @@ CSS bliver brugt til at style en hjemmeside. HTML er selve strukturen og indhold
 
 
 
-Obligatorisk opgave Cache forklar!
+**Diverse**
+
+- Obligatorisk opgave Cache forklar! 
+- Jeg har tilføjet learning goals til sidste uges html.
 
 
 

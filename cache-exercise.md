@@ -130,9 +130,9 @@ This should return the randomnly generated `value` stored for the user with `use
 
 ![Screenshot 2021-02-17 at 11.06.03](./assets/get-user-data-screenshot.png)
 
-Remember to use the cache! So in the controller 
+Remember to initialize the Cache in the controller. Then at a given endpoint
 
-- First check if the key is there
+- First check if the key (userId) is there
 - If it is, return the value
 - If not, get the value using the slow method, then store the result in the cache
 

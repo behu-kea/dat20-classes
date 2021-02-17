@@ -108,5 +108,31 @@ userCache.has(userId); // false
 
 
 
-## Applying your newly created cache
+## Applying your newly created Cache
+
+Create a `User` class with an `id` that is randomnly generated and the following method:
+
+```java
+// simulates a slow call
+public String getDataSlow() throws InterruptedException {
+    TimeUnit.SECONDS.sleep(10);
+    String generatedString = RandomStringUtils.randomAlphabetic(1000);
+
+    return generatedString;
+}
+```
+
+
+
+Now create an endpoint that should be used like this: http://localhost:8080/get-user-data?userId=6
+
+This should return the randomnly generated `value` stored for the user with `userId` 6
+
+![Screenshot 2021-02-17 at 11.06.03](./assets/get-user-data-screenshot.png)
+
+Remember to use the cache! So in the controller 
+
+- First check if the key is there
+- If it is, return the value
+- If not, get the value using the slow method, then store the result in the cache
 

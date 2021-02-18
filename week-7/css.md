@@ -212,7 +212,7 @@ A property in css is the styling you want to apply to an element. You write a pr
 
 
 
-*Exercise*
+*Exercise* - 10 min
 
 Give the button with the text `Signup` a `green` background color
 

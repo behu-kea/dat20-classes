@@ -5,6 +5,7 @@ body {
 ul {
     background-color: yellow;
     list-style-type: none;
+    font-size: 2rem;
 }
 
 #highlighted {
@@ -45,4 +46,21 @@ h1:hover {
     width: 50px;
     height: 50px;
     background-color: lightgreen;
+}
+
+section.flex{
+    margin-top: 50px;
+    bottom: 50px;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.flex-item {
+    background-color: grey;
+    paddgin: 5px;
+    border-radius: 8px;
+    height: 100px;
 }

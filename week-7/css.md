@@ -216,17 +216,24 @@ Give the button with the text `Signup` a `green` background color
 
 All buttons in the page should have a padding of `12px` and a rounded corners
 
+*Remember to add the*  `main.css` *file*
+
 ```html
-<body>
-    <main>
-        <section class="intro">
-            <h1>Welcome to my site</h1>
-            <h2>I hope you like it</h2>
-            <button class="call-to-action">Signup</button>
-            <button>See pricing</button>
-        </section>
-    </main>
-</body>
+<html>
+  <head>
+  		<link rel="stylesheet" href="main.css">
+  </head>
+  <body>
+      <main>
+          <section class="intro">
+              <h1>Welcome to my site</h1>
+              <h2>I hope you like it</h2>
+              <button class="call-to-action">Signup</button>
+              <button>See pricing</button>
+          </section>
+      </main>
+  </body>
+ </html>
 ```
 
 

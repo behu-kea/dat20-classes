@@ -347,9 +347,11 @@ https://marina-ferreira.github.io/tutorials/css/flexbox/
 
 https://css-tricks.com/snippets/css/a-guide-to-flexbox/
 
-
-
 *Practical example*
+
+
+
+#### Flex exercies
 
 Using Flex, recreate the following mockups using the html above with the `flex-container`
 

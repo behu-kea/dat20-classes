@@ -385,7 +385,7 @@ https://www.amsiq.com/da
 
 ## *Exercise*
 
-Try and recreate the layout below with the code found [here](https://github.com/behu-kea/dat20-classes/tree/master/week-1/exercises/flexbox). You can clone the project and open the files in IntelliJ or just copy the files to your computer. Thats up to you. 
+Try and recreate the layout below with the code found [here](https://github.com/behu-kea/dat20-classes/tree/master/week-7/exercises/flexbox). You can clone the project and open the files in IntelliJ or just copy the files to your computer. Thats up to you. 
 
 ![hyf-exercise](./assets/hyf-flexbox-mockup.png)
 

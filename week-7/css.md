@@ -10,8 +10,6 @@ CSS bliver brugt til at style en hjemmeside. HTML er selve strukturen og indhold
 
 
 
-**D**
-
 - Obligatorisk opgave Cache forklar! 
 - Jeg har tilføjet learning goals til sidste uges html.
 
@@ -328,11 +326,11 @@ Is where the `display: flex;` is applied. This will make all the **immediate chi
 
 ```html
 <div class="flex-container">
-    <div>Flex item 1</div>
-    <div>Flex item 2</div>
-    <div>Flex item 3</div>
-    <div>Flex item 4</div>
-    <div>Flex item 5</div>
+    <div class="flex-item">Flex item 1</div>
+    <div class="flex-item">Flex item 2</div>
+    <div class="flex-item">Flex item 3</div>
+    <div class="flex-item">Flex item 4</div>
+    <div class="flex-item">Flex item 5</div>
 </div>
 ```
 

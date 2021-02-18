@@ -10,8 +10,6 @@ CSS bliver brugt til at style en hjemmeside. HTML er selve strukturen og indhold
 
 
 
-**D**
-
 - Obligatorisk opgave Cache forklar! 
 - Jeg har tilføjet learning goals til sidste uges html.
 
@@ -221,6 +219,8 @@ All buttons in the page should have a padding of `12px` and a rounded corners.
 **Don't change the html!**
 
 *Remember to create the* `main.css` *file*
+
+*Remember to add the*  `main.css` *file*
 
 ```html
 <html>

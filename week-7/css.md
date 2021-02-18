@@ -149,7 +149,7 @@ You can make the selectors more specific by using the descendant selector:
 Style all `h1` elements that are descendants of the element with class name intro
 
 ```html
-section class="intro">
+<section class="intro">
     <h1>Welcome to our wonderful site</h1>
 </section>
 ```

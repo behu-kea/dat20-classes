@@ -216,19 +216,28 @@ A property in css is the styling you want to apply to an element. You write a pr
 
 Give the button with the text `Signup` a `green` background color
 
-All buttons in the page should have a padding of `12px` and a rounded corners
+All buttons in the page should have a padding of `12px` and a rounded corners.
+
+**Don't change the html!**
+
+*Remember to create the* `main.css` *file*
 
 ```html
-<body>
-    <main>
-        <section class="intro">
-            <h1>Welcome to my site</h1>
-            <h2>I hope you like it</h2>
-            <button class="call-to-action">Signup</button>
-            <button>See pricing</button>
-        </section>
-    </main>
-</body>
+<html>
+  <head>
+  		<link rel="stylesheet" href="main.css">
+  </head>
+  <body>
+      <main>
+          <section class="intro">
+              <h1>Welcome to my site</h1>
+              <h2>I hope you like it</h2>
+              <button class="call-to-action">Signup</button>
+              <button>See pricing</button>
+          </section>
+      </main>
+  </body>
+</html>
 ```
 
 
@@ -328,11 +337,11 @@ Is where the `display: flex;` is applied. This will make all the **immediate chi
 
 ```html
 <div class="flex-container">
-    <div>Flex item 1</div>
-    <div>Flex item 2</div>
-    <div>Flex item 3</div>
-    <div>Flex item 4</div>
-    <div>Flex item 5</div>
+    <div class="flex-item">Flex item 1</div>
+    <div class="flex-item">Flex item 2</div>
+    <div class="flex-item">Flex item 3</div>
+    <div class="flex-item">Flex item 4</div>
+    <div class="flex-item">Flex item 5</div>
 </div>
 ```
 

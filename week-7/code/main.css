@@ -1,0 +1,34 @@
+body {
+    color: blue;
+}
+
+ul {
+    background-color: yellow;
+    list-style-type: none;
+}
+
+#highlighted {
+    background-color: aqua;
+}
+
+.alerted{
+    background-color: red;
+}
+
+.intro h2 {
+    border: 1px solid black;
+}
+
+.button-styling {
+    padding: 12px;
+    border-radius: 8px;
+    background-color: lightblue;
+}
+
+h1, h2 {
+    font-size: 3rem;
+}
+
+h1:hover {
+    background-color: green;
+}

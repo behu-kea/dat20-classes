@@ -262,7 +262,7 @@ These elements are fx `div`, `p`, `section`, `footer`
 
 Elements that have inline flow are positioned next to each other. 
 
-That if fx `span`, `a`, `strong`.
+That if fx `span`, `a`, `strong`
 
 *Teacher note:* Show with example
 

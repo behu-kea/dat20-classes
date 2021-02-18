@@ -10,7 +10,7 @@ CSS bliver brugt til at style en hjemmeside. HTML er selve strukturen og indhold
 
 
 
-**Diverse**
+**D**
 
 - Obligatorisk opgave Cache forklar! 
 - Jeg har tilføjet learning goals til sidste uges html.
@@ -313,7 +313,7 @@ section .user-name {
 
 
 
-![Diagram: comparison of static, relative, absolute, and fixed positioning schemes](/Users/benjamin-hughes/Documents/projects/dat20-classes/week-1/assets/css-positioning.png)
+![Diagram: comparison of static, relative, absolute, and fixed positioning schemes](./assets/css-positioning.png)
 
 
 

@@ -222,9 +222,8 @@ All buttons in the page should have a padding of `12px` and a rounded corners
 <body>
     <main>
         <section class="intro">
-            <h1></h1>
-            <h2></h2>
-            <p></p>
+            <h1>Welcome to my site</h1>
+            <h2>I hope you like it</h2>
             <button class="call-to-action">Signup</button>
             <button>See pricing</button>
         </section>

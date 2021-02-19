@@ -161,7 +161,7 @@ public ModelAndView redirectViewprefix(ModelMap model) {
 
 Below is how the redirect will work behind the scenes. What does the 302 mean? 
 
-![Screenshot 2021-02-12 at 13.50.10](file:///Users/benjamin-hughes/Documents/projects/dat20-classes/week-8/assets/redirect.png?lastModify=1613736809)
+![Screenshot 2021-02-12 at 13.50.10](./assets/redirect.png)
 
 
 

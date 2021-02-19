@@ -21,7 +21,6 @@ CSS bliver brugt til at style en hjemmeside. HTML er selve strukturen og indhold
 - CSS selectors, properties and values
 - CSS layout
   - Flow
-  - Positioning
   - Flexbox
 
 

@@ -1,10 +1,10 @@
 # Portfolio
 
-*Exercise*
+Lets create a portfolio
 
-Lets create a portfolio! I would encourage you to use this portfolio as your actual portfolio that you can show interested employeers.
+I would encourage you to use this portfolio as your actual portfolio that you can show interested employeers.
 
-The text you write in the portfolio does not matter
+The text you write in the portfolio does not matter for this assignment
 
 
 

@@ -21,7 +21,6 @@ CSS bliver brugt til at style en hjemmeside. HTML er selve strukturen og indhold
 - CSS selectors, properties and values
 - CSS layout
   - Flow
-  - Positioning
   - Flexbox
 
 
@@ -278,7 +277,7 @@ That if fx `span`, `a`, `strong`
 
 
 
-### Positioning
+### Positioning - not part of learning goals!
 
 #### Relative
 
@@ -331,9 +330,9 @@ Flex is a relative new way of layouting things in the browser.
 
 
 
-#### Flex container
+## Let's get started!
 
-Is where the `display: flex;` is applied. This will make all the **immediate children** flex items.  
+We will be using this html
 
 ```html
 <div class="flex-container">
@@ -345,9 +344,58 @@ Is where the `display: flex;` is applied. This will make all the **immediate chi
 </div>
 ```
 
+
+
+#### Flex container
+
+Is where the `display: flex;` rule is applied. In our example it is the div with the class `flex-container`. 
+
+![Screenshot 2021-02-19 at 09.44.16](./assets/flex-container.png)
+
+
+
+### Flex items
+
+When `display: flex;` is applied to the container all the **immediate children** will be the flex items. In our example that is the div's with the class of `flex-item`
+
+![Screenshot 2021-02-19 at 09.44.35](./assets/flex-items.png)
+
 When applying `display:flex;` the default direction of the flex items is row, meaning they will be positioned next to each other. 
 
-We can use the `justfy-content` to decide the spacing between the element in the flex direction. We can use `align-items` to decide the spacing in the other direction. 
+### Flex-direction
+
+The `flex-direction` desides in what direction the items will align. This rule is applied to the container
+
+- `flex-direction: row;` the items will align from left to right (next to each other)
+- `flex-direction: reverse-row;`  the items will align from left to right but in the reverse order
+- `flex-direction: column;` the items will align from top to bottom (on top of each other)
+- `flex-direction: reverse-column;` the items will align from top to bottom but in the reverse order
+
+![Screenshot 2021-02-19 at 09.44.51](./assets/flex-direction.png)
+
+
+
+### Justify content
+
+Decides the spacing between the items **in the direction of the flex-direction**. This rule is applied to the container
+
+An example is: `justify-content: space-between;`
+
+![Screenshot 2021-02-19 at 09.45.20](./assets/flex-justify-content.png)
+
+
+
+### Align items
+
+Decides the spacing between the items **in the opposite direction of the flex-direction**. This rule is applied to the container
+
+`align-items: center;`
+
+![Screenshot 2021-02-19 at 09.45.45](./assets/flex-align-items.png)
+
+
+
+
 
 Now try and play around with `flex-direction` and with `justify-content` and `align-items`
 

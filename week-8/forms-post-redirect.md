@@ -227,7 +227,7 @@ The site should have these url's:
 | -------------- | ------------------------------------------------------------ |
 | `/submit`      | Is where a user can create a new social media post using a `form`. Use the  `form` you created in the exercise earlier. In the starter there is an example of how to return an html template for a specific route. |
 | `/dashboard`   | Return the json for the `titles` of the public social media posts (Thursday we will render these posts using html templates). In the starter example there is an example of how to return json from a list. |
-| `/submit-post` | Where the `@PostMapping`  exists. When a new post has been created and added to the list of posts, remember to `redirect` to `/dashboard` |
+| `/submit-post` | Where the `@PostMapping`  exists. Remember to `redirect` to `/dashboard` |
 
 
 

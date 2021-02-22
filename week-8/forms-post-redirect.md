@@ -192,9 +192,9 @@ public class PostRedirectGet {
     public String createProductPage() {
         return "create-new-product";
     }
-
+  
     @PostMapping("create-product")
-    public String createProduct(@RequestParam String title, @RequestParam int price, RedirectAttributes attributes) {
+    public String createProduct(@RequestParam("title") String title, @RequestParam("price") int price, RedirectAttributes attributes) {
         attributes.addAttribute("title", title);
         attributes.addAttribute("price", price);
 

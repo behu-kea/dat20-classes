@@ -72,6 +72,8 @@ There are a few things going on. Lets disect it:
 
 #### Exercise
 
+Consider using https://codepen.io/ for making the html
+
 Create an html page with a form that can submit a new social media post. It should have these fields:
 
 - Title

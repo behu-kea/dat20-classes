@@ -179,6 +179,8 @@ The browser now loads the new url found under the `Location` header!
 
 ## Post, redirect, get pattern
 
+Good youtube video: https://www.youtube.com/watch?v=DCC7ufuFD2w
+
 Imagine a user submits a form and reloads the page. Now that form request will be sent twice. Resulting in two database instances.
 
 With this new pattern a server receives a request, saves the data (`createProduct`) and then redirects the user to a confirmation page using `GET` not `POST` (`createProductPageSuccess`)

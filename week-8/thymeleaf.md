@@ -175,6 +175,26 @@ Using the `model` we can add attributes to the view using `addAttribute`. This m
 
 
 
+### Adding css
+
+Thymeleaf expects that templates are put in the `resources/templates` folder. For adding `css` and `javascript` that should be done in the `resources/static` folder. 
+
+In the `resources/static` folder, create a new folder called `styles`. In this folder we will have all our styles for the site. In this folder you will add your `main.css` file. 
+
+Now to add the css file to html add this line to your `head` tag: `<link th:href="@{/styles/main.css}" rel="stylesheet" />`. The `@` is a reference to a link.
+
+Now try and add a simple stylesheet that sets the background color of the body to black:
+
+```css
+body {
+    background-color: red;
+}
+```
+
+If the background color is black it works
+
+
+
 ### Exercise 60 min
 
 We just landed a rover on Mars millions kilometres from here, how cool is that not 🪐👽🚀 https://www.youtube.com/watch?v=4czjS9h4Fpg
@@ -197,7 +217,7 @@ Focus on getting thymeleaf to work and writing good html! When you have done tha
 
 
 
-## Continue on Social media exercise
+## Continue on Social media exercise - rest of class
 
 Today we will be continuing work on the social media we started creating Monday. 
 

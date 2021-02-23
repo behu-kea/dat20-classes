@@ -42,10 +42,10 @@ This is where Thymeleaf comes in, it helps us with working in html files even th
 
 ## What is Thymeleaf
 
-Thymeleaf is a templating engine. It takes care of the view part of MVC (Model, View, Controller). In our case the view willl always be rendered in html. So it will serverside render our html.
+Thymeleaf is a templating engine. It takes care of the view part of MVC (Model, View, Controller). In our case the view willl always be rendered in html. So Thymeleaf will serverside render our html.
 
 - Thymeleaf helps us work with html files even though we are working in a java application
-- It also helps us send data from the controller into the view (the hmtl file)
+- It also helps us send data from the controller into the view (the html file)
 
 There are other templating engines out there, but Thymeleaf is well supported and documented and seems to be the main templating engine.
 
@@ -53,7 +53,7 @@ There are other templating engines out there, but Thymeleaf is well supported an
 
 ### Installing Thymeleaf
 
-Then initializing your new project, add the `spring-boot-starter-thymeleaf` using the Spring Initializr
+When initializing your new project, add the `spring-boot-starter-thymeleaf` using the Spring Initializr
 
 
 
@@ -65,9 +65,9 @@ To create your first template, lets first create a simple hello-world example:
 
 **Controller**
 
-First lets create the controller. This controller handles the request that comes to `/hello-world`.
+First lets create the controller. This controller handles the request that comes to `/hello-world`
 
-To return a template, return the name of the template as a string. Remember to not have a 
+To return a template, return the name of the template as a string. Remember to not have the `@ResponseBody` annotation. 
 
 ```java
 @GetMapping(value = "hello-world")
@@ -80,7 +80,7 @@ public String renderHelloWorld() {
 
 **View**
 
-To get a template to work, save the template under the location  `src/main/resources/templates`
+To get a template to work, save the template under the location  `src/main/resources/templates`. The `templates` folder you have to create if it is not already there
 
 The template below is called `src/main/resources/templates/hello-world.html`
 
@@ -117,11 +117,9 @@ You can also create folders in the `templates` folder. Then in the controller yo
 
 ## Accessing data
 
-Now we have created a simple example that renders some html. But what if we wanted to send some data from the controller into the view. What we will be looking at now:
+Now we have created a simple example that renders some html. But what if we wanted to send some data from the controller into the view. For that we use the `Model` class. 
 
-We send data to the template using the `Model` class. 
-
-
+This concept of having attributes available in the view is in thymeleaf language called context variables
 
 **View**
 
@@ -143,6 +141,13 @@ We send data to the template using the `Model` class.
   </body>
 </html>
 ```
+
+Again there are is a few things going on here:
+
+- `th:text="${title}"` - This is how we render variable in Thymeleaf. We indicate the type using the `text` and then we write the kind of weird `${title}` that is the attribute that is coming from the controller. If `title` is `null` then the `Default title` will be shown
+-  `th:each="feature : ${features}"` - This is how we render a list in Thymeleaf. `features` is coming from the controller. 
+
+This weird kind of language is called [Spring EL](http://docs.spring.io/spring-framework/docs/current/spring-framework-reference/html/expressions.html) expression. In short, Spring EL (Spring Expression Language) is a  language that supports querying and manipulating an object graph at  runtime - from https://www.thymeleaf.org/doc/articles/springmvcaccessdata.html
 
 
 
@@ -166,15 +171,29 @@ public String renderProduct(Model model) {
 }
 ```
 
+Using the `model` we can add attributes to the view using `addAttribute`. This method takes the key of the attribute ann then the value. You done need to do more with the `model` simply add the attributes and that's it.
 
 
-*Exercise*
 
-You have to create the model for the product. We have now added the television as simple variables directly in the controller. But that is not following proper MVC structure. It is your task now to create a `Produt` class that has the attributes `title`,  `price`,  `features`, `isOnSale`. 
+### Exercise 60 min
 
-Using the new `Product` class, create a product in the controller and add that to the view. Now render the view using the new class. 
+We just landed a rover on Mars millions kilometres from here, how cool is that not 🪐👽🚀 https://www.youtube.com/watch?v=4czjS9h4Fpg
 
-**Optional** add `reviews` to the `Product` class and render the reviews.
+Lets stay in the space topic and create a website that shows the number of people in space right now!
+
+Use this boilerplate to get started on the project: https://github.com/behu-kea/astronauts-in-space-boilerplate. First investigate how the application works. Then it's time to create some views!
+
+
+
+##### Creating the view
+
+Using Thymeleaf recreate this design: https://www.howmanypeopleareinspacerightnow.com/
+
+We dont have access to things like the nationality, position and number of days. But we have the craft. So for displaying the astronauts. Show the name in the left side and the craft in the right side!
+
+Also add a `header` and a `footer` to the site
+
+Focus on getting thymeleaf to work and writing good html! When you have done that you can start on the styling. 
 
 
 
@@ -182,10 +201,51 @@ Using the new `Product` class, create a product in the controller and add that t
 
 Today we will be continuing work on the social media we started creating Monday. 
 
-| Url          | Description                                                  |
-| ------------ | ------------------------------------------------------------ |
-| `/dashboard` | Render all the public posts                                  |
-| `/submit`    | Is where a user can create a new social media post using a form. (should be created by now. Otherwise go to monday file) |
-| `/success`   | Render that the social media post was successfully created. Maybe you want to add the post information. Fx this is the post that you created: title: "I love sunshine", Description... Should contain a link to go to `/dashboard` |
-| /            | Add a home page for your site. Add a header, title, h1, and a good description |
 
+
+| Url/endpoint   | Description                                                  | Request method |
+| -------------- | ------------------------------------------------------------ | -------------- |
+| `/dashboard`   | Render all the public posts. Remember to add the `header` and the `footer ` shown in the design! | `GET`          |
+| `/submit`      | Is where a user can create a new social media post using a form. (should be created by now). Remember to add a `header` and a `footer `. How you implement the design for this page is up to you. | `GET`          |
+| `/success`     | This is the page that shows that the social media post was successfully created. See the mockup! Should contain a link to go back to `/dashboard` (i for got to add this in the mockup) | `GET`          |
+| /              | Add a home page for your site. Add a header, title, h1, and a good description of the site. Maybe you want to add an image aswell. Its up to you how it should look | `GET`          |
+| `/submit-post` | Where the `@PostMapping`  exists. This is where the data from the form is submitted! See more information about this page below | `POST`         |
+
+
+
+#### `/submit-post`
+
+There are a few things going on in this endpoint:
+
+- It gets the data sent from the `form`
+- It should create a new `Post` object. `Post post = new Post(title, content, date, ...)`
+- It should add the post to some `ArrayList` where you will store all the posts created. `posts.add(post)`
+- Redirect to the `/success` page! 
+  - In the `/success` page you need to render the `title`, `content`, `date` and `public/private` of the post that was created. To do this use query parameters in a redirect (go through the teaching material from monday to find out how that works)
+
+
+
+### Mockups
+
+I have created some fantastic mockups with my amazing drawing skills!
+
+
+
+#### `/dashboard`
+
+![IMG_20210223_114517](./assets/dashboard.png)
+
+
+
+#### `/success`
+
+![IMG_20210223_114526](./assets/success.png)
+
+
+
+### Flow
+
+So the flow is as follows:
+
+1. User fills in information in the `form` found at  `/submit`
+2. After the post is created the user is redirected to `/success` where the `title`, `content`, `date` and `public/private` of the post is shown. There is a link back to `/dashboard`

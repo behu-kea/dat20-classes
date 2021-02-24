@@ -110,7 +110,7 @@ userCache.has(userId); // false
 
 ## Applying your newly created Cache
 
-Create a `User` class with an `id` that is randomnly generated and the following method:
+Create a `User` class with an `id` that is randomnly generated and has the following method:
 
 ```java
 // simulates a slow call
@@ -132,9 +132,9 @@ This should return the randomnly generated `value` stored for the user with `use
 
 Remember to initialize the Cache in the controller. Then at a given endpoint
 
-- First check if the key (userId) is there
+- First check if the key (userId) is in the cache
 - If it is, return the value
-- If not, get the value using the slow method, then store the result in the cache
+- If not, then create a new `User` object, get the randomnly generated value for the `User` object using the slow method, then store the result in the cache
 
 
 

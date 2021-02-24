@@ -6,7 +6,7 @@ Last week we familarized ourselves with Thymeleaf. We can use Thymeleaf for more
 
 ## Why are we even continuing talking about Thymeleaf
 
-
+Thymeleaf is a powerful system and can do things like fragments, translation, and logic. This can be super useful when developing a site.
 
 
 
@@ -20,60 +20,44 @@ Last week we familarized ourselves with Thymeleaf. We can use Thymeleaf for more
 
 ## Thymeleaf syntax
 
-There is quite a bit of detail in the Thymeleaf syntax. I will be highlighting the most important ones here, but you can further explore here: https://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html#standard-expression-syntax
+There is quite a bit of detail in the Thymeleaf syntax. I will be talking about a few of them: https://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html#standard-expression-syntax
 
 
 
-### Messages
+### If
 
-Messages bliver brugt til at bygge sider der kan understøtte flere sprog. 
-
-
-
-`#{home.welcome}`
-
-
-
-### Variables
-
-
-
-###  Expressions on selections 
-
-You can select an object
+https://www.baeldung.com/spring-thymeleaf-conditionals
 
 ```html
-<div th:object="${session.user}">
-    <p>Name: <span th:text="*{firstName}">Sebastian</span>.</p>
-    <p>Surname: <span th:text="*{lastName}">Pepper</span>.</p>
-    <p>Nationality: <span th:text="*{nationality}">Saturn</span>.</p>
-  </div>
+<td>
+    <span th:if="${teacher.gender == 'F'}">Female</span>
+    <span th:unless="${teacher.gender == 'F'}">Male</span>
+</td>
 ```
 
 
 
-These two are the same
+### Switch
+
+https://www.baeldung.com/spring-thymeleaf-conditionals
 
 ```html
-<div th:object="${session.user}">
-  <p>Name: <span th:text="*{firstName}">Sebastian</span>.</p>
-  <p>Surname: <span th:text="${session.user.lastName}">Pepper</span>.</p>
-  <p>Nationality: <span th:text="*{nationality}">Saturn</span>.</p>
-</div>
+<td th:switch="${numberOfCourses}">
+    <span th:case="'0'">NO COURSES YET!</span>
+    <span th:case="'1'" >A course</span>
+</td>
 ```
 
 
 
 ### Link url's
 
+https://www.thymeleaf.org/doc/articles/standardurlsyntax.html
+
+Relative to where the app is deployed it will give the correct url. So if running localhost the link will look like this: `http://localhost:8080/lol`
+
 ```html
-<p>Please select an option</p>
-<ol>
-  <li><a href="product/list.html" th:href="@{/product/list}">Product List</a></li>
-  <li><a href="order/list.html" th:href="@{/order/list}">Order List</a></li>
-  <li><a href="subscribe.html" th:href="@{/subscribe}">Subscribe to our Newsletter</a></li>
-  <li><a href="userprofile.html" th:href="@{/userprofile}">See User Profile</a></li>
-</ol>
+<a th:href="@{/product}">product</a>
 ```
 
 
@@ -193,19 +177,33 @@ You can also select a specific part (fragment) of the fragment:
 
 
 
-*Exercise*
+### Changing class of an element
 
-Make it so that in the navigation part of the header the page you are currently on is highlighted
+```html
+<a href="" class="baseclass" th:classappend="${isAdmin} ? adminclass : userclass"></a>
+```
+
+If `isAdmin` is `true`, then this will result in
+
+```html
+<a href="" class="baseclass adminclass"></a>
+```
 
 
 
-## Exercise
+### Exercise
 
-Lets continue working on our social media site. 
+Continuing the social media exercise:
 
-Lets create a `head`, `footer` and  `header` fragment. The fragment should as a parameter take the current page and highlight that on the page. Maybe with a bold text style. 
 
-Create multilanguage support aswell!
 
-Think about students that have not create the exercise. Should we start from scratch or maybe make a solution for them?
+Create 3 fragments:
+
+1. A `head` fragment. Where the `title` of the page can be configured as a parameter. You should also add your `css` and other things you have in your `head`
+2. A `header` fragment. The header fragment should have a parameter called `currentPage`. The value of current page is the current page name. That could fx be `dashboard`, `submit`, `home`, etc. In the navigation part of the `header` the current page should be highlighted (maybe with bold text or some other background color) Like seen in the screenshot below
+3. A `footer`. No parameter here.
+
+![Screenshot 2021-02-17 at 11.25.37](./assets/highlighted-navigation.png)
+
+
 

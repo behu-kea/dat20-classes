@@ -197,7 +197,7 @@ If the background color is black it works
 
 ### Exercise 60 min
 
-We just landed a rover on Mars millions kilometres from here, how cool is that not 🪐👽🚀 https://www.youtube.com/watch?v=4czjS9h4Fpg
+We just **landed a rover on Mars millions kilometres from here**, how cool is that not 🪐👽🚀 https://www.youtube.com/watch?v=4czjS9h4Fpg
 
 Lets stay in the space topic and create a website that shows the number of people in space right now!
 

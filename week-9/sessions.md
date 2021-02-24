@@ -36,7 +36,22 @@ Here is a screenshot of how the cookie id is sent in the request
 
 
 
+![Screenshot 2021-02-24 at 10.18.38](./assets/session-server.png)
+
+
+
 ### Creating a session in Spring boot
+
+Firstly add the dependency that makes the sessions work:
+
+```xml
+<dependency>
+    <groupId>org.springframework.session</groupId>
+    <artifactId>spring-session-core</artifactId>
+</dependency>
+```
+
+
 
 For creating the session in Spring boot we will be working with two specific classes:
 
@@ -48,25 +63,25 @@ For creating the session in Spring boot we will be working with two specific cla
 Let's get to a real example:
 
 ```java
-@GetMapping("set-session")
+@GetMapping("/set-session")
 @ResponseBody
-public String setSession(HttpServletRequest request, @RequestParam("title") String title) {
+public String setSession(HttpServletRequest request) {
     HttpSession session = request.getSession();
-    session.setAttribute("title", title);
+    session.setAttribute("username", "CookieMonster42");
   
-    return title + " saved in the session";
+    return "Username saved in the session";
 }
 
-@GetMapping("get-session")
+@GetMapping("/get-session")
 @ResponseBody
 public String getSession(HttpServletRequest request) {
     HttpSession session = request.getSession();
-    String title = (String) session.getAttribute("title");
+    String username = (String) session.getAttribute("username");
   
-    return title;
+    return username;
 }
 
-@GetMapping("invalidate-session")
+@GetMapping("/invalidate-session")
 @ResponseBody
 public String invalidateSession(HttpServletRequest request) {
     HttpSession session = request.getSession();
@@ -78,20 +93,131 @@ public String invalidateSession(HttpServletRequest request) {
 
 Lets disect what happens here:
 
-- `request.getSession() ` to get the session we use the `getSession` method on the request
-- `session.setAttribute("key", "value")` - Will save some data in the session. It will be in a key value format. Save this value at this key.
-- `session.getAttribute("key")` - Will get some value at the specified key.
+There are 3 endpoints
+
+1. `/set-session` - Here we save the value (`"CookieMonster42"`) that is stored under the key `"username"`
+2. `/get-session` - Here we get the value stored under the `"username"` key
+3. `/invalidate-session` - Here we invalidate (delete) the session
+
+
+
+Let's dive into some of the code
+
+- `request.getSession() ` to get the session we use the `getSession` method on the `request`
+
+- `session.setAttribute("key", "value")` - Will save some data in the session. It will be in a key value format. Save this value at this key
+
+- `session.getAttribute("key")` - Will get some value at the specified key
 - `session.invalidate()` will invalidate/delete the session
 
 
 
+Lets try and manually delete the cookie and see what happens.
 
+
+
+### Session storage
+
+For now the session is stored in memory in the spring boot application. It is possible to store it in a database aswell. 
+
+
+
+### Session timeout
+
+To decide how long the session should be kept alive add the following to the `application.properties` file
+
+```java
+server.servlet.session.timeout=60s
+```
+
+Minimum timeout is 60 seconds
 
 
 
 https://docs.spring.io/spring-session/docs/current/reference/html5/guides/java-jdbc.html
 
 https://attacomsian.com/blog/thymeleaf-get-session-attributes
+
+
+
+### What can i save?
+
+Anything you would like! `String`, `Integer`, `ArrayList`, some class it does not matter!
+
+
+
+```java
+@GetMapping("/set-users")
+@ResponseBody
+public String setSession(HttpServletRequest request) {
+    HttpSession session = request.getSession();
+    ArrayList<Session> users = new ArrayList<>();
+    User user1 = new Session("benjamin", 23);
+    User user2 = new Session("peter", 45);
+    users.add(user1);
+    users.add(user2);
+    session.setAttribute("users", users);
+
+    return "two users saved in the session";
+}
+
+@GetMapping("/get-session")
+@ResponseBody
+public String getSession(HttpServletRequest request) {
+  HttpSession session = request.getSession();
+  List<User> users = (List<User>)  session.getAttribute("users");
+
+  return username.get(0).name;
+}
+```
+
+
+
+## Sessions in Thymeleaf
+
+To access the session in Thymeleaf simply use the `session`. We dont need to send the session from the `@Controller` to the view. 
+
+
+
+```java
+@GetMapping("/get-session-rendered")
+public String getSessionRendered() {
+    return "session.html";
+}
+```
+
+
+
+**session.html**
+
+```html
+<div th:text="${session.username}">John Doe</div>
+```
+
+
+
+Since the sessions might not be there, its a good idea to check if they session data is available first:
+
+```html
+<div th:if="${session.containsKey('username')}" th:text="${session.email}"></div>
+```
+
+
+
+We can also use `session.size()` and `session.isEmpty()`
+
+
+
+## Exercise time!
+
+- Google maps der gemmer dine sidste søgninger
+- Opretter en ordre der er persistent
+- En hjemmeside til at bestille kebab
+- En hjemmeside til at vise vejret. Man gemmer sin lokation, navn, men man kan gemme flere destinationer med lokation og navn.
+
+
+
+
 
 
 

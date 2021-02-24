@@ -221,6 +221,8 @@ Focus on getting thymeleaf to work and writing good html! When you have done tha
 
 Today we will be continuing work on the social media we started creating Monday. 
 
+If you did not get to do any work on the exercises and would like to start from scratch, then write me and i will give the solution for mondays exercise. 
+
 
 
 | Url/endpoint   | Description                                                  | Request method |

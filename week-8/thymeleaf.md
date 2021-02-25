@@ -216,6 +216,15 @@ Use this boilerplate to get started on the project: https://github.com/behu-kea/
 
 ##### Creating the view
 
+Do this exercise one step at a time!
+
+1. Figure out how to render the number of people in space
+2. Figure out how to render the astronauts. Try and render their name and the craft they are on
+
+
+
+#### If you have time 👇
+
 Using Thymeleaf recreate this design: https://www.howmanypeopleareinspacerightnow.com/
 
 We dont have access to things like the nationality, position and number of days. But we have the craft. So for displaying the astronauts. Show the name in the left side and the craft in the right side!
@@ -238,8 +247,6 @@ If you did not get to do any work on the exercises and would like to start from 
 | -------------- | ------------------------------------------------------------ | -------------- |
 | `/dashboard`   | Render all the public posts. Remember to add the `header` and the `footer ` shown in the design! | `GET`          |
 | `/submit`      | Is where a user can create a new social media post using a form. (should be created by now). Remember to add a `header` and a `footer `. How you implement the design for this page is up to you. | `GET`          |
-| `/success`     | This is the page that shows that the social media post was successfully created. See the mockup! Should contain a link to go back to `/dashboard` (i for got to add this in the mockup) | `GET`          |
-| /              | Add a home page for your site. Add a header, title, h1, and a good description of the site. Maybe you want to add an image aswell. Its up to you how it should look | `GET`          |
 | `/submit-post` | Where the `@PostMapping`  exists. This is where the data from the form is submitted! See more information about this page below | `POST`         |
 
 
@@ -251,16 +258,15 @@ There are a few things going on in this endpoint:
 - It gets the data sent from the `form`
 - It should create a new `Post` object. `Post post = new Post(title, content, date, ...)`
 - It should add the post to some `ArrayList` where you will store all the posts created. `posts.add(post)`
-- Redirect to the `/success` page! 
-  - In the `/success` page you need to render the `title`, `content`, `date` and `public/private` of the post that was created. To do this use query parameters in a redirect (go through the teaching material from monday to find out how that works)
+- Redirect to `/dashboard`
 
 
 
 ### Mockups
 
-I have created some fantastic mockups with my amazing drawing skills!
+I have created a fantastic mockup with my amazing drawing skills!
 
-
+### 
 
 #### `/dashboard`
 
@@ -268,11 +274,26 @@ I have created some fantastic mockups with my amazing drawing skills!
 
 
 
+
+
+### If you have time 👇
+
+Add a success page after creating a new post!
+
+| Url/endpoint | Description                                                  | Request method |
+| ------------ | ------------------------------------------------------------ | -------------- |
+| `/success`   | This is the page that shows that the social media post was successfully created. See the mockup! Should contain a link to go back to `/dashboard` (i for got to add this in the mockup) | `GET`          |
+| /            | Add a home page for your site. Add a header, title, h1, and a good description of the site. Maybe you want to add an image aswell. Its up to you how it should look | `GET`          |
+
+Redirect to the `/success` page! 
+
+- In the `/success` page you need to render the `title`, `content`, `date` and `public/private` of the post that was created. To do this use query parameters in a redirect (go through the teaching material from monday to find out how that works)
+
+
+
 #### `/success`
 
 ![IMG_20210223_114526](./assets/success.png)
-
-
 
 ### Flow
 

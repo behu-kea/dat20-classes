@@ -128,6 +128,32 @@ Now we have created a simple example that renders some html. But what if we want
 
 This concept of having attributes available in the view is in thymeleaf language called context variables
 
+
+
+**Controller**
+
+```java
+@GetMapping(value = "/product")
+public String renderProduct(Model model) {
+    String title = "Television";
+    int price = 1000;
+    ArrayList<String> features = new ArrayList<>();
+    features.add("HD");
+    features.add("Smart TV");
+    features.add("Netflix");
+
+    model.addAttribute("title", title);
+    model.addAttribute("price", price);
+    model.addAttribute("features", features);
+
+    return "product.html";
+}
+```
+
+Using the `model` we can add attributes to the view using `addAttribute`. This method takes the key of the attribute ann then the value. You done need to do more with the `model` simply add the attributes and that's it.
+
+
+
 **View**
 
 ```html
@@ -155,30 +181,6 @@ Again there are is a few things going on here:
 -  `th:each="feature : ${features}"` - This is how we render a list in Thymeleaf. `features` is coming from the controller. 
 
 This weird kind of language is called [Spring EL](http://docs.spring.io/spring-framework/docs/current/spring-framework-reference/html/expressions.html) expression. In short, Spring EL (Spring Expression Language) is a  language that supports querying and manipulating an object graph at  runtime - from https://www.thymeleaf.org/doc/articles/springmvcaccessdata.html
-
-
-
-**Controller**
-
-```java
-@GetMapping(value = "/product")
-public String renderProduct(Model model) {
-    String title = "Television";
-    int price = 1000;
-    ArrayList<String> features = new ArrayList<>();
-    features.add("HD");
-    features.add("Smart TV");
-    features.add("Netflix");
-
-    model.addAttribute("title", title);
-    model.addAttribute("price", price);
-    model.addAttribute("features", features);
-
-    return "product.html";
-}
-```
-
-Using the `model` we can add attributes to the view using `addAttribute`. This method takes the key of the attribute ann then the value. You done need to do more with the `model` simply add the attributes and that's it.
 
 
 

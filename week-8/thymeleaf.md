@@ -6,6 +6,13 @@ Go here for online version: https://behu.gitbook.io/kea/week-8/thymeleaf
 
 
 
+## Before we start
+
+- **Uddannelses- og Forskningsministeriet**
+- Portfolio questions or questions from last weeks exercise?
+
+
+
 ## Why are we even talking about thymeleaf?
 
 Writing html directly in `Java` is very bad practice. Its also just not a pleasant experience. Like look at this:
@@ -121,34 +128,6 @@ Now we have created a simple example that renders some html. But what if we want
 
 This concept of having attributes available in the view is in thymeleaf language called context variables
 
-**View**
-
-```html
-<!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>Product</title>
-</head>
-  <body>
-    <main>
-        <h1 th:text="${title}">Default title</h1>
-        <span th:text="${price}">Default title</span>
-        <ul th:each="feature : ${features}">
-            <li th:text="${feature}"></li>
-        </ul>
-    </main>
-  </body>
-</html>
-```
-
-Again there are is a few things going on here:
-
-- `th:text="${title}"` - This is how we render variable in Thymeleaf. We indicate the type using the `text` and then we write the kind of weird `${title}` that is the attribute that is coming from the controller. If `title` is `null` then the `Default title` will be shown
--  `th:each="feature : ${features}"` - This is how we render a list in Thymeleaf. `features` is coming from the controller. 
-
-This weird kind of language is called [Spring EL](http://docs.spring.io/spring-framework/docs/current/spring-framework-reference/html/expressions.html) expression. In short, Spring EL (Spring Expression Language) is a  language that supports querying and manipulating an object graph at  runtime - from https://www.thymeleaf.org/doc/articles/springmvcaccessdata.html
-
 
 
 **Controller**
@@ -172,6 +151,36 @@ public String renderProduct(Model model) {
 ```
 
 Using the `model` we can add attributes to the view using `addAttribute`. This method takes the key of the attribute ann then the value. You done need to do more with the `model` simply add the attributes and that's it.
+
+
+
+**View**
+
+```html
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Product</title>
+</head>
+  <body>
+    <main>
+        <h1 th:text="${title}">Default title</h1>
+        <span th:text="${price}">Default title</span>
+        <ul th:each="feature : ${features}">
+            <li th:text="${feature}"></li>
+        </ul>
+    </main>
+  </body>
+</html>
+```
+
+Again there are is a few things going on here:
+
+- `th:text="${title}"` - This is how we render a variable in Thymeleaf. We indicate the type using the `ht:text` and then we write the kind of weird `${title}`. This is called a variable expressions. `title` is coming from the controller. If `title` is `null` then the `Default title` will be shown
+-  `th:each="feature : ${features}"` - This is how we render a list in Thymeleaf. `features` is coming from the controller. 
+
+This weird kind of language is called [Spring EL](http://docs.spring.io/spring-framework/docs/current/spring-framework-reference/html/expressions.html) expression. In short, Spring EL (Spring Expression Language) is a  language that supports querying and manipulating an object graph at  runtime - from https://www.thymeleaf.org/doc/articles/springmvcaccessdata.html
 
 
 
@@ -220,6 +229,8 @@ Focus on getting thymeleaf to work and writing good html! When you have done tha
 ## Continue on Social media exercise - rest of class
 
 Today we will be continuing work on the social media we started creating Monday. 
+
+If you did not get to do any work on the exercises and would like to start from scratch, then write me and i will give the solution for mondays exercise. 
 
 
 

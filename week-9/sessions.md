@@ -217,6 +217,28 @@ We can also use `session.size()` and `session.isEmpty()`
 
 
 
+Lets create a website where users can see the weather for different cities!
+
+It should be possible for a user to add a new city. For each city added the user should see the weather for all of those cities
+
+| url         | Description                                                  | Method |
+| ----------- | ------------------------------------------------------------ | ------ |
+| `/add-city` | A user should be able to add a city name and the users firstname using a `form` | `GET`  |
+| `/`         | Should show the weather for the cities that have been added  | `GET`  |
+| `save-city` | Should save the city name to the list of cities              | `POST` |
+
+**Remember the GET, POST, REDIRECT pattern**
+
+
+
+### Technicalities
+
+For getting the weather data we will be using this service: https://home.openweathermap.org
+
+To get an api so we can get weather, go here: https://openweathermap.org/api click on `Subscribe` for `Current Weather Data`. Follow the signup flow. When you are done you should have an API key.
+
+
+
 
 
 

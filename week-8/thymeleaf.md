@@ -6,6 +6,13 @@ Go here for online version: https://behu.gitbook.io/kea/week-8/thymeleaf
 
 
 
+## Before we start
+
+- **Uddannelses- og Forskningsministeriet**
+- Portfolio questions or questions from last weeks exercise?
+
+
+
 ## Why are we even talking about thymeleaf?
 
 Writing html directly in `Java` is very bad practice. Its also just not a pleasant experience. Like look at this:
@@ -144,7 +151,7 @@ This concept of having attributes available in the view is in thymeleaf language
 
 Again there are is a few things going on here:
 
-- `th:text="${title}"` - This is how we render variable in Thymeleaf. We indicate the type using the `text` and then we write the kind of weird `${title}` that is the attribute that is coming from the controller. If `title` is `null` then the `Default title` will be shown
+- `th:text="${title}"` - This is how we render a variable in Thymeleaf. We indicate the type using the `ht:text` and then we write the kind of weird `${title}`. This is called a variable expressions. `title` is coming from the controller. If `title` is `null` then the `Default title` will be shown
 -  `th:each="feature : ${features}"` - This is how we render a list in Thymeleaf. `features` is coming from the controller. 
 
 This weird kind of language is called [Spring EL](http://docs.spring.io/spring-framework/docs/current/spring-framework-reference/html/expressions.html) expression. In short, Spring EL (Spring Expression Language) is a  language that supports querying and manipulating an object graph at  runtime - from https://www.thymeleaf.org/doc/articles/springmvcaccessdata.html

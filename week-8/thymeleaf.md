@@ -178,7 +178,7 @@ Using the `model` we can add attributes to the view using `addAttribute`. This m
 Again there are is a few things going on here:
 
 - `th:text="${title}"` - This is how we render a variable in Thymeleaf. We indicate the type using the `ht:text` and then we write the kind of weird `${title}`. This is called a variable expressions. `title` is coming from the controller. If `title` is `null` then the `Default title` will be shown
--  `th:each="feature : ${features}"` - This is how we render a list in Thymeleaf. `features` is coming from the controller. 
+-  `th:each="feature : ${features}"` - This is how we render a list in Thymeleaf. `features` is coming from the controller. Fungerer ligesom https://www.geeksforgeeks.org/for-each-loop-in-java/
 
 This weird kind of language is called [Spring EL](http://docs.spring.io/spring-framework/docs/current/spring-framework-reference/html/expressions.html) expression. In short, Spring EL (Spring Expression Language) is a  language that supports querying and manipulating an object graph at  runtime - from https://www.thymeleaf.org/doc/articles/springmvcaccessdata.html
 

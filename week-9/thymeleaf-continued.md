@@ -12,7 +12,7 @@ Thymeleaf is a powerful system and can do things like fragments, translation, an
 
 ## Learning goals
 
-- Thymelear syntax (variable, expressions)
+- More advanced thymelear syntax
 - Thymeleaf fragments
 - Iterating a list of objects
 
@@ -123,6 +123,8 @@ Lets add a `header` to another page
 
 ### Fragment Parameters
 
+Imagine you have a site where each page has a unique title! How do you solve that without creating a `head` tag for each individual page? Fragment Parameters is the answer 
+
 You can pass in parameters to your fragment! And it's nearly like just calling a method
 
 `fragments/header.html`
@@ -177,7 +179,94 @@ You can also select a specific part (fragment) of the fragment:
 
 
 
-### Changing class of an element
+
+
+### Exercises
+
+Continuing the social media exercise:
+
+
+
+### `footer` - level 1
+
+Create a new fragment called `footer.html`. You can see the `footer` here where it says `developed by Benjamin`👇
+
+Add this `footer` fragment to your `/dashboard` page
+
+
+
+![dashboard](./../week-8/assets/dashboard.png)
+
+
+
+*If you have not created a page for the `/dashboard` endpoint use the code below*
+
+In your Controller
+
+```java
+@GetMapping("/dashboard")
+public String renderEventForm() {
+    return "dashboard.html";
+}
+```
+
+**`src/main/resources/templates/dashboard.html`**
+
+```html
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+</head>
+<body>
+	<h1>Welcome to your Dashboard</h1>
+  <!--
+	This is where the footer fragment should go!
+	-->
+	</body>
+</html>
+```
+
+
+
+Now you need to figure out how to add the `footer` fragment to the dashboard page 
+
+
+
+### `head` - level 2
+
+Lets create the `head` tag as a fragment for our social media site
+
+We have 3 pages on our site (for this example we call it  `Social Media Star`): `/dashboard`, `/submit` and `/success`. When going to the 
+
+- `/dashboard` the title should of the page should be `Social Media Star - Dashboard 📈`
+- `/submit`, the title should of the page should be `Social Media Star - Create new post 💌`
+- `/success`, the title should of the page should be `Social Media Star - Success 🎉`
+
+To create a seperate title for each fragment we have to use fragment parameters!
+
+Off course you need to add the other things in your `head` tag that you already had there. Like fx the `link` tag for the css, `meta` tag and what you now have there.
+
+If you have not created the success page, just create the endpoint and the template file like we did with the dashboard!
+
+
+
+### `Header` - level 3
+
+The `header` fragment should have a parameter called `currentPage`. The value of `currentPage` is the url of the page you are currently on. That could fx be `dashboard`, `submit`, `success`, etc. In the navigation part of the `header` the current page should be highlighted (maybe with bold text or some other background color) Like seen in the screenshot below. The current page is highlighted with a green `background-color`
+
+
+
+![Screenshot 2021-02-17 at 11.25.37](./assets/highlighted-navigation.png)
+
+
+
+ You will probably need to change a class somehow 👇
+
+
+
+#### Changing class of an element
 
 ```html
 <a href="" class="baseclass" th:classappend="${isAdmin} ? adminclass : userclass"></a>
@@ -188,22 +277,4 @@ If `isAdmin` is `true`, then this will result in
 ```html
 <a href="" class="baseclass adminclass"></a>
 ```
-
-
-
-### Exercise
-
-Continuing the social media exercise:
-
-
-
-Create 3 fragments:
-
-1. A `head` fragment. Where the `title` of the page can be configured as a parameter. You should also add your `css` and other things you have in your `head`
-2. A `header` fragment. The header fragment should have a parameter called `currentPage`. The value of current page is the current page name. That could fx be `dashboard`, `submit`, `home`, etc. In the navigation part of the `header` the current page should be highlighted (maybe with bold text or some other background color) Like seen in the screenshot below
-3. A `footer`. No parameter here.
-
-![Screenshot 2021-02-17 at 11.25.37](./assets/highlighted-navigation.png)
-
-
 

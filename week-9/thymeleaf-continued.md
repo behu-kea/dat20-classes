@@ -12,7 +12,7 @@ Thymeleaf is a powerful system and can do things like fragments, translation, an
 
 ## Learning goals
 
-- Thymelear syntax (variable, expressions)
+- More advanced thymelear syntax
 - Thymeleaf fragments
 - Iterating a list of objects
 
@@ -179,17 +179,13 @@ You can also select a specific part (fragment) of the fragment:
 
 
 
-### Exercise
+### Exercises
 
 Continuing the social media exercise:
 
 
 
-Create 3 fragments:
-
-
-
-### `footer`
+### `footer` - level 1
 
 Create a new fragment called `footer.html`. You can see the `footer` here where it says `developed by Benjamin`👇
 
@@ -238,13 +234,35 @@ Now you need to figure out how to add the `footer` fragment to the dashboard pag
 
 
 
-### `head`
+### `head` - level 2
 
-Add a `head` fragment. Where the `title` of the page can be configured as a parameter. You should also add your `css` and other things you have in your `head`
+Lets create the `head` tag as a fragment for our social media site
+
+We have 3 pages on our site (for this example we call it  `Social Media Star`): `/dashboard`, `/submit` and `/success`. When going to the 
+
+- `/dashboard` the title should of the page should be `Social Media Star - Dashboard 📈`
+- `/submit`, the title should of the page should be `Social Media Star - Create new post 💌`
+- `/success`, the title should of the page should be `Social Media Star - Success 🎉`
+
+To create a seperate title for each fragment we have to use fragment parameters!
+
+Off course you need to add the other things in your `head` tag that you already had there. Like fx the `link` tag for the css, `meta` tag and what you now have there.
+
+If you have not created the success page, just create the endpoint and the template file like we did with the dashboard!
 
 
 
-### `Header`
+### `Header` - level 3
+
+The `header` fragment should have a parameter called `currentPage`. The value of `currentPage` is the url of the page you are currently on. That could fx be `dashboard`, `submit`, `success`, etc. In the navigation part of the `header` the current page should be highlighted (maybe with bold text or some other background color) Like seen in the screenshot below. The current page is highlighted with a green `background-color`.
+
+
+
+![Screenshot 2021-02-17 at 11.25.37](./assets/highlighted-navigation.png)
+
+
+
+ You will probably need to change a class somehow 👇
 
 
 
@@ -259,16 +277,4 @@ If `isAdmin` is `true`, then this will result in
 ```html
 <a href="" class="baseclass adminclass"></a>
 ```
-
-
-
-
-
-1. A `header` fragment. The header fragment should have a parameter called `currentPage`. The value of current page is the current page name. That could fx be `dashboard`, `submit`, `home`, etc. In the navigation part of the `header` the current page should be highlighted (maybe with bold text or some other background color) Like seen in the screenshot below
-
-   
-
-![Screenshot 2021-02-17 at 11.25.37](./assets/highlighted-navigation.png)
-
-
 

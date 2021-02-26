@@ -123,6 +123,8 @@ Lets add a `header` to another page
 
 ### Fragment Parameters
 
+Imagine you have a site where each page has a unique title! How do you solve that without creating a `head` tag for each individual page? Fragment Parameters is the answer 
+
 You can pass in parameters to your fragment! And it's nearly like just calling a method
 
 `fragments/header.html`
@@ -199,8 +201,6 @@ Add this `footer` fragment to your `/dashboard` page
 
 *If you have not created a page for the `/dashboard` endpoint use the code below*
 
-
-
 In your Controller
 
 ```java
@@ -254,7 +254,7 @@ If you have not created the success page, just create the endpoint and the templ
 
 ### `Header` - level 3
 
-The `header` fragment should have a parameter called `currentPage`. The value of `currentPage` is the url of the page you are currently on. That could fx be `dashboard`, `submit`, `success`, etc. In the navigation part of the `header` the current page should be highlighted (maybe with bold text or some other background color) Like seen in the screenshot below. The current page is highlighted with a green `background-color`.
+The `header` fragment should have a parameter called `currentPage`. The value of `currentPage` is the url of the page you are currently on. That could fx be `dashboard`, `submit`, `success`, etc. In the navigation part of the `header` the current page should be highlighted (maybe with bold text or some other background color) Like seen in the screenshot below. The current page is highlighted with a green `background-color`
 
 
 

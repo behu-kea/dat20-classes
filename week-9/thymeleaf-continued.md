@@ -177,7 +177,78 @@ You can also select a specific part (fragment) of the fragment:
 
 
 
-### Changing class of an element
+
+
+### Exercise
+
+Continuing the social media exercise:
+
+
+
+Create 3 fragments:
+
+
+
+### `footer`
+
+Create a new fragment called `footer.html`. You can see the `footer` here where it says `developed by Benjamin`👇
+
+Add this `footer` fragment to your `/dashboard` page
+
+
+
+![dashboard](./../week-8/assets/dashboard.png)
+
+
+
+*If you have not created a page for the `/dashboard` endpoint use the code below*
+
+
+
+In your Controller
+
+```java
+@GetMapping("/dashboard")
+public String renderEventForm() {
+    return "dashboard.html";
+}
+```
+
+**`src/main/resources/templates/dashboard.html`**
+
+```html
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+</head>
+<body>
+	<h1>Welcome to your Dashboard</h1>
+  <!--
+	This is where the footer fragment should go!
+	-->
+	</body>
+</html>
+```
+
+
+
+Now you need to figure out how to add the `footer` fragment to the dashboard page 
+
+
+
+### `head`
+
+Add a `head` fragment. Where the `title` of the page can be configured as a parameter. You should also add your `css` and other things you have in your `head`
+
+
+
+### `Header`
+
+
+
+#### Changing class of an element
 
 ```html
 <a href="" class="baseclass" th:classappend="${isAdmin} ? adminclass : userclass"></a>
@@ -191,17 +262,11 @@ If `isAdmin` is `true`, then this will result in
 
 
 
-### Exercise
-
-Continuing the social media exercise:
 
 
+1. A `header` fragment. The header fragment should have a parameter called `currentPage`. The value of current page is the current page name. That could fx be `dashboard`, `submit`, `home`, etc. In the navigation part of the `header` the current page should be highlighted (maybe with bold text or some other background color) Like seen in the screenshot below
 
-Create 3 fragments:
-
-1. A `head` fragment. Where the `title` of the page can be configured as a parameter. You should also add your `css` and other things you have in your `head`
-2. A `header` fragment. The header fragment should have a parameter called `currentPage`. The value of current page is the current page name. That could fx be `dashboard`, `submit`, `home`, etc. In the navigation part of the `header` the current page should be highlighted (maybe with bold text or some other background color) Like seen in the screenshot below
-3. A `footer`. No parameter here.
+   
 
 ![Screenshot 2021-02-17 at 11.25.37](./assets/highlighted-navigation.png)
 

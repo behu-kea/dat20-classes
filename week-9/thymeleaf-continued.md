@@ -4,7 +4,7 @@ Last week we familarized ourselves with Thymeleaf. We can use Thymeleaf for more
 
 
 
-Social media assignement to next week. Sorry for late notice. Not mandatory
+Social media assignement to next week. Sorry for late notice. Not mandatory. 
 
 
 
@@ -16,7 +16,7 @@ Thymeleaf is a powerful system and can do things like fragments, translation, an
 
 ## Learning goals
 
-- More advanced thymelear syntax
+- More advanced thymeleaf syntax
 - Thymeleaf fragments
 - Iterating a list of objects
 
@@ -69,7 +69,7 @@ Relative to where the app is deployed it will give the correct url. So if runnin
 ### Literal substitutions
 
 ```html
-<span th:text="|Welcome to our application, ${user.name}!|">
+<span th:text="|Welcome to our application, ${user.name}!|"></span>
 ```
 
 

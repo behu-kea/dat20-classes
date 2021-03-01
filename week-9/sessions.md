@@ -210,12 +210,61 @@ We can also use `session.size()` and `session.isEmpty()`
 
 ## Exercise time!
 
-- Google maps der gemmer dine sidste søgninger
-- Opretter en ordre der er persistent
-- En hjemmeside til at bestille kebab
-- En hjemmeside til at vise vejret. Man gemmer sin lokation, navn, men man kan gemme flere destinationer med lokation og navn.
 
 
+Lav den sådan at det hele handler om vejret! Men bare med de forksellige niveauer. Så et er at de får en random by. Derefter kan brugeren gemme den by han er i. Derefter gemme en liste af byer. Derefter finde vejret for de byer.
+
+
+
+### Get fake name - level 1
+
+Lets create a website where a user can get a fake name! It should have 3 endpoints:
+
+
+
+| Endpoint            | Description                                                  | Method |
+| ------------------- | ------------------------------------------------------------ | ------ |
+| `/assign-fake-name` | At this endpoint the user gets a fake name assigned.  We do three things:<br />1. We generate the fake name using the code below. <br />2. We save that name in the session!<br />3. Return a string sayng something like `Fake name has been assigned. Go to /get-fake-name to see the name` | `GET`  |
+| `/get-fake-name`    | Here the user can see the name that was assigned (and saved in the session) at the endpoint `/assign-fake-name` | `GET`  |
+| `/delete-fake-name` | Here the user can delete the fake name. This happens with us invalidating the whole session | `GET`  |
+
+
+
+#### Generate fake name
+
+Add this dependency:
+
+```xml
+<dependency>
+    <groupId>com.github.javafaker</groupId>
+    <artifactId>javafaker</artifactId>
+    <version>0.12</version>
+</dependency>
+```
+
+
+
+Code to generate a fake name:
+
+```java
+Faker faker = new Faker();
+String fakeName = faker.name().fullName();
+```
+
+
+
+### Notes website - level 2
+
+Lets create a website where users can create notes
+
+| Endpoint    | Description                    | Method |
+| ----------- | ------------------------------ | ------ |
+| `/notes`    | See a list of your saved notes | `GET`  |
+| `/add-note` | Create                         |        |
+
+
+
+### Weather site - level 3
 
 Lets create a website where users can see the weather for different cities!
 

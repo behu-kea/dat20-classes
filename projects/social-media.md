@@ -43,7 +43,7 @@ I have created a fantastic mockup with my amazing drawing skills!
 
 #### `/dashboard`
 
-![IMG_20210223_114517](/Users/benjamin-hughes/Documents/projects/dat20-classes/week-8/assets/dashboard.png)
+![IMG_20210223_114517](./../week-8/assets/dashboard.png)
 
 
 
@@ -76,7 +76,7 @@ Redirect to the `/success` page!
 
 #### `/success`
 
-![IMG_20210223_114526](/Users/benjamin-hughes/Documents/projects/dat20-classes/week-8/assets/success.png)
+![IMG_20210223_114526](./../week-8/assets/success.png)
 
 
 

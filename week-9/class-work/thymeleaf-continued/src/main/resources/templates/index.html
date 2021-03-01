@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -7,6 +7,17 @@
 <body>
     <h1>Kebabenhavn</h1>
     <h2>Kebab der bare kan og vil noget!</h2>
+    <p th:text="${isUserLoggedIn}"></p>
 
+    <button th:if="${isUserLoggedIn == true}">Order food</button>
+    <button th:if="${isUserLoggedIn == false}">Log in to order food</button>
+
+    <p th:text="${emailProvider}"></p>
+    <td th:switch="${emailProvider}">
+        <span th:case="'gmail'">Fantastic email provider you have</span>
+        <span th:case="'hotmail'" >Consider switching to gmail</span>
+    </td>
+
+    <a th:href="@{/about}">product</a>
 </body>
 </html>

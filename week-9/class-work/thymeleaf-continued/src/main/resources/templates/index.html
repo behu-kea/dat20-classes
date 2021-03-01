@@ -1,12 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-    <h1>Kebabenhavn</h1>
-    <h2>Kebab der bare kan og vil noget!</h2>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+    <head th:replace="fragments/head.html(currentPage='home')"></head>
+    <body>
+        <header th:replace="fragments/header.html"></header>
+        <h1>Kebabenhavn</h1>
+        <h2>Kebab der bare kan og vil noget!</h2>
+        <p th:text="${isUserLoggedIn}"></p>
 
-</body>
+        <button th:if="${isUserLoggedIn == true}">Order food</button>
+        <button th:if="${isUserLoggedIn == false}">Sign in to order food</button>
+
+        <td th:switch="${emailProvider}">
+            <span th:case="'gmail'">Gmail seems like a good email provider</span>
+            <span th:case="'hotmail'" >Consider switching to gmail</span>
+        </td>
+
+        <span th:text="|Welcome to our application, ${emailProvider}!|"></span>
+    </body>
 </html>

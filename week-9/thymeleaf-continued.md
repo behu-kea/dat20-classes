@@ -4,6 +4,10 @@ Last week we familarized ourselves with Thymeleaf. We can use Thymeleaf for more
 
 
 
+Social media assignement to next week. Sorry for late notice. Not mandatory
+
+
+
 ## Why are we even continuing talking about Thymeleaf
 
 Thymeleaf is a powerful system and can do things like fragments, translation, and logic. This can be super useful when developing a site.

@@ -21,4 +21,14 @@ public class KebabenhavnController {
     public String renderAbout(Model model) {
         return "about.html";
     }
+
+    @GetMapping("/contact")
+    public String rendercontact(Model model) {
+        return "contact.html";
+    }
+
+    @GetMapping("/pricing")
+    public String renderPricing(Model model) {
+        return "pricing.html";
+    }
 }

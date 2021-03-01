@@ -4,6 +4,10 @@ Last week we familarized ourselves with Thymeleaf. We can use Thymeleaf for more
 
 
 
+Social media assignement to next week. Sorry for late notice. Not mandatory
+
+
+
 ## Why are we even continuing talking about Thymeleaf
 
 Thymeleaf is a powerful system and can do things like fragments, translation, and logic. This can be super useful when developing a site.
@@ -184,6 +188,34 @@ You can also select a specific part (fragment) of the fragment:
 ### Exercises
 
 Continuing the social media exercise:
+
+
+
+### Working with if, switch and link - level 1
+
+Create a new endpoint and a new template file for these exercises. They do not have anything specific to do with the social media site but is just for practice.
+
+
+
+#### If
+
+Send a `boolean` variable from the controller to the view. The variable should be called `isUserLoggedIn`. If the variable is `true` then render a `p` tag saying `Welcome back`. If it is `false` render a `p` tag saying `Please log in`
+
+
+
+#### Switch
+
+Send a variable called `userType` from the controller to the view. 
+
+- If `userType` is equal to `free` render a `p` tag with the text `Consider paying`
+- If `userType` is equal to `paying` render a `p` tag with the text `Consider upgrading to premium`
+- If `userType` is equal to `premium` render a `p` tag with the text ` We hope you are happy with your account`
+
+
+
+### Link
+
+Make a link to an endpoint using the link syntax shown above. 
 
 
 

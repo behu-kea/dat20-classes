@@ -10,6 +10,10 @@ This problem is solved using sessions.
 
 
 
+Frustrerende semester, der er rigtigt meget der bliver smidt efter jeg som studerende!
+
+
+
 ## Learning objectives
 
 - What is a session and why do we use it?

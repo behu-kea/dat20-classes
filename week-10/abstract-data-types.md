@@ -49,11 +49,19 @@ A specification of a type of data and the operations that can be performed on it
 
 In Java, ADTs are specified by `interfaces`. Each ADT's operations are specified by the methods of its interface. For example, both LinkedList and ArrayList implement an interface in the java.util package called List. The List interface declares all the common methods that both types of lists implement. You can find the interface here: https://docs.oracle.com/javase/8/docs/api/java/util/List.html
 
-
-
 It's smart because we have a strick interface with a contract that specifies how to use the data.
 
 Good interface design makes us as developers not even think about what lies behind the code we are using it. We are just using the methods. 
+
+Lets take a look at the `List` interface in Java!
+
+
+
+### Collection (Java collection framework)
+
+A collection is an object that stores a group of other objects, called its *elements.* Entities that store and manage data are also called *data structures.* 
+
+Java provides a large group of useful collections that allow you to store, access, search, sort, and manipulate data in a variety of ways. Together, these collections and classes are known as the *Java Collections Framework.*
 
 
 
@@ -75,13 +83,7 @@ names3.add("asd");
 
 
 
-### Collection (Java collection framework)
-
-A collection is an object that stores a group of other objects, called its *elements.*
-
-Entities that store and manage data are also called *data structures.*
-
-Some examples of collections:
+Some examples of collection interfaces:
 
 - **List**: An ordered collection of elements, often accessed by integer indexes or by iteration.
 - **Queue**: A collection in which elements are removed in the same order in which they were added.
@@ -133,9 +135,7 @@ Finish the methods using this boilerplate
 
 
 
-
-
-## O notation
+## Big O notation
 
 Watch this video to get an overview of why we talk about Big O notation: https://www.youtube.com/watch?v=RGuJga2Gl_k
 
@@ -143,7 +143,7 @@ Watch this video to get an overview of why we talk about Big O notation: https:/
 
 Big O notation. Helps us as  figure out how fast our program will run. How does the runtime scale with respect to some inputs. It is a simplified analysis of an algorithms efficiency.
 
-Usually talking about works case. Its an approximation. 
+Usually talking about works case. Big O is an approximation of how long time a program will take to run. 
 
 
 

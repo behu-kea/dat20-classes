@@ -110,9 +110,28 @@ Hopefully it is going to be so cool that the people behind Java will actually ac
 
 Lets call this new datastructure for `CoolList`. It should be a `List` which means it should implement the `List` `interface`. 
 
+`CoolList` will only use `Strings` since everything else is irrelevant 😂
+
+Since it will `implement` the `List` interface there are lots of methods we need to implement like `add`, `size`, `get` and so on.
+
+On top of those methods we will be adding some unique ["cool"](https://giphy.com/gifs/30-rock-sme-how-do-you-1Qdp4trljSkY8) features
+
+| Method name                 | Description                                                  |
+| --------------------------- | ------------------------------------------------------------ |
+| `deleteRandomItem`          | Deletes a random item in the list                            |
+| `deleteRandomNumberOfItems` | Deletes a random number of items in the list                 |
+| `nukeTheList`               | Removes all items in the array                               |
+| `emojiThisList`             | Replaces all items with emojis                               |
+| `rickRoll`                  | Replace a random item with the link to the [rick roll video](https://www.youtube.com/watch?v=dQw4w9WgXcQ) |
+| `YourMethodHere`            | Implement a fun method you think should be part of `CoolList` |
 
 
-Implement it as a list of Strings
+
+### Exercise - 60 min
+
+Finish the methods using this boilerplate
+
+
 
 
 

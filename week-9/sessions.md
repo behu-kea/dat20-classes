@@ -124,23 +124,7 @@ Lets try and manually delete the cookie and see what happens.
 
 For now the session is stored in memory in the spring boot application. It is possible to store it in a database aswell. 
 
-
-
-### Session timeout
-
-To decide how long the session should be kept alive add the following to the `application.properties` file
-
-```java
-server.servlet.session.timeout=60s
-```
-
-Minimum timeout is 60 seconds
-
-
-
 https://docs.spring.io/spring-session/docs/current/reference/html5/guides/java-jdbc.html
-
-https://attacomsian.com/blog/thymeleaf-get-session-attributes
 
 
 
@@ -155,9 +139,9 @@ Anything you would like! `String`, `Integer`, `ArrayList`, some class it does no
 @ResponseBody
 public String setSession(HttpServletRequest request) {
     HttpSession session = request.getSession();
-    ArrayList<Session> users = new ArrayList<>();
-    User user1 = new Session("benjamin", 23);
-    User user2 = new Session("peter", 45);
+    ArrayList<User> users = new ArrayList<>();
+    User user1 = new User("benjamin", 23);
+    User user2 = new User("peter", 45);
     users.add(user1);
     users.add(user2);
     session.setAttribute("users", users);
@@ -169,7 +153,7 @@ public String setSession(HttpServletRequest request) {
 @ResponseBody
 public String getSession(HttpServletRequest request) {
   HttpSession session = request.getSession();
-  List<User> users = (List<User>)  session.getAttribute("users");
+  List<User> users = (List<User>) session.getAttribute("users");
 
   return username.get(0).name;
 }
@@ -216,61 +200,50 @@ We can also use `session.size()` and `session.isEmpty()`
 
 
 
-Lav den sådan at det hele handler om vejret! Men bare med de forksellige niveauer. Så et er at de får en random by. Derefter kan brugeren gemme den by han er i. Derefter gemme en liste af byer. Derefter finde vejret for de byer.
+Lav den sådan at det hele handler om vejret! Men bare med de forksellige niveauer. 
+
+- Så et er at de får en random by.
+- Derefter kan brugeren gemme den by han er i. 
+- Derefter gemme en liste af byer. Derefter finde vejret for de byer.
+
+Lets create a website where users can 
 
 
 
-### Get fake name - level 1
+### Save random city - level 1
 
-Lets create a website where a user can get a fake name! It should have 3 endpoints:
-
-
-
-| Endpoint            | Description                                                  | Method |
-| ------------------- | ------------------------------------------------------------ | ------ |
-| `/assign-fake-name` | At this endpoint the user gets a fake name assigned.  We do three things:<br />1. We generate the fake name using the code below. <br />2. We save that name in the session!<br />3. Return a string sayng something like `Fake name has been assigned. Go to /get-fake-name to see the name` | `GET`  |
-| `/get-fake-name`    | Here the user can see the name that was assigned (and saved in the session) at the endpoint `/assign-fake-name` | `GET`  |
-| `/delete-fake-name` | Here the user can delete the fake name. This happens with us invalidating the whole session | `GET`  |
+Lets create a website where users can see the weather for different cities!
 
 
 
-#### Generate fake name
-
-Add this dependency:
-
-```xml
-<dependency>
-    <groupId>com.github.javafaker</groupId>
-    <artifactId>javafaker</artifactId>
-    <version>0.12</version>
-</dependency>
-```
+| Endpoint              | Description                                                  | Method |
+| --------------------- | ------------------------------------------------------------ | ------ |
+| `/assign-random-city` | At this endpoint the user gets a random city assigned.  We do three things:<br />1. We generate the random city (has been done) <br />2. We save that city in the session!<br />3. Return a string saying something like `Random city has been assigned` | `GET`  |
+| `/get-random-cities`  | Here the user can see the city that was assigned (and saved in the session) at the endpoint `/assign-random-city` | `GET`  |
 
 
 
-Code to generate a fake name:
+### Save list of cities - level 2
 
-```java
-Faker faker = new Faker();
-String fakeName = faker.name().fullName();
-```
+Now instead of just saving one city we will save a list of cities in the session. 
+
+If i go to `/assign-random-city` twice and i get assigned `copenhagen` and `milano` then going to `/get-random-city` will render that list of cities. You can choose to just render the list directly (with `@ResponseBody` and just `return` the `ArrayList` of strings) or you can render them using Thymeleaf. That is up to you.
+
+
 
 
 
 ### Notes website - level 2
 
-Lets create a website where users can create notes
+Now instead of randomly assigning a user a city, the user fills that out in a form! So instead of generating the random city you now have to create a `form` with one `input` where the user can write a city. 
 
-| Endpoint    | Description                    | Method |
-| ----------- | ------------------------------ | ------ |
-| `/notes`    | See a list of your saved notes | `GET`  |
-| `/add-note` | Create                         |        |
+Remember to create the endpoint that will get the city written in the `form` and add it to the session as a list of cities.
+
+ To look at the code to study in the bottom to get inspired on how to do this! 
 
 
 
 ### Weather site - level 3
-
-Lets create a website where users can see the weather for different cities!
 
 It should be possible for a user to add a new city. For each city added the user should see the weather for all of those cities
 
@@ -299,3 +272,41 @@ To get an api so we can get weather, go here: https://openweathermap.org/api cli
 ## Glossary
 
 Contains words and their explanation
+
+
+
+## Session example to study
+
+From this article: https://www.techgeeknext.com/spring-boot/spring-boot-session-management
+
+```java
+@Controller
+public class SpringBootSessionController {
+    @PostMapping("/addNote")
+    public String addNote(@RequestParam("note") String note, HttpServletRequest request) {
+        //get the notes from request session
+        List<String> notes = (List<String>) request.getSession().getAttribute("NOTES_SESSION");
+        //check if notes is present in session or not
+        if (notes == null) {
+            notes = new ArrayList<>();
+            // if notes object is not present in session, set notes in the request session
+            request.getSession().setAttribute("NOTES_SESSION", notes);
+        }
+        notes.add(note);
+        request.getSession().setAttribute("NOTES_SESSION", notes);
+        return "redirect:/home";
+    }
+    @GetMapping("/home")
+    public String home(Model model, HttpSession session) {
+        List<String> notes = (List<String>) session.getAttribute("NOTES_SESSION");
+        model.addAttribute("notesSession", notes!=null? notes:new ArrayList<>());
+        return "home";
+    }
+    @PostMapping("/invalidate/session")
+    public String destroySession(HttpServletRequest request) {
+        //invalidate the session , this will clear the data from configured database (Mysql/redis/hazelcast)
+        request.getSession().invalidate();
+        return "redirect:/home";
+    }
+}
+```

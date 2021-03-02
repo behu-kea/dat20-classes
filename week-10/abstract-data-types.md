@@ -156,14 +156,10 @@ Constant time with respect to the input. If you double the input the program wil
 
 
 ```java
-String name = "Benjamin"; // O(1)
-name = name + "1"; // O(1)
-System.out.println(name); // O(1)
+String name = "Benjamin";
+name = name + "1";
+System.out.println(name);
 ```
-
-
-
-Total time = O(1) + O(1) + O(1) = 3*O(1) = **O(1)** 
 
 
 
@@ -254,11 +250,11 @@ You need to figure out the Big O for these code snippets. They are written in js
 
 ```javascript
 function isEven(value){
-  if (value % 2 == 0){
-    return true;
-  }
-  else
-    return false;
+    if (value % 2 == 0){
+      	return true;
+    } else {
+      	return false;
+    }
 }
 ```
 

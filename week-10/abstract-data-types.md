@@ -135,7 +135,7 @@ On top of those methods we will be adding some unique ["cool"](https://giphy.com
 
 ### Exercise - 60 min
 
-Finish the methods using this boilerplate
+Finish the methods using [this boilerplate](https://github.com/behu-kea/cool-type-boilerplate)
 
 
 

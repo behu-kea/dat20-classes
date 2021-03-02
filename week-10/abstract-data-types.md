@@ -137,10 +137,243 @@ Finish the methods using this boilerplate
 
 ## O notation
 
+Watch this video to get an overview of why we talk about Big O notation: https://www.youtube.com/watch?v=RGuJga2Gl_k
+
+
+
+Big O notation. Helps us as  figure out how fast our program will run. How does the runtime scale with respect to some inputs. It is a simplified analysis of an algorithms efficiency.
+
+Usually talking about works case. Its an approximation. 
+
+
+
+### Constant time
+
+O(1) constant time with respect to the input
+
+
+
+i = 0;
+
+ or 
+
+x= 4;
+
+hej = "asd";
+
+print hej + x;
+
+Total time = O(1) + O(1) + O(1) = 3* O(1) = O(1) drop constants
+
+
+
+### Linear time
+
+O(n)
+
+If you double the input you double the time the program takes
+
+Foreach
+
+
+
+
+
+### Quadratic time
+
+forEach
+
+​    forEach
+
+O(N^2)
+
+
+
+![1*5ZLci3SuR0zM_QlZOADv8Q](./assets/big-o-complexity.png)
+
+
+
+
+
+### Rules for calculating big O
+
+- Drop constants.  O(2n) its just O(n). That is because that the most important part is the O(N) part. If its double that time does not really matter in the bigger picture
+- Drop low order terms. with fx O(1) + O(n). Here O(n) will completely dominate the runtime. n + 10 for n=10000. Here it does not matter to have the 10 part. 
+
 https://www.baeldung.com/java-algorithm-complexity
+
+
+
+
+
+If(x>0)
+
+// O(1)
+
+else if (x <0)
+
+O(logn)
+
+else
+
+O(n^2)
+
+Runtime is O(N^2)
 
 
 
 Possible exercise:
 
 - Given some pseudocode write what O notation is is
+
+
+
+### Exercises
+
+You need to figure out the Big O for these code snippets. They are written in js. You dont have to understand what the code exactly does. 
+
+
+
+**1**
+
+```javascript
+function isEven(value){
+  if (value % 2 == 0){
+    return true;
+  }
+  else
+    return false;
+}
+```
+
+
+
+**2**
+
+```javascript
+function areYouHere(arr1, arr2) {
+    for (let i=0; i<arr1.length; i++) {
+				const el1 = arr1[i];
+        for (let j=0; j<arr2.length; j++) {
+    				const el2 = arr2[j];
+            if (el1 === el2) return true;
+        }
+    }
+    return false;
+}
+```
+
+
+
+**3**
+
+```javascript
+function doubleArrayValues(array) {
+    for (let i=0; i<array.length; i++) {
+      array[i] *= 2;
+    }
+    return array;
+}
+```
+
+
+
+**4**
+
+```javascript
+function naiveSearch(array, item) {
+    for (let i=0; i<array.length; i++) {
+        if (array[i] === item) {
+            return i;
+        }
+    }
+}
+```
+
+
+
+**5**
+
+```javascript
+function createPairs(arr) {
+    for (let i = 0; i < arr.length; i++) {
+        for(let j = i+1; j < arr.length; j++) {
+          	console.log(arr[i] + ", " +  arr[j] );
+        }
+    }
+}
+```
+
+
+
+**6**
+
+```javascript
+function generateFib(num) {
+    let result = [];
+    for (let i = 1; i <= num; i++) {
+      if (i === 1) {
+        result.push(0);
+      }
+      else if (i == 2) {
+        result.push(1);
+      }
+      else {
+        result.push(result[i - 2] + result[i - 3]);
+      }
+    }
+  
+    return result;
+}
+```
+
+
+
+**7**
+
+```javascript
+function findRandomElement(arr) {
+  	return arr[Math.floor(Math.random() * arr.length)];
+}
+```
+
+
+
+**8**
+
+```javascript
+function isPrime(n) {
+    if (n < 2 || n % 1 != 0) {
+      return false;
+    }
+    for (let i = 2; i < n; ++i) {
+      if (n % i == 0) return false;
+    }
+    return true;
+}
+```
+
+
+
+**9**
+
+```javascript
+function factorialOf(n) {
+    switch (n) {
+      case 0:
+      case 1:
+        return 1;
+      default: return n * factorialOf(n - 1);
+    }
+}
+```
+
+
+
+
+
+### Other videos
+
+https://www.youtube.com/watch?v=kgBjXUE_Nwc
+
+https://www.youtube.com/watch?v=kPRA0W1kECg

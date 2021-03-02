@@ -1,5 +1,9 @@
 # Abstract data types
 
+Knowing about different ways to store data is crucial when writing software. Right now it might not be that clear because you are working with small amounts of data in your projects. But once you start working with 1000 of objects, maybe even millions of objects then knowing different data structures is absolutely crucial. (Java collection Framework)
+
+Having an idea of how slow/fast your program will be is also a very useful skill. (Big O notation)
+
 
 
 ## Learning goals
@@ -240,7 +244,7 @@ if (x > 0) {
 
 
 
-### Exercises
+### Exercises 15 min until class ends
 
 You need to figure out the Big O for these code snippets. They are written in js. You dont have to understand what the code exactly does. 
 

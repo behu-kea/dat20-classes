@@ -190,33 +190,6 @@ You can pass in parameters to your fragment! And it's nearly like just calling a
 
 
 
-
-
-##### Fragment selector 
-
-You can also select a specific part (fragment) of the fragment:
-
-```html
-<header th:replace="products/fragments/users-login.html :: logged-in"></header>
-```
-
-`/fragments/sers-login.html`
-
-```html
-<html xmlns:th="http://www.thymeleaf.org">
-  <p th:fragment="logged-in">
-      User logged in
-  </p>
-  <p th:fragment="logged-out">
-      User logged out
-  </p>
-</html>
-```
-
-
-
-
-
 ### Exercises
 
 Continuing the social media exercise:

@@ -149,21 +149,21 @@ Usually talking about works case. Its an approximation.
 
 ### Constant time
 
-O(1) constant time with respect to the input
+O(1) 
+
+Constant time with respect to the input. If you double the input the program will still take the same time.
 
 
 
-i = 0;
+```java
+String name = "Benjamin"; // O(1)
+name = name + "1"; // O(1)
+System.out.println(name); // O(1)
+```
 
- or 
 
-x= 4;
 
-hej = "asd";
-
-print hej + x;
-
-Total time = O(1) + O(1) + O(1) = 3* O(1) = O(1) drop constants
+Total time = O(1) + O(1) + O(1) = 3*O(1) = **O(1)** 
 
 
 
@@ -171,21 +171,41 @@ Total time = O(1) + O(1) + O(1) = 3* O(1) = O(1) drop constants
 
 O(n)
 
-If you double the input you double the time the program takes
-
-Foreach
+If you double the input you double the time the program takes. Seen typically with iterating through a list. if the array has 1000 items it will take 1000 times longer than if the array had one item. 
 
 
+
+```java
+ArrayList<String> names = new ArrayList<>();
+names.add("Henriette");
+for (String name : names) {
+    System.out.println(name);
+}
+```
 
 
 
 ### Quadratic time
 
-forEach
-
-​    forEach
-
 O(N^2)
+
+If you double the input you quardouble the time the program takes. Typically seen with a nested foreach
+
+
+
+```java
+ArrayList<String> firstNames = new ArrayList<>();
+ArrayList<String> lastNames = new ArrayList<>();
+firstNames.add("Henriette");
+firstNames.add("Pedersen");
+for (String firstName : firstNames) {
+    for (String lastname : lastNames) {
+        System.out.println(firstName + " " + lastname);
+    }
+}
+```
+
+
 
 
 
@@ -206,25 +226,21 @@ https://www.baeldung.com/java-algorithm-complexity
 
 
 
-If(x>0)
+### Example
 
-// O(1)
+What is the big O notation for this program?
 
-else if (x <0)
+```java
+if (x > 0) {
+    // In here the program takes O(1)
+} else if (x < 0) {
+    // In here the program takes O(logn)
+} else {
+    // In here the program takes O(n^2)
+}
+```
 
-O(logn)
 
-else
-
-O(n^2)
-
-Runtime is O(N^2)
-
-
-
-Possible exercise:
-
-- Given some pseudocode write what O notation is is
 
 
 

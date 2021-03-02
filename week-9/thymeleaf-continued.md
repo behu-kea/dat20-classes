@@ -74,6 +74,38 @@ Relative to where the app is deployed it will give the correct url. So if runnin
 
 
 
+
+
+### Exercise - Working with if, switch and link - level 1 30 min
+
+Create a new endpoint and a new template file for these exercises. You can just work in a new porject or in the social media site thats up to you. The following exercises does not have anything to do with social media exercises
+
+
+
+#### If
+
+Send a `boolean` variable from the controller to the view. The variable should be called `isUserLoggedIn`. If the variable is `true` then render a `p` tag saying `Welcome back`. If it is `false` render a `p` tag saying `Please log in`
+
+
+
+#### Switch
+
+Send a variable called `userType` from the controller to the view. 
+
+- If `userType` is equal to `free` render a `p` tag with the text `Consider paying`
+- If `userType` is equal to `paying` render a `p` tag with the text `Consider upgrading to premium`
+- If `userType` is equal to `premium` render a `p` tag with the text ` We hope you are happy with your account`
+
+
+
+### Link
+
+Make a link to an endpoint using the link syntax shown above. 
+
+
+
+
+
 ## Fragments
 
 On a standard website we probably have about 30 html pages. Imagine that you get the task to change the logo image in the header. Imaging going to every single one of those pages looking for the logo image, rewriting the image `src` but probably also the `alt` attribute. That would be quite a task and what if you forgot that one hidden page? Now you have the old logo showing to customers (this is something the author have literally done so its not even a thought up example 😆)
@@ -158,64 +190,9 @@ You can pass in parameters to your fragment! And it's nearly like just calling a
 
 
 
-
-
-##### Fragment selector 
-
-You can also select a specific part (fragment) of the fragment:
-
-```html
-<header th:replace="products/fragments/users-login.html :: logged-in"></header>
-```
-
-`/fragments/sers-login.html`
-
-```html
-<html xmlns:th="http://www.thymeleaf.org">
-  <p th:fragment="logged-in">
-      User logged in
-  </p>
-  <p th:fragment="logged-out">
-      User logged out
-  </p>
-</html>
-```
-
-
-
-
-
 ### Exercises
 
 Continuing the social media exercise:
-
-
-
-### Working with if, switch and link - level 1
-
-Create a new endpoint and a new template file for these exercises. They do not have anything specific to do with the social media site but is just for practice.
-
-
-
-#### If
-
-Send a `boolean` variable from the controller to the view. The variable should be called `isUserLoggedIn`. If the variable is `true` then render a `p` tag saying `Welcome back`. If it is `false` render a `p` tag saying `Please log in`
-
-
-
-#### Switch
-
-Send a variable called `userType` from the controller to the view. 
-
-- If `userType` is equal to `free` render a `p` tag with the text `Consider paying`
-- If `userType` is equal to `paying` render a `p` tag with the text `Consider upgrading to premium`
-- If `userType` is equal to `premium` render a `p` tag with the text ` We hope you are happy with your account`
-
-
-
-### Link
-
-Make a link to an endpoint using the link syntax shown above. 
 
 
 

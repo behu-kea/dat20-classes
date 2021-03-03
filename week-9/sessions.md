@@ -265,15 +265,23 @@ Again get inspired by the [notes](https://github.com/behu-kea/notes-example/) ex
 
 ### Weather site - level 3
 
-So now a user can add a list of cities to the session. Now all we need is to show the weather for each of those cities. 
+So now a user can add a list of cities to the session. Now we need is to show the weather for each of those cities. 
 
 To get weather for a city use the code below. To get the `YOUR_API_KEY` read below
 
 ```java
 WeatherData weatherData = CityWeather.getWeatherData("london", "YOUR_API_KEY");
+// Getting the first item in the array
+HashMap<String, String> weather = weatherData.weather.get(0);
+// Contains the weather description like fx Fog, Mist etc
+String weatherDescription = weather.get("main");
+// Contains the temperature in degrees fx 10.2
+Float temperature = weatherData.main.get("temp");
 ```
 
 The `WeatherData` class can be found in `models/WeatherData.java` 
+
+Use Thymeleaf to render the weather is a nice way ☁️☀️🌨
 
 
 

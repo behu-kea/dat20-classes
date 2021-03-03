@@ -1,16 +1,16 @@
 # Sessions
 
-When developing web applications sometimes we need to store data for a user. That could fx be to save data for a logged in user. It could also be to store previous searches from a user like Google maps does. 
-
-Now the problem with that is that HTTP is stateless. This means that there is no state stored in a request. Each request is a completely new request.
 
 
-
-This problem is solved using sessions. 
-
-
+## Before we start
 
 Frustrerende semester, der er rigtigt meget der bliver smidt efter jeg som studerende!
+
+
+
+## So why are we talking about session?
+
+Sometimes we need to save data for a user. When you log in to fx Facebook and next time you visit facebook you dont need to log in again. That is solved using sessions.
 
 
 
@@ -24,21 +24,11 @@ Frustrerende semester, der er rigtigt meget der bliver smidt efter jeg som stude
 
 ## Sessions
 
-In Spring boot sessions is implemented using cookies. Cookies is a small text file saved in the browser. This small text file gives the user an id so it knows who you are! Now every time you request a page from a specific domain, the `cookie` is sent wth the request. Now the server know who requested a specific page.
+When developing web applications sometimes we need to store data for a user. That could fx be to save data for a logged in user. It could also be to store previous searches from a user like Google maps does. 
 
+Now the problem with that is that HTTP is stateless. This means that there is no state stored in a request. Each request is a completely new request.
 
-
-Here is a screenshot of how the cookie is stored in the browser
-
-![Screenshot 2021-02-23 at 14.56.11](./assets/cookie-browser.png)
-
-
-
-Here is a screenshot of how the cookie id is sent in the request
-
-![Screenshot 2021-02-23 at 14.58.04](/Users/benjamin-hughes/Documents/projects/dat20-classes/week-9/assets/cookie-sent-on-request.png)
-
-
+This problem is solved using sessions. 
 
 ![Screenshot 2021-02-24 at 10.18.38](./assets/session-server.png)
 
@@ -116,10 +106,6 @@ Let's dive into some of the code
 
 
 
-Lets try and manually delete the cookie and see what happens.
-
-
-
 ### What can i save?
 
 Anything you would like! `String`, `Integer`, `ArrayList`, some class it does not matter!
@@ -150,6 +136,28 @@ public String getSession(HttpServletRequest request) {
   return username.get(0).name;
 }
 ```
+
+
+
+## So how does session actually work - Cookies
+
+*Learning about cookies is not part of the learning goals!*
+
+In Spring boot sessions is implemented using cookies. Cookies is a small text file saved in the browser. This small text file gives the user an id so it knows who you are! Now every time you request a page from a specific domain, the `cookie` is sent with the request. Now the server know who requested a specific page.
+
+
+
+Here is a screenshot of how the cookie is stored in the browser
+
+![Screenshot 2021-02-23 at 14.56.11](./assets/cookie-browser.png)
+
+
+
+Here is a screenshot of how the cookie id is sent in the request
+
+![Screenshot 2021-02-23 at 14.58.04](/Users/benjamin-hughes/Documents/projects/dat20-classes/week-9/assets/cookie-sent-on-request.png)
+
+
 
 
 
@@ -205,16 +213,22 @@ Figure out:
 
 Answer these questions:
 
-- What type is the notes?
-- How are the individual notes saved in the session
+- What type are the notes?
+- How are the notes saved in the session
 - We are not sending any data from the controller to the view. How are we rendering the notes?
 - When clicking the `Add Note` button a new note is saved in the session. But how does that work?
+
+
+
+When you come back i will randomly select a group to present the code
 
 
 
 ## Exercise time - rest of class
 
 Lets create a website where users can see the weather for different cities! It will work by the user adding a list of cities and then for each city the user can see the weather.
+
+Use this boilerplate for the project: https://github.com/behu-kea/weather-boilerplate
 
 
 
@@ -253,7 +267,7 @@ Get inspired by the [notes](https://github.com/behu-kea/notes-example/) example 
 
 ### User inputs the city - level 2
 
-Now instead of randomly assigning a user a city. The user fills that out in a form! So instead of generating the random city you now have to create a `form` with one `input` where the user can write a city. 
+Now instead of randomly assigning a user a city. The user fills that out in a `form`! So instead of generating the random city you now have to create a `form` with one `input` where the user can write a city. 
 
 You can maybe add the form to an endpoint called `add-city`
 
@@ -299,8 +313,3 @@ From this article: https://www.techgeeknext.com/spring-boot/spring-boot-session-
 
 https://github.com/behu-kea/notes-example/
 
-
-
-## Glossary
-
-Contains words and their explanation

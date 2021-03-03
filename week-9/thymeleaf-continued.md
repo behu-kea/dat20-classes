@@ -190,6 +190,24 @@ You can pass in parameters to your fragment! And it's nearly like just calling a
 
 
 
+## Resources folder structure
+
+*Not part of learning goals!*
+
+The resources holds as the name tells resources for the spring application. These can be thought of as frontend resources like html files, css files, javascript files etc.
+
+- `static` - Has all the static files (files that dont change) for the web application. This is `css` files, `js` files, `images` and more
+  - `images` - A folder i have chosen to create. Contains images
+  - `styling` - A folder i have chosen to create contains css files.
+- `templates` - Contains the html for the different pages in your application. Think `about`, `dashboard`, `contact` etc.
+  - `frgaments` - Contains the fragments for the application
+
+
+
+![Screenshot 2021-03-03 at 13.58.45](./assets/folder-structure.png)
+
+
+
 ### Exercises
 
 Continuing the social media exercise:

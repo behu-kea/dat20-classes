@@ -120,14 +120,6 @@ Lets try and manually delete the cookie and see what happens.
 
 
 
-### Session storage
-
-For now the session is stored in memory in the spring boot application. It is possible to store it in a database aswell. 
-
-https://docs.spring.io/spring-session/docs/current/reference/html5/guides/java-jdbc.html
-
-
-
 ### What can i save?
 
 Anything you would like! `String`, `Integer`, `ArrayList`, some class it does not matter!
@@ -196,23 +188,39 @@ We can also use `session.size()` and `session.isEmpty()`
 
 
 
-## Exercise time!
+## Exercise - 40 min
+
+Study this code in groups of 2 or 3: https://github.com/behu-kea/notes-example/ 
 
 
 
-Lav den sådan at det hele handler om vejret! Men bare med de forksellige niveauer. 
+Figure out:
 
-- Så et er at de får en random by.
-- Derefter kan brugeren gemme den by han er i. 
-- Derefter gemme en liste af byer. Derefter finde vejret for de byer.
+- How is the controller structured?
+- What endpoints are there and what do those endpoint do?
+- How does the template work?
+- How is the session used?
 
-Lets create a website where users can 
+
+
+Answer these questions:
+
+- What type is the notes?
+- How are the individual notes saved in the session
+- We are not sending any data from the controller to the view. How are we rendering the notes?
+- When clicking the `Add Note` button a new note is saved in the session. But how does that work?
+
+
+
+## Exercise time - rest of class
+
+Lets create a website where users can see the weather for different cities! It will work by the user adding a list of cities and then for each city the user can see the weather.
 
 
 
 ### Save random city - level 1
 
-Lets create a website where users can see the weather for different cities!
+In the first step we will just assing a random city to a user and then show that city to the user at a different endpoint
 
 
 
@@ -223,55 +231,57 @@ Lets create a website where users can see the weather for different cities!
 
 
 
+![exercise-level-1](./assets/exercise-level-1.gif)
+
+
+
+
+
 ### Save list of cities - level 2
 
 Now instead of just saving one city we will save a list of cities in the session. 
 
-If i go to `/assign-random-city` twice and i get assigned `copenhagen` and `milano` then going to `/get-random-city` will render that list of cities. You can choose to just render the list directly (with `@ResponseBody` and just `return` the `ArrayList` of strings) or you can render them using Thymeleaf. That is up to you.
+If i go to `/assign-random-city` twice and i get assigned `copenhagen` and `milano` then going to `/get-random-city` will render that list of cities. 
+
+You can choose to just render the list directly (with `@ResponseBody` and just `return` the `ArrayList` of strings) or you can render them using Thymeleaf. That is up to you.
+
+Get inspired by the [notes](https://github.com/behu-kea/notes-example/) example we investigated before to save a list in the session
+
+![exercise-level-2](./assets/exercise-level-2.gif)
 
 
 
+### User inputs the city - level 2
 
+Now instead of randomly assigning a user a city. The user fills that out in a form! So instead of generating the random city you now have to create a `form` with one `input` where the user can write a city. 
 
-### Notes website - level 2
-
-Now instead of randomly assigning a user a city, the user fills that out in a form! So instead of generating the random city you now have to create a `form` with one `input` where the user can write a city. 
+You can maybe add the form to an endpoint called `add-city`
 
 Remember to create the endpoint that will get the city written in the `form` and add it to the session as a list of cities.
 
- To look at the code to study in the bottom to get inspired on how to do this! 
+Again get inspired by the [notes](https://github.com/behu-kea/notes-example/) example
 
 
 
 ### Weather site - level 3
 
-It should be possible for a user to add a new city. For each city added the user should see the weather for all of those cities
+So now a user can add a list of cities to the session. Now all we need is to show the weather for each of those cities. 
 
-| url         | Description                                                  | Method |
-| ----------- | ------------------------------------------------------------ | ------ |
-| `/add-city` | A user should be able to add a city name and the users firstname using a `form` | `GET`  |
-| `/`         | Should show the weather for the cities that have been added  | `GET`  |
-| `save-city` | Should save the city name to the list of cities              | `POST` |
+To get weather for a city use the code below. To get the `YOUR_API_KEY` read below
 
-**Remember the GET, POST, REDIRECT pattern**
+```java
+WeatherData weatherData = CityWeather.getWeatherData("london", "YOUR_API_KEY");
+```
+
+The `WeatherData` class can be found in `models/WeatherData.java` 
 
 
 
-### Technicalities
+#### Getting the api key
 
 For getting the weather data we will be using this service: https://home.openweathermap.org
 
-To get an api so we can get weather, go here: https://openweathermap.org/api click on `Subscribe` for `Current Weather Data`. Follow the signup flow. When you are done you should have an API key.
-
-
-
-
-
-
-
-## Glossary
-
-Contains words and their explanation
+To get an api so we can get weather, go here: https://openweathermap.org/api click on `Subscribe` for `Current Weather Data`. Follow the signup flow. When you are done you should have an API key. It should come in an email.
 
 
 
@@ -279,34 +289,10 @@ Contains words and their explanation
 
 From this article: https://www.techgeeknext.com/spring-boot/spring-boot-session-management
 
-```java
-@Controller
-public class SpringBootSessionController {
-    @PostMapping("/addNote")
-    public String addNote(@RequestParam("note") String note, HttpServletRequest request) {
-        //get the notes from request session
-        List<String> notes = (List<String>) request.getSession().getAttribute("NOTES_SESSION");
-        //check if notes is present in session or not
-        if (notes == null) {
-            notes = new ArrayList<>();
-            // if notes object is not present in session, set notes in the request session
-            request.getSession().setAttribute("NOTES_SESSION", notes);
-        }
-        notes.add(note);
-        request.getSession().setAttribute("NOTES_SESSION", notes);
-        return "redirect:/home";
-    }
-    @GetMapping("/home")
-    public String home(Model model, HttpSession session) {
-        List<String> notes = (List<String>) session.getAttribute("NOTES_SESSION");
-        model.addAttribute("notesSession", notes!=null? notes:new ArrayList<>());
-        return "home";
-    }
-    @PostMapping("/invalidate/session")
-    public String destroySession(HttpServletRequest request) {
-        //invalidate the session , this will clear the data from configured database (Mysql/redis/hazelcast)
-        request.getSession().invalidate();
-        return "redirect:/home";
-    }
-}
-```
+https://github.com/behu-kea/notes-example/
+
+
+
+## Glossary
+
+Contains words and their explanation

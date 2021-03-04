@@ -8,6 +8,8 @@ Frustrerende semester, der er rigtigt meget der bliver smidt efter jeg som stude
 
 Added folder structure
 
+Alle skulle have fået feedback på deres portfolio
+
 
 
 ## So why are we talking about session?

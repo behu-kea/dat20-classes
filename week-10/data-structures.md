@@ -12,3 +12,15 @@ Knowing about different ways to store data is crucial when writing software. Rig
 
 
 
+Der er andre datastrukturer end arraylist.
+
+de skal lære at identificere forskellige datatyper og vide hvornår de skal bruge hvilken
+
+
+
+## Exercise
+
+Vi har de her krav til noget vi skal implementere. Hvilken data struktur skal vi vælge. 
+
+
+

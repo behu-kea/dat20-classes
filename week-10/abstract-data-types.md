@@ -244,7 +244,7 @@ if (x > 0) {
 
 
 
-### Exercises 15 min until class ends
+### Exercises until class ends
 
 You need to figure out the Big O for these code snippets. They are written in js. You dont have to understand what the code exactly does. 
 

@@ -6,6 +6,8 @@
 
 Frustrerende semester, der er rigtigt meget der bliver smidt efter jeg som studerende!
 
+Added folder structure
+
 
 
 ## So why are we talking about session?

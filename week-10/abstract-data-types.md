@@ -16,13 +16,9 @@ Having an idea of how slow/fast your program will be is also a very useful skill
 
 ## Interface example
 
-An interface is a contract (or a protocol, or a common understanding)  of what the classes can do. Using inheritance two objects can communicate based on the contract defined in the interface, instead of their specific implementation.
+An interface is a contract (or a protocol, or a common understanding)  of what a class can do. Using interfaces two objects can communicate based on the contract defined in the interface, instead of their specific implementation.
 
 An interface defines what methods and attributes a class should have. It works like this:
-
-
-
-This interface defines two methods: `addName` and `getName`. Any class that implements this interface **has to have** these two methods!
 
 ```java
 interface User {
@@ -31,9 +27,9 @@ interface User {
 }
 ```
 
+This interface defines two methods: `addName` and `getName`. Any class that implements this interface **has to have** these two methods!
 
 
-The `WebUser` class `implements` the `User` interface. Meaning it has to have the  `addName` and `getName` methods.
 
 ```java
 public class WebUser implements User {
@@ -44,6 +40,8 @@ public class WebUser implements User {
     }
 }
 ```
+
+The `WebUser` class `implements` the `User` interface. Meaning it has to have the  `addName` and `getName` methods.
 
 
 
@@ -216,6 +214,8 @@ for (String firstName : firstNames) {
 ![1*5ZLci3SuR0zM_QlZOADv8Q](./assets/big-o-complexity.png)
 
 
+
+![Screenshot 2021-03-05 at 13.51.16](./assets/big-o-times.png)
 
 
 

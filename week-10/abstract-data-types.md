@@ -137,8 +137,6 @@ On top of those methods we will be adding some unique ["cool"](https://giphy.com
 
 You have to create a new List just like `CoolType` that implements the `List` interface (behaves like a list). What name you give it is up to you.
 
-
-
 Add both some of the expected methods to be a `List` (`add`, `size`, `get`) and add some unique methods (you can take some of the methods i have written above)
 
 

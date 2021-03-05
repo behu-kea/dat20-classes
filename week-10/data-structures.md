@@ -258,3 +258,35 @@ can group all the words in a book by length and report how many words there are 
    - for example: ["up","down","ip","a","a", "up", "down"] will print "up: 2, down: 2, ip: 1, a: 2 
 3. 
 
+
+
+### System for Storebæltsbroen
+
+We have been asked to build a system for Storebæltsbroen. They want to build a system that can keep track of all the cars that cross the bridge. They have built some software for recognising numberplates, car color, number of passengers and length. The information about a car should be saved using the numberplate. 
+
+The information they want to save for a car is the following:
+
+- Car color
+- Number of passengers
+- Car length
+
+It is important for Storebælts that they can **quickly** find information about a particular car (using the numberplate)
+
+What data structure should we choose and why? Write a bit of code (maybe pseudo code) showing how you would save some data for a new car.
+
+
+
+#### Continued
+
+Storebæltsbroen (the company) owns more bridges and they would like to know how many of the cars has been crossing **all** of the bridges. From each bridge they register the numberplate using the above mentioned system. The system should be **fast**. What data structure can help us achieve this and why? Please write some pseudo code of how you would get how many of the cars has crossed **all** the bridges
+
+
+
+
+
+
+
+
+
+
+

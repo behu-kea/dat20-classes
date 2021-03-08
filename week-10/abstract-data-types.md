@@ -192,7 +192,7 @@ On top of those methods we will be adding some unique ["cool"](https://giphy.com
 
 
 
-### Exercise - 60 min
+### Exercise - 45 min
 
 You have to create a new List just like `CoolType` that implements the `List` interface (behaves like a list). What name you give it is up to you.
 
@@ -284,7 +284,7 @@ What is the big O notation for this program?
 ArrayList<String> firstNames = new ArrayList<>();
 ArrayList<String> lastNames = new ArrayList<>();
 firstNames.add("Henriette");
-firstNames.add("Pedersen");
+lastNames.add("Pedersen");
 
 for (String firstName : firstNames) {
     System.out.println(firstName);

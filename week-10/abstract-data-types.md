@@ -6,6 +6,14 @@ Having an idea of how slow/fast your program will be is also a very useful skill
 
 
 
+## Portfolio general feedback
+
+- Names and id's
+- Inline styles
+- Good html structure
+
+
+
 ## Learning goals
 
 - Understand purpose of ADT

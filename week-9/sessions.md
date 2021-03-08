@@ -159,7 +159,7 @@ Here is a screenshot of how the cookie is stored in the browser
 
 Here is a screenshot of how the cookie id is sent in the request
 
-![Screenshot 2021-02-23 at 14.58.04](/Users/benjamin-hughes/Documents/projects/dat20-classes/week-9/assets/cookie-sent-on-request.png)
+![Screenshot 2021-02-23 at 14.58.04](./assets/cookie-sent-on-request.png)
 
 
 

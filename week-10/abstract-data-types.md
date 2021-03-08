@@ -9,8 +9,59 @@ Having an idea of how slow/fast your program will be is also a very useful skill
 ## Portfolio general feedback
 
 - Names and id's
+  - No spaces in classnames or id's. fx `<div class="om mig"></div>` This adds two classes. `om` and `mig`.
+  - **Only** use capital starting letter for classes **nothing** else!
+  - Dash between words: `<div class="education-projects"></div>` not `<div class="education projects"></div>`
 - Inline styles
+  - Avoid inline styles like `<div style="background-color: blue;"></div>`. Write these styles in `css` not `html`!
+  - Dont use `<br>` for spacing, use `margin-bottom` in css for that.
 - Good html structure
+
+```html
+<html>
+  <head>
+    <title>Good structure</title>
+  </head>
+  <body>
+    <header>
+      <a href="/">
+        <img src="/logo" alt="Company logo" />
+      </a>
+      <nav>
+        <ul>
+          <li>
+            <a href="/pricing">Pricing</a>
+          </li>
+          <li>
+            <a href="/about">about</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+		<main>
+      <section id="intro">
+				<h2>
+          Lidt om mig
+        </h2>
+        <p>
+          ajshbdk kja sdkjaksd kjabskjd kjas 
+        </p>
+      </section>
+      <section id="education">
+				<h2>
+          mine uddannelserne
+        </h2>
+        <ul>
+          <li>Herning Gymnasium</li>
+        </ul>
+      </section>
+    </main>
+    <footer>
+    	Developed by Benjamin
+    </footer>
+  </body>
+</html>
+```
 
 
 

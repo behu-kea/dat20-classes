@@ -146,8 +146,6 @@ The Java hashmap has a lot of operations, but for this note we will only look at
 
 
 
-
-
 ### TreeMap
 
 A `HashMap` where the keys are sorted.
@@ -160,7 +158,9 @@ More efficient than a `TreeMap`. So if order does not matters to you then use a 
 
 
 
-#### HashMap exercises
+### HashMap exercises
+
+Using this boilerplate: https://github.com/behu-kea/data-structure-exercise-boilerplate
 
 1. Skriv en metode der hedder contains3 som tager en liste af Strings som parameter og returnerer `true` hvis der i listen findes bare en String som forekommer mindst 3 gange i listen. Ellers returneres false. Brug  en map som datastruktur. 
 
@@ -279,8 +279,6 @@ Iteration is different for most ADT's (Abstract Data Types) like `List`, `Map`, 
 
 
 ## Exercise
-
-
 
 
 

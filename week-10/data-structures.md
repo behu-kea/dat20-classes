@@ -10,8 +10,6 @@ Knowing about different ways to store data is crucial when writing software. Rig
 - `Hashmap` - Collisions and extension
 - `TreeSet`
 - Identify which is best for which use case
-- There are other data structures that `ArrayList`
-- Knowing when to use what data type
 
 
 
@@ -164,7 +162,7 @@ More efficient than a `TreeMap`. So if order does not matters to you then use a 
 
 #### HashMap exercises
 
-
+1. Skriv en metode der hedder contains3 som tager en liste af Strings som parameter og returnerer `true` hvis der i listen findes bare en String som forekommer mindst 3 gange i listen. Ellers returneres false. Brug  en map som datastruktur. 
 
 
 
@@ -234,6 +232,18 @@ The list is not sorted when the you add items! Meaning adding items is quicker b
 
 
 There are [other differences](https://stackoverflow.com/questions/25602382/java-hashset-vs-treeset-when-should-i-use-over-the-other) between `HashSet` and `TreeSet`
+
+
+
+### Set exercises
+
+Using the `Set` data structure and the `randomNames1` and `randomNames2` figure out 
+
+- How many names are in both `ArrayLists`
+- Log out the names that are in `randomNames1` but not in `randomNames2`
+- Log out all the names in the two arrays
+
+
 
 
 

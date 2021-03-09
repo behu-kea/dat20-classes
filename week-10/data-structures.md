@@ -19,7 +19,15 @@ Knowing about different ways to store data is crucial when writing software. Rig
 
 
 
-## ArrayList
+## List
+
+Array structure where duplicate items are allowed. Get the item through using the index. Can be easily iterated. 
+
+
+
+
+
+### Arraylist
 
 Stores data in a list. You can `add`, `get`, `set` and `delete` items. Every item in the `ArrayList` has an index. 
 
@@ -29,21 +37,48 @@ A sequence of elements arranged in order of insertion
 
 
 
-### Pros
+#### Pros
 
 - Fast to get items at a specific index
 - Adding and removing at the end of the list is fast
 
 
 
-### Cons
+#### Cons
 
 - Finding a specific item is slow. Since we need to search through every item in the array to find what we are looking for
 - Deleting an item is slow. Especially if we need to remove an item in the front of the array. That is because for all the items at the index after the deleted item we need to update the index.
 
 
 
-### Typical usages
+### LinkedList
+
+Stores items just like `ArrayList` but does it in a different way
+
+![Linkedlist](./assets/Linkedlist.png)
+
+#### Pros
+
+- Adding and removing at the end and front of the list is fast
+
+
+
+#### Cons
+
+- Finding a specific item is slow. Since we need to search through every item in the array to find what we are looking for
+- Slow to get items at a specific index
+
+
+
+Use `LinkedList` if you need to add or remove items in the start of your `List` then use `LinkedList`. BUT getting an item at a index takes `O(n)` time. Huge disadvantage. 
+
+
+
+More in depth here: https://stackoverflow.com/questions/322715/when-to-use-linkedlist-over-arraylist-in-java
+
+
+
+#### Typical usages
 
 - List of accounts
 - List of numbers
@@ -51,23 +86,23 @@ A sequence of elements arranged in order of insertion
 
 
 
-## Hashmap
+## Map
 
 A collection that associates objects called keys with objects called values. You can store a key/value pair into a map; later in your code, if you supply just the key to the map, it will give you back the value associated with that key. 
 
 
 
-When creating a new `HashMap` we need to write it like this:
+When creating a new `Map` we need to write it like this:
 
 ```java
-HashMap<String, Double> salaryMap = new HashMap<>();
+Map<String, Double> salaryMap = new HashMap<>();
 ```
 
 The `String` part indicate the type of the key. The `Integer` part indicates that the value will be stored as `Integer`. 
 
 
 
-To add items to a `HashMap` we use the method `put`
+To add items to a `Map` we use the method `put`
 
 ```java
 salaryMap.put("Stuart Reges", 10000.00);
@@ -81,10 +116,6 @@ Double stuartSalary = salaryMap.get("Stuart Reges");
 
 
 
-A set of unique elements that can be searched quickly
-
-
-
 The Java hashmap has a lot of operations, but for this note we will only look at a few of them:
 
 - *get(Object key)* <br>
@@ -93,59 +124,58 @@ The Java hashmap has a lot of operations, but for this note we will only look at
   Associates the specified value with the specified key in this map.
 - *containsKey(Object key)*<br>
   Returns true if this map contains a mapping for the specified key.
-- *size()*<br>
-  Returns the number of key-value mappings in this map.
-- *values()*<br>
-  Returns a Collection view of the values contained in this map.
 
 
 
-### Iterating through a HashMap
-
-```java
-for (int name : salaryMap.keySet()) {
-    String salary = ssnMap.get(name);
-		System.out.println(name + "'s salary is " + salary);
-}
-```
-
-
-
-### Pros
+#### Pros
 
 - Fast to remove or add any item
 - Fast for finding items
 
 
 
-### Cons
+#### Cons
 
 - Has got no index for finding items
 - Iterating through the items is hard
 
 
 
-### Typical usages
+#### Typical usages
 
 - Word counting
 - Phone book creation
 
 
 
-### HashMap exercises
+
+
+### TreeMap
+
+A `HashMap` where the keys are sorted.
+
+
+
+### Hashmap
+
+More efficient than a `TreeMap`. So if order does not matters to you then use a `HashMap`.
+
+
+
+#### HashMap exercises
 
 
 
 
 
+## Set
+
+`Set` data structures cannot contain duplicates! 
 
 
-## TreeSet
-
-Cannot contain duplicates! The list is sorted when the you add items!
 
 ```java
-Set<String> stooges = new HashSet<String>();
+Set<String> stooges = new TreeSet<String>();
 stooges.add("Larry");
 stooges.add("Moe");
 stooges.add("Curly");
@@ -156,35 +186,7 @@ stooges.add("Moe"); // duplicate, won't be added
 
 
 
-Very fast for searching
-
-```java
-names.contains("Henriette");
-```
-
-
-
-We cannot make a forloop over it:
-
-```java
-// this code does not compile
-for (int i = 0; i < words.size(); i++) {
-    String word = words.get(i); // error –– no get method
-    System.out.println(word);
-}
-```
-
-We need to use an iterator
-
-```java
-Iterator<String> itr = words.iterator();
-while (itr.hasNext()) {
-    String word = itr.next();
-    System.out.println(word);
-}
-```
-
-
+#### Set operations
 
 | **Set operation** | **Method**  | **Description**                               |
 | ----------------- | ----------- | --------------------------------------------- |
@@ -196,26 +198,48 @@ while (itr.hasNext()) {
 
 ![Screenshot 2021-03-05 at 14.38.36](./assets/treeset.png)
 
-### Pros
+#### Pros
 
 - Cannot contain dublicates
 - Fast for searching
 - Items are sorted when added
-- Really good for doing set operations on!
+- Really good for doing set operations (union, intersection, etc.) shown above!
 
 
 
-### Cons
+#### Cons
 
 - Cannot loop over using index (must use iterator)
 - Does not have indexes
 
 
 
-### Typical use cases
+#### Typical use cases
 
 - Unique words in a book
 - Lottery ticket numbers
+
+
+
+### TreeSet
+
+The list is sorted when the you add items! Adding items is a bit slower compared to `HashSet`. If you need a sorted list choose `TreeSet` otherwise choose `HashSet`
+
+
+
+### Hashset
+
+The list is not sorted when the you add items! Meaning adding items is quicker but sorting the list will be slow.
+
+
+
+There are [other differences](https://stackoverflow.com/questions/25602382/java-hashset-vs-treeset-when-should-i-use-over-the-other) between `HashSet` and `TreeSet`
+
+
+
+## Iterating the data structures
+
+Iteration is different for most ADT's (Abstract Data Types) like `List`, `Map`, `Tree`. You can figure out how to iterate by googling: `YOUR_DATA_STRUCTURE iteration` fx `TreeSet iteration`
 
 
 
@@ -236,7 +260,9 @@ while (itr.hasNext()) {
 | Sets (like list, but no dublicates) | false             | O(1)      | O(1)                        | O(1)                 | O(1)                              |
 | Array                               | true              | -         | -                           | O(n)                 | -                                 |
 
-The two datastructures which will cover 90% of your needs are **ArrayList** and **HashMap**.
+
+
+👉 The two datastructures which will cover 90% of your needs are **ArrayList** and **HashMap**. 👈
 
 
 
@@ -244,7 +270,7 @@ The two datastructures which will cover 90% of your needs are **ArrayList** and 
 
 ## Exercise
 
-Vi har de her krav til noget vi skal implementere. Hvilken data struktur skal vi vælge. 
+
 
 
 
@@ -256,7 +282,6 @@ can group all the words in a book by length and report how many words there are 
    - For example: ["up","down","ip","a","a", "up", "down"] will return 4 (up, down, ip, a).
 2. This time you will still read the same file, but afterwards you are asked to write out how many times each word occured in the list. Which collection is well suited for this?
    - for example: ["up","down","ip","a","a", "up", "down"] will print "up: 2, down: 2, ip: 1, a: 2 
-3. 
 
 
 

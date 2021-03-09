@@ -1,8 +1,22 @@
 import java.util.ArrayList;
 
 public class BigO {
+    public static Boolean isPrime(Integer n) {
+        // n = 2
+        if (n < 2 || n % 1 != 0) {
+            return false;
+        }
+        for (int i = 2; i < n; ++i) {
+            System.out.println("called");
+            if (n % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
     public static void main(String[] args) {
-        Integer n = 100000;
+        Integer n = 10;
         ArrayList<String> names = new ArrayList<>();
         for (int i = 0; i < n; i++) {
             names.add("Peter");
@@ -17,22 +31,25 @@ public class BigO {
 
         // Linear time O(n)
         for (String name : names) {
-            System.out.println(name);
+            /*System.out.println(name);*/
         }
 
         // Quadratic time O(n^2)
         for (String name1 : names) {
             for (String name2 : names) {
-                System.out.println(name1 + name2);
+                /*System.out.println(name1 + name2);*/
             }
         }
 
-        if (x > 0) {
+        /*if (x > 0) {
             // In here the program takes O(1)
         } else if (x < 0) {
             // In here the program takes O(n)
         } else {
             // In here the program takes O(n^2)
-        }
+        }*/
+
+        isPrime(4);
     }
+
 }

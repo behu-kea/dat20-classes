@@ -171,7 +171,7 @@ More efficient than a `TreeMap`. So if order does not matters to you then use a 
 
 
 
-### HashMap exercises
+### HashMap exercises - 30 min
 
 Using this boilerplate: https://github.com/behu-kea/data-structure-exercise-boilerplate
 
@@ -201,8 +201,8 @@ HashMapExercise.contains3(words2); // returns false
 Pseudo kode til opgaven
 
 ```
-Lav et map-objekt 
-Loop igennem listen 
+Lav et map-objekt
+Loop igennem listen
 For hvert element 
 	If( jeg har ikke set elementet før) 
 		map.put(element, 1) 
@@ -247,7 +247,7 @@ stooges.add("Moe"); // duplicate, won't be added
 #### Pros
 
 - Cannot contain dublicates
-- Fast for searching
+- Fast for searching (`contains`)
 - Items are sorted when added
 - Really good for doing set operations (union, intersection, etc.) shown above!
 
@@ -283,7 +283,7 @@ There are [other differences](https://stackoverflow.com/questions/25602382/java-
 
 
 
-### Set exercises
+### Set exercises - 30 min
 
 Using this boilerplate: https://github.com/behu-kea/data-structure-exercise-boilerplate
 
@@ -326,7 +326,7 @@ Iteration is different for most ADT's (Abstract Data Types) like `List`, `Map`, 
 
 
 
-## Exercise
+## Exercise - Rest of class
 
 
 
@@ -372,7 +372,7 @@ Storebæltsbroen (the company) owns more bridges and they would like to know how
 
 ##### Map
 
-1. Skriv en metode der hedder `aliceInWonderland` som indlæser filen aliceInWonderland og printer et map med følgende Key/value pair 
+1. Skriv en metode der hedder `aliceInWonderland` som indlæser filen [aliceInWonderland](https://github.com/behu-kea/dat20-classes/blob/master/week-10/assets/Alice%20in%20wonderland)  og printer et map med følgende Key/value pair 
 
 	- Key: Unikke ord i bogen 
 	- Value: Hvor mange gange det optræder 
@@ -401,7 +401,7 @@ For hvert element
 
 ##### Set
 
-1. Skriv en metode der hedder `uniqueAlice` som indlæser filen aliceInWonderland og returnerer og returnerer hvor mange unikke ord den indeholder.  Brug et set som datastruktur. 
+1. Skriv en metode der hedder `uniqueAlice` som indlæser filen [aliceInWonderland](https://github.com/behu-kea/dat20-classes/blob/master/week-10/assets/Alice%20in%20wonderland) og returnerer og returnerer hvor mange unikke ord den indeholder.  Brug et set som datastruktur. 
 
 2. Skriv en metode der hedder countCommon som tager to lister af Integers som  parametre og som returnerer antallet af unikke tal der findes i begge lister. Brug et eller flere set til at løse dette.  
 

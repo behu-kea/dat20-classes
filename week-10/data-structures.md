@@ -128,6 +128,8 @@ Now to get the value we write:
 Double stuartSalary = salaryMap.get("Stuart Reges");
 ```
 
+*How would this use case have looked with `ArrayList`?*
+
 
 
 The Java hashmap has a lot of operations, but for this note we will only look at a few of them:
@@ -243,6 +245,10 @@ stooges.add("Moe"); // duplicate, won't be added
 
 
 ![Screenshot 2021-03-05 at 14.38.36](./assets/treeset.png)
+
+*Make an example with some sets of names*
+
+
 
 #### Pros
 

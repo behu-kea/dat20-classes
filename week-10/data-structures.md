@@ -393,23 +393,17 @@ For hvert element
  		map.put.(element, antal) 
 ```
 
-
-
  
 
 2.  Skriv en metode der hedder `aliceMostFrequent` som indlæser filen  aliceInWonderland og returnerer hvor mange gange det hyppigst optrædende ord forekommer. Brug en map som datastruktur. 
 
 
 
-
-
 ##### Set
 
-Skriv en metode der hedder `uniqueAlice` som indlæser filen aliceInWonderland og returnerer og returnerer hvor mange unikke ord den indeholder.  Brug et set som datastruktur. 
+1. Skriv en metode der hedder `uniqueAlice` som indlæser filen aliceInWonderland og returnerer og returnerer hvor mange unikke ord den indeholder.  Brug et set som datastruktur. 
 
-
-
-1. Skriv en metode der hedder countCommon som tager to lister af Integers som  parametre og som returnerer antallet af unikke tal der findes i begge lister. Brug et eller flere set til at løse dette.  
+2. Skriv en metode der hedder countCommon som tager to lister af Integers som  parametre og som returnerer antallet af unikke tal der findes i begge lister. Brug et eller flere set til at løse dette.  
 
    ​	eksempel: hvis den ene liste indeholder værdierne { 3, 7, 3, -1, 2,3 7,  2, 15, 15} og den anden liste indeholder værdierne {-5, 15, 2, -1, 7,  15, 36} skal metoden returnere 4 fordi elementerne -1, 2, 7 og 15  forekommer i begge lister.
 

@@ -17,11 +17,21 @@ Knowing about different ways to store data is crucial when writing software. Rig
 
 
 
+## Specifying the ADT
+
+It's a good practice to declare any variables and parameters of a collection type using the appropriate interface type for that ADT rather than the actual class's type. 
+
+```java
+List<String> names = new ArrayList<>();
+```
+
+This programming practice is “strongly recommended” because “it gives you the flexibility to change implementations.”
+
+
+
 ## List
 
 Array structure where duplicate items are allowed. Get the item through using the index. Can be easily iterated. 
-
-
 
 
 
@@ -76,7 +86,7 @@ More in depth here: https://stackoverflow.com/questions/322715/when-to-use-linke
 
 
 
-#### Typical usages
+#### Typical `List` usages
 
 - List of accounts
 - List of numbers
@@ -87,6 +97,12 @@ More in depth here: https://stackoverflow.com/questions/322715/when-to-use-linke
 ## Map
 
 A collection that associates objects called keys with objects called values. You can store a key/value pair into a map; later in your code, if you supply just the key to the map, it will give you back the value associated with that key. 
+
+
+
+![Screenshot 2021-03-10 at 10.26.00](./assets/steam-hashmap.png)
+
+*Instructor note: code the above data structure* 👆
 
 
 
@@ -116,12 +132,9 @@ Double stuartSalary = salaryMap.get("Stuart Reges");
 
 The Java hashmap has a lot of operations, but for this note we will only look at a few of them:
 
-- *get(Object key)* <br>
-  Returns the value to which the specified key is mapped, or null if this map contains no mapping for the key.
-- *put(K key, V value)* <br>
-  Associates the specified value with the specified key in this map.
-- *containsKey(Object key)*<br>
-  Returns true if this map contains a mapping for the specified key.
+- `put(K key, V value)` - Associates the specified value with the specified key in this map.
+- `get(Object key)` - Returns the value to which the specified key is mapped, or null if this map contains no mapping for the key.
+- `containsKey(Object key)` - Returns true if this map contains a mapping for the specified key.
 
 
 
@@ -139,7 +152,7 @@ The Java hashmap has a lot of operations, but for this note we will only look at
 
 
 
-#### Typical usages
+#### Typical `Map` usages
 
 - Word counting
 - Phone book creation
@@ -162,7 +175,42 @@ More efficient than a `TreeMap`. So if order does not matters to you then use a 
 
 Using this boilerplate: https://github.com/behu-kea/data-structure-exercise-boilerplate
 
-1. Skriv en metode der hedder contains3 som tager en liste af Strings som parameter og returnerer `true` hvis der i listen findes bare en String som forekommer mindst 3 gange i listen. Ellers returneres false. Brug  en map som datastruktur. 
+In the [`HashMapExercise` class](https://github.com/behu-kea/data-structure-exercise-boilerplate/blob/master/src/main/java/HashMapExercise.java) you should finish the method called `contains3`. This method takes a `List` of strings as parameter and returns `true` if there in the list is a string that occurs at least 3 times. otherwise return `false`.  Use `Map` as a data structure, which `Map` implementation will you use?
+
+See the usage i the `Main.java` class. Here the code that calls the method with random strings (dishes) has been created for you. 
+
+Here is a practical example of how the method should work
+
+```java
+List<String> words1 = new ArrayList<>();
+words.add("chicken");
+words.add("chicken");
+words.add("house");
+words.add("chicken");
+HashMapExercise.contains3(words); // returns true
+
+List<String> words2 = new ArrayList<>();
+words2.add("chicken");
+words2.add("house");
+words2.add("chicken");
+HashMapExercise.contains3(words2); // returns false
+```
+
+
+
+Pseudo kode til opgaven
+
+```
+Lav et map-objekt 
+Loop igennem listen 
+For hvert element 
+	If( jeg har ikke set elementet før) 
+		map.put(element, 1) 
+	Else (jeg har set elementet før) 
+		Int antal = map.get(element) 
+		antal++ 
+ 		map.put.(element, antal) 
+```
 
 
 
@@ -212,7 +260,7 @@ stooges.add("Moe"); // duplicate, won't be added
 
 
 
-#### Typical use cases
+#### Typical `Set` usages
 
 - Unique words in a book
 - Lottery ticket numbers
@@ -237,13 +285,13 @@ There are [other differences](https://stackoverflow.com/questions/25602382/java-
 
 ### Set exercises
 
+Using this boilerplate: https://github.com/behu-kea/data-structure-exercise-boilerplate
+
 Using the `Set` data structure and the `randomNames1` and `randomNames2` figure out 
 
-- How many names are in both `ArrayLists`
+- How many names are in both `randomNames1` and `randomNames2`
 - Log out the names that are in `randomNames1` but not in `randomNames2`
 - Log out all the names in the two arrays
-
-
 
 
 
@@ -282,17 +330,6 @@ Iteration is different for most ADT's (Abstract Data Types) like `List`, `Map`, 
 
 
 
-**Map**
-
-can group all the words in a book by length and report how many words there are of each length. Maps can associate chat users with their set of friends and buddies. Maps can even represent a family tree associating each person with his or her mother and father. Adress who lives where? 
-
-1. Imagine a method which will get an array of Strings, each String being will contain just one word. You need to answer how many different words are there in the array. Which collection is well suited for this?
-   - For example: ["up","down","ip","a","a", "up", "down"] will return 4 (up, down, ip, a).
-2. This time you will still read the same file, but afterwards you are asked to write out how many times each word occured in the list. Which collection is well suited for this?
-   - for example: ["up","down","ip","a","a", "up", "down"] will print "up: 2, down: 2, ip: 1, a: 2 
-
-
-
 ### System for Storebæltsbroen
 
 We have been asked to build a system for Storebæltsbroen. They want to build a system that can keep track of all the cars that cross the bridge. They have built some software for recognising numberplates, car color, number of passengers and length. The information about a car should be saved using the numberplate. 
@@ -303,7 +340,7 @@ The information they want to save for a car is the following:
 - Number of passengers
 - Car length
 
-It is important for Storebælts that they can **quickly** find information about a particular car (using the numberplate)
+It is important for Storebæltsbroen that they can **quickly** find information about a particular car (using the numberplate)
 
 What data structure should we choose and why? Write a bit of code (maybe pseudo code) showing how you would save some data for a new car.
 
@@ -315,11 +352,64 @@ Storebæltsbroen (the company) owns more bridges and they would like to know how
 
 
 
+### More exercises
+
+1. Imagine a method which will get an array of Strings, each String will contain just one word. You need to answer how many different words are there in the array. Which collection is well suited for this?
+
+   For example: ["up","down","ip","a","a", "up", "down"] will return 4 (up, down, ip, a).
+
+---
+
+2. This time you will still read the same file, but afterwards you are asked to write out how many times each word occured in the list. Which collection is well suited for this?
+
+   For example: ["up","down","ip","a","a", "up", "down"] will print "up: 2, down: 2, ip: 1, a: 2 
+
+---
+
+
+
+#### Alice in Wonderland
+
+##### Map
+
+1. Skriv en metode der hedder `aliceInWonderland` som indlæser filen aliceInWonderland og printer et map med følgende Key/value pair 
+
+	- Key: Unikke ord i bogen 
+	- Value: Hvor mange gange det optræder 
+
+Brug et map som datastruktur. 
+
+Pseudokode til opgaven
+
+```
+Lav et map-objekt 
+Loop igennem listen 
+For hvert element 
+	If( jeg har ikke set elementet før) 
+		map.put(element, 1) 
+	Else (jeg har set elementet før) 
+		Int antal = map.get(element) 
+		antal++ 
+ 		map.put.(element, antal) 
+```
+
+
+
+ 
+
+2.  Skriv en metode der hedder `aliceMostFrequent` som indlæser filen  aliceInWonderland og returnerer hvor mange gange det hyppigst optrædende ord forekommer. Brug en map som datastruktur. 
 
 
 
 
 
+##### Set
+
+Skriv en metode der hedder `uniqueAlice` som indlæser filen aliceInWonderland og returnerer og returnerer hvor mange unikke ord den indeholder.  Brug et set som datastruktur. 
 
 
+
+1. Skriv en metode der hedder countCommon som tager to lister af Integers som  parametre og som returnerer antallet af unikke tal der findes i begge lister. Brug et eller flere set til at løse dette.  
+
+   ​	eksempel: hvis den ene liste indeholder værdierne { 3, 7, 3, -1, 2,3 7,  2, 15, 15} og den anden liste indeholder værdierne {-5, 15, 2, -1, 7,  15, 36} skal metoden returnere 4 fordi elementerne -1, 2, 7 og 15  forekommer i begge lister.
 

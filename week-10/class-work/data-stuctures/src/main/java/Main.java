@@ -66,5 +66,13 @@ public class Main {
 
         System.out.println(names1);
 
+
+
+        Cardata car = new Cardata("blue", 10, 100);
+        Map<String, Cardata> carsMap = new HashMap<>();
+        carsMap.put("asdsd", car);
+
+        carsMap.get("asdsd");
+
     }
 }

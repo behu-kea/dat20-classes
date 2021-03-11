@@ -24,5 +24,40 @@ public class Main {
         steamLibrary.put("stellaris", stellaris);
 
         System.out.println(steamLibrary.get("stellaris"));
+
+
+        // Set
+        Set<String> namesSet = new HashSet<>();
+        namesSet.add("Larry");
+        namesSet.add("Moe");
+        namesSet.add("Curly");
+        namesSet.add("Moe"); // duplicate, won't be added
+        namesSet.add("Shemp");
+        namesSet.add("Moe"); // duplicate, won't be added
+
+        System.out.println(namesSet);
+
+        Set<String> namesA = new HashSet<>();
+        namesA.add("per");
+        namesA.add("pernille");
+        namesA.add("Camilla");
+
+        Set<String> namesB = new HashSet<>();
+        namesB.add("per");
+        namesB.add("Hans");
+        namesB.add("Anna");
+
+        // union
+        //namesA.addAll(namesB);
+        //System.out.println(namesA);
+
+        // intersection
+        namesA.retainAll(namesB);
+        System.out.println(namesA);
+
+        namesA.contains("Hans");
+
+
+
     }
 }

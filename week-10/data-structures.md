@@ -177,26 +177,28 @@ More efficient than a `TreeMap`. So if order does not matters to you then use a 
 
 1. Write the code to declare a Map that associates people's names with their ages. Add mappings for your own name and age, as well as those of a few friends or relatives.
 
-2. ```
-   Map<Integer, String> map = new HashMap<Integer, String>();
-       map.put(8, "Eight");
-       map.put(41, "Forty-one");
-       map.put(8, "Ocho");
-   ```
+2. What keys and values are contained in the following map after this code executes?
 
-   ```
-       map.put(18, "Eighteen");
-       map.put(50, "Fifty");
-       map.put(132, "OneThreeTwo");
-       map.put(28, "Twenty-eight");
-       map.put(79, "Seventy-nine");
-       map.remove(41);
-       map.remove(28);
-       map.remove("Eight");
-       map.put(50, "Forty-one");
-       map.put(28, "18");
-       map.remove(18);
-   ```
+```
+Map<Integer, String> map = new HashMap<Integer, String>();
+    map.put(8, "Eight");
+    map.put(41, "Forty-one");
+    map.put(8, "Ocho");
+```
+
+```
+    map.put(18, "Eighteen");
+    map.put(50, "Fifty");
+    map.put(132, "OneThreeTwo");
+    map.put(28, "Twenty-eight");
+    map.put(79, "Seventy-nine");
+    map.remove(41);
+    map.remove(28);
+    map.remove("Eight");
+    map.put(50, "Forty-one");
+    map.put(28, "18");
+    map.remove(18);
+```
 
 
 

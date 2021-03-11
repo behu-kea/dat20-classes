@@ -110,7 +110,7 @@ userCache.has(userId); // false
 
 ## Applying your newly created Cache
 
-Create a `User` class with an `id` that is randomnly generated and has the following method:
+Create a `User` class with an `id` that can be set when creating a new object. `User user = new User(3); // create a user with id 3`. The `User` class should have one method called `getDataSlow` 👇
 
 ```java
 // simulates a slow call
@@ -122,19 +122,36 @@ public String getDataSlow() throws InterruptedException {
 }
 ```
 
+Remember to add this dependency in your `pom.xml` file to get `RandomStringUtils` working
+
+```xml
+<dependency>
+    <groupId>org.apache.commons</groupId>
+    <artifactId>commons-lang3</artifactId>
+    <version>3.12.0</version>
+</dependency>
+```
 
 
-Now create an endpoint that should be used like this: http://localhost:8080/get-user-data?userId=6
 
-This should return the randomnly generated `value` stored for the user with `userId` 6
+#### Creating the endpoint
 
-![Screenshot 2021-02-17 at 11.06.03](./assets/get-user-data-screenshot.png)
+Now create an endpoint that should be used like this: http://localhost:8080/get-user-data?id=6 
 
-Remember to initialize the Cache in the controller. Then at a given endpoint
+This should return the randomnly generated `value` stored for the user with `userId` 6. In the gif below you can see first time it takes a long time (`id` is not in cache) and we therefor need to use the `getDataSlow` method. Second time the data is in the cache and its now super quick to load!
 
-- First check if the key (userId) is in the cache
-- If it is, return the value
-- If not, then create a new `User` object, get the randomnly generated value for the `User` object using the slow method, then store the result in the cache
+
+
+![cache-example](./assets/cache-example.gif)
+
+
+
+Remember to initialize the `Cache` in the controller. Then at a given endpoint
+
+- First get the `id` from the [query parameter](https://www.baeldung.com/spring-request-param#a-simple-mapping)
+- Then check if the key (`id`) is in the cache
+- If it is, return the randomly generated value stored for that user
+- If the `id` is not in the cache, then create a new `User` object (with the `id` from the query parameter), get the randomnly generated value for the `User` object using the slow method, then store the result in the cache.
 
 
 

@@ -382,7 +382,7 @@ public Integer naiveSearch(ArrayList<Integer> array, Integer itemToFind) {
   Integer itemToReturn = new Integer();
   for (Integer item : array) {
     if(item == itemToFind) {
-      item = itemToReturn;
+      itemToReturn = item;
     }
   }
   
@@ -418,11 +418,9 @@ public ArrayList<Integer> generateFib(Integer n) {
   for (int i = 0; i < n; i++) {
     if (i == 1) {
       result.add(0);
-    }
-    else if (i == 2) {
+    } else if (i == 2) {
       result.add(1);
-    }
-    else {
+    } else {
       result.add(result.get(i - 2) + result.get(i - 3));
     }
   }
@@ -448,6 +446,7 @@ public Object findRandomElement(ArrayList<Integer> array) {
 
 ```java
 public Boolean isPrime(Integer n) {
+  // n = 2
   if (n < 2 || n % 1 != 0) {
     return false;
   }
@@ -466,13 +465,14 @@ public Boolean isPrime(Integer n) {
 
 ```java
 public Integer factorialOf(Integer n) {
+  // n = 3
   switch(n) {
     case 0:
       return 1;
     case 1:
       return 1;
     default:
-      return n * factorialOf(n -1);
+      return n * factorialOf(n - 1);
   }
 }
 ```

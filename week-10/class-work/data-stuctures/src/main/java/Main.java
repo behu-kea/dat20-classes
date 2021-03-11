@@ -30,5 +30,41 @@ public class Main {
         // Constant
         System.out.println(steamGames.get("stellaris").price);
 
+
+        Set<String> names3 = new TreeSet<String>();
+        names3.add("Larry");
+        names3.add("Moe");
+        names3.add("Curly");
+        names3.add("Moe"); // duplicate, won't be added
+        names3.add("Shemp");
+        names3.add("Moe"); // duplicate, won't be added
+
+        //System.out.println(names);
+
+
+
+
+
+
+
+
+        Set<String> names1 = new TreeSet<String>();
+        names1.add("per");
+        names1.add("hans");
+        names1.add("kristina");
+
+        Set<String> names2 = new TreeSet<String>();
+        names2.add("per");
+        names2.add("julie");
+        names2.add("anna");
+
+        System.out.println(names1);
+        System.out.println(names2);
+
+        //names1.addAll(names2);
+        names1.retainAll(names2);
+
+        System.out.println(names1);
+
     }
 }

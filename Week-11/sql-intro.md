@@ -2,8 +2,6 @@
 
 
 
-
-
 ## Learning objectives
 
 Har  kendskab til tabelstruktur i den relationelle databasemodel inkl constraints  (PK, FK, NULL)     Kan anvende SQL SELECT statement til forespørgsler på en tabel     Kan oprette en database og indsætte data vha. SQL script

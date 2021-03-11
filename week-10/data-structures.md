@@ -175,44 +175,28 @@ More efficient than a `TreeMap`. So if order does not matters to you then use a 
 
 ### HashMap exercises - 30 min
 
-Using this boilerplate: https://github.com/behu-kea/data-structure-exercise-boilerplate
+1. Write the code to declare a Map that associates people's names with their ages. Add mappings for your own name and age, as well as those of a few friends or relatives.
 
-In the [`HashMapExercise` class](https://github.com/behu-kea/data-structure-exercise-boilerplate/blob/master/src/main/java/HashMapExercise.java) you should finish the method called `contains3`. This method takes a `List` of strings as parameter and returns `true` if there in the list is a string that occurs at least 3 times. otherwise return `false`.  Use `Map` as a data structure, which `Map` implementation will you use?
+2. ```
+   Map<Integer, String> map = new HashMap<Integer, String>();
+       map.put(8, "Eight");
+       map.put(41, "Forty-one");
+       map.put(8, "Ocho");
+   ```
 
-See the usage i the `Main.java` class. Here the code that calls the method with random strings (dishes) has been created for you. 
-
-Here is a practical example of how the method should work
-
-```java
-List<String> words1 = new ArrayList<>();
-words.add("chicken");
-words.add("chicken");
-words.add("house");
-words.add("chicken");
-HashMapExercise.contains3(words); // returns true
-
-List<String> words2 = new ArrayList<>();
-words2.add("chicken");
-words2.add("house");
-words2.add("chicken");
-HashMapExercise.contains3(words2); // returns false
-```
-
-
-
-Pseudo kode til opgaven
-
-```
-Lav et map-objekt
-Loop igennem listen
-For hvert element 
-	If( jeg har ikke set elementet før) 
-		map.put(element, 1) 
-	Else (jeg har set elementet før) 
-		Int antal = map.get(element) 
-		antal++ 
- 		map.put.(element, antal) 
-```
+   ```
+       map.put(18, "Eighteen");
+       map.put(50, "Fifty");
+       map.put(132, "OneThreeTwo");
+       map.put(28, "Twenty-eight");
+       map.put(79, "Seventy-nine");
+       map.remove(41);
+       map.remove(28);
+       map.remove("Eight");
+       map.put(50, "Forty-one");
+       map.put(28, "18");
+       map.remove(18);
+   ```
 
 
 
@@ -355,6 +339,49 @@ What data structure should we choose and why? Write a bit of code (maybe pseudo 
 #### Continued
 
 Storebæltsbroen (the company) owns more bridges and they would like to know how many of the cars has been crossing **all** of the bridges. From each bridge they register the numberplate using the above mentioned system. The system should be **fast**. What data structure can help us achieve this and why? Please write some pseudo code of how you would get how many of the cars has crossed **all** the bridges
+
+
+
+#### Map exercise
+
+Using this boilerplate: https://github.com/behu-kea/data-structure-exercise-boilerplate
+
+In the [`HashMapExercise` class](https://github.com/behu-kea/data-structure-exercise-boilerplate/blob/master/src/main/java/HashMapExercise.java) you should finish the method called `contains3`. This method takes a `List` of strings as parameter and returns `true` if there in the list is a string that occurs at least 3 times. otherwise return `false`.  Use `Map` as a data structure, which `Map` implementation will you use?
+
+See the usage i the `Main.java` class. Here the code that calls the method with random strings (dishes) has been created for you. 
+
+Here is a practical example of how the method should work
+
+```java
+List<String> words1 = new ArrayList<>();
+words.add("chicken");
+words.add("chicken");
+words.add("house");
+words.add("chicken");
+HashMapExercise.contains3(words); // returns true
+
+List<String> words2 = new ArrayList<>();
+words2.add("chicken");
+words2.add("house");
+words2.add("chicken");
+HashMapExercise.contains3(words2); // returns false
+```
+
+
+
+Pseudo kode til opgaven
+
+```
+Lav et map-objekt
+Loop igennem listen
+For hvert element 
+	If( jeg har ikke set elementet før) 
+		map.put(element, 1) 
+	Else (jeg har set elementet før) 
+		Int antal = map.get(element) 
+		antal++ 
+ 		map.put.(element, antal) 
+```
 
 
 

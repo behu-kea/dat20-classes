@@ -99,11 +99,19 @@ So lets disect this statement:
 
 
 
+### Inserting using a SQL Script
+
+Simply open the script in Workbench and run the script. Remember to sepcify the database to use using the `use` SQL command
+
+
+
 *Question*
 
 What would happen if i ran this SQL statement?
 
-`INSERT INTO product (id,price) VALUES (1, 100);`
+```sql
+INSERT INTO product (id,price) VALUES (1, 100);
+```
 
 
 
@@ -186,11 +194,39 @@ What is the most expensive product
 ## SQL Workbench can help with everything!
 
 - Selection
-- Creating of table, database and insertion
+- Creating of table, database
+- Insertion
 
 
 
 ## Exercises - rest of class
+
+
+
+
+
+1. List all information about all departments
+2. Find the employee number (empno) for employees named MARTIN.
+3. Find the employee(s) with a salary greater than 1500.
+4. Find all job types – list each only once.
+5. List the names of salesmen that earn more than 1300
+6. List the names of employees that are not salesmen
+7. List the names of all clerks together with their salary with a deduction of 10%
+8. Find the name of employees hired before May 1981.
+9. List total sum of salary and commission for all employees
+10. List sum of salary PLUS commission for employees that have commission
+11. List name and job for employees whose name ends with ‘s’;
+12. List employees sorted by name
+13. List employees sorted by salary in descending order (i.e. highest salary first)
+14. Find name of employee without a manager (i.e. the CEO)
+15. List departments sorted by location
+16. Find name of department located in New York
+17. List the number of employees
+18. List the sum of all salaries (excluding commission)
+19. List the average salary for employees in department 20
+20. List the unique job titles in the company
+21. List the number of employees in each department
+22. List in decreasing order the maximum salary in each department together with the department number
 
 
 

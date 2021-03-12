@@ -93,7 +93,6 @@ In the `social_media_database` create a table called `post` that has these colum
 - Title
 - Content (the text of the social media post)
 - Date
-- Public/private 
 - Number of likes
 
 

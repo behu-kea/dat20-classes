@@ -190,6 +190,10 @@ What is the most expensive product
 
 
 
+## Exercises - rest of class
+
+
+
 ## SQL best practices
 
 https://www.sqlshack.com/learn-sql-naming-conventions/

@@ -55,8 +55,8 @@ To create a new table use the `CREATE TABLE` SQL sentence
 
 ```sql
 CREATE TABLE product (	
-  id INTEGER,
-	price INTEGER, 
+  id INT,
+	price INT, 
 	name VARCHAR(30), 
 	description VARCHAR(255)
 ); 
@@ -218,7 +218,8 @@ What is the most expensive product
 ## SQL Workbench can help with everything!
 
 - Selection
-- Creating of table, database
+- Creating of table
+- Creating of database
 - Insertion
 
 

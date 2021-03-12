@@ -14,6 +14,25 @@ Working with databases is a way to save data for our website.
 
 
 
+## Quickly about SQL
+
+**DML** (**D**ata **M**anipulation **L**anguage) – Commands that change data in the database
+
+	- Create
+	- Alter
+	- DROP
+
+​	
+
+**DDL** (**D**ata **D**efinition **L**anguage) – Commands that define the database
+
+	- SELECT
+	- INSERT
+	- UPDATE
+	- DELETE
+
+
+
 ## Creating a Database
 
 Create a new database using the  `CREATE SCHEMA` SQL
@@ -112,6 +131,12 @@ What would happen if i ran this SQL statement?
 ```sql
 INSERT INTO product (id,price) VALUES (1, 100);
 ```
+
+
+
+### Exercise - 15 min
+
+Insert 3 posts into the `post` table you created in the exercise above
 
 
 

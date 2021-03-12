@@ -16,20 +16,20 @@ Working with databases is a way to save data for our website.
 
 ## Quickly about SQL
 
-**DML** (**D**ata **M**anipulation **L**anguage) – Commands that change data in the database
-
-	- Create
-	- Alter
-	- DROP
-
-​	
-
-**DDL** (**D**ata **D**efinition **L**anguage) – Commands that define the database
+**DML** (**D**ata **M**anipulation **L**anguage) – Commands that change data in the database	
 
 	- SELECT
 	- INSERT
 	- UPDATE
 	- DELETE
+
+
+
+**DDL** (**D**ata **D**efinition **L**anguage) – Commands that define the database
+
+	- Create
+	- Alter
+	- DROP
 
 
 

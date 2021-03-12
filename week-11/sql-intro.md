@@ -201,9 +201,11 @@ What is the most expensive product
 
 ## Exercises - rest of class
 
+We will be working with a database that has employeers and departments. To get the tables and data, create a new database and run the script below against that database. Remember the `use` SQL command
 
+https://github.com/behu-kea/dat20-classes/blob/master/week-11/assets/create-emp-dept-database.sql
 
-
+When all the data has been inserted that writing SQL statements to answer the questions below:
 
 1. List all information about all departments
 2. Find the employee number (empno) for employees named MARTIN.

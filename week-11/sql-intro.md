@@ -16,15 +16,7 @@ Working with databases is a way to save data for our website.
 
 ## Quickly about SQL
 
-**DML** (**D**ata **M**anipulation **L**anguage) – Commands that change data in the database
-
-	- Create
-	- Alter
-	- DROP
-
-​	
-
-**DDL** (**D**ata **D**efinition **L**anguage) – Commands that define the database
+**DML** (**D**ata **M**anipulation **L**anguage) – Commands that change data in the database	
 
 	- SELECT
 	- INSERT
@@ -33,11 +25,19 @@ Working with databases is a way to save data for our website.
 
 
 
+**DDL** (**D**ata **D**efinition **L**anguage) – Commands that define the database
+
+	- Create
+	- Alter
+	- DROP
+
+
+
 ## Creating a Database
 
 Create a new database using the  `CREATE SCHEMA` SQL
 
- `CREATE SCHEMA product`
+ `CREATE SCHEMA product_database`
 
 This will create a new database called `product`
 
@@ -54,6 +54,8 @@ In SQL  use `use` to specify which database to run the script against.
 To create a new table use the `CREATE TABLE` SQL sentence
 
 ```sql
+USE product_database;
+
 CREATE TABLE product (	
   id INT,
 	price INT, 
@@ -81,7 +83,7 @@ You can read more about them here: https://www.journaldev.com/16774/sql-data-typ
 
 
 
-### Create table exercise - 20 min
+### Create table exercise - 15 min
 
 Lets continue in the Social Media Post universe 👩‍💻👨‍💻
 
@@ -102,18 +104,18 @@ In the `social_media_database` create a table called `post` that has these colum
 To insert data into a SQL table use the `INSERT INTO` statement. 
 
 ```sql
-INSERT INTO product (id, price,name,description) VALUES (1, 100,'Shoe','A beautiful shoe with a nice patina. Cannot find other pair. Still useable as a beautiful artwork');
+INSERT INTO product (id, price, name, description) VALUES (1, 100,'Shoe','A shoe with a nice patina');
 ```
 
 So lets disect this statement:
 
 `INSERT INTO product` - tells the database that we are interested in inserting data to the `product` table.
 
-`(id, price,name,description) ` specifying what columns we will be inserting data into
+`(id, price, name, description) ` specifying what columns we will be inserting data into
 
 `VALUES` tells the values/data we will be inserting into the database
 
-`(1, 100,'Shoe','A beautiful shoe with a nice patina. Cannot find other pair. Still useable as a beautiful artwork')` - The actual data comma seperated
+`(1, 100,'Shoe','A shoe with a nice patina')` - The actual data comma seperated
 
 
 
@@ -128,7 +130,7 @@ Simply open the script in Workbench and run the script. Remember to sepcify the 
 What would happen if i ran this SQL statement?
 
 ```sql
-INSERT INTO product (id,price) VALUES (1, 100);
+INSERT INTO product (id, price) VALUES (1, 100);
 ```
 
 
@@ -136,6 +138,8 @@ INSERT INTO product (id,price) VALUES (1, 100);
 ### Exercise - 15 min
 
 Insert 3 posts into the `post` table you created in the exercise above
+
+*Be wary of dates!*
 
 
 
@@ -147,7 +151,7 @@ To get data from out table we use the `SELECT` command. Here is a practical exam
 SELECT * FROM product;
 ```
 
-`SELECT *` tells the database that we will be selecting all columns (`*`) from a table
+`SELECT *` tells the database that we will be selecting all columns (`*`) from a table. You can also write column names here to only get fx `price`
 
 `FROM product` specifies that we be selecting data from the `product` table. 
 
@@ -155,9 +159,7 @@ SELECT * FROM product;
 
 ### `WHERE`
 
-`WHERE ` specifies a condition that has to be met
-
-Lets increase the complexity a bit
+`WHERE ` specifies a condition that has to be met for the reteieved entries
 
 ```sql
 SELECT name FROM product WHERE price > 40
@@ -186,11 +188,11 @@ ORDER BY PRICE DESC
 
 ## Aggregate functions
 
-- AVG
-- COUNT
-- SUM
-- MIN
-- MAX
+- `AVG`
+- `COUNT`
+- `SUM`
+- `MIN`
+- `MAX`
 
 
 

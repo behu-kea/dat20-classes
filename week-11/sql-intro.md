@@ -83,7 +83,7 @@ You can read more about them here: https://www.journaldev.com/16774/sql-data-typ
 
 
 
-### Create table exercise - 20 min
+### Create table exercise - 15 min
 
 Lets continue in the Social Media Post universe 👩‍💻👨‍💻
 
@@ -139,6 +139,8 @@ INSERT INTO product (id, price) VALUES (1, 100);
 
 Insert 3 posts into the `post` table you created in the exercise above
 
+*Be wary of dates!*
+
 
 
 ## Getting data from a table
@@ -186,11 +188,11 @@ ORDER BY PRICE DESC
 
 ## Aggregate functions
 
-- AVG
-- COUNT
-- SUM
-- MIN
-- MAX
+- `AVG`
+- `COUNT`
+- `SUM`
+- `MIN`
+- `MAX`
 
 
 

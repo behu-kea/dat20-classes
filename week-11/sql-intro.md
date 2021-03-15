@@ -6,7 +6,6 @@ Working with databases is a way to save data for our website.
 
 ## Learning objectives
 
-- What is a database and why use it?
 - Can create a database using `CREATE SCHEMA`
 - Creating tabels with `CREATE TABLE`
 - Can insert data into a databse using `INSERT` also using a sql script

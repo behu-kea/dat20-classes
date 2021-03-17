@@ -67,7 +67,7 @@ CREATE TABLE product (
 
 `PRIMARY KEY (id),` - means that the column called `id` has to be unique
 
-`AUTO_increment` - When creating a new row the `id` does not have to be part of the insert statement. 
+`AUTO_INCREMENT` - When creating a new row the `id` does not have to be part of the insert statement. 
 
 
 

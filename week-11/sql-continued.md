@@ -103,6 +103,10 @@ CREATE TABLE review (
 
 
 
+*What if i wanted to have multiple reviews? How could we have multiple orders?*
+
+https://en.wikipedia.org/wiki/Associative_entity junction table
+
 
 
  ### Exercises - 40 min
@@ -111,27 +115,31 @@ Jeg vil rigtig gerne have noget feedback på min undervisning, så brug lige 5 -
 
 
 
+Use your social media database from last week for the following exercises
+
+
+
 #### `UPDATE`
 
-Brug jeres social media database fra sidste uge til at opdatere nogle af jeres rækker. Prøv både at opdatere enkelte rækker, og flere rækker med en SQL command
+Update some of the rows in the `post` table. Try updating both a single row and multiple rows with one SQL command
 
 
 
 #### `DELETE`
 
-Prøv at slette nogle rækker i social media databasen. Prøv både at slette enkelte rækker og flere rækker med en SQL command
+Try deleting some rows.  Try deleting both a single row and multiple rows with one SQL command
 
 
 
 #### `PRIMARY KEY` og `FOREIGN KEY`
 
-I den her opgave skal i ændre i databasen. Derfor bliver i nødt til at slette database og lave den på ny (med de ændringer jeg beskriver herunder)
+In the exercise below you have to change the `post` table. So i would encourage you to create a new database called `social-media-database-improved` with the changes i describe below
 
-I skal ændre `post` tabellen fra sidste uge sådan at:
+Change the `post` table so that
 
--  `id` skal være `PRIMARY KEY`, 
-- Gør sådan at man **skal have** et `id` når man tilføjer en ny række i `post` databasen
--  gør sådan at databasen automatisk incrementerer `id`'et i `post` tabellen
+- `id` is a  `PRIMARY KEY`
+- When creating a new `post` row `id` is mandatory
+- `id` should be automatically incremented when creating a new `post` row
 
 
 
@@ -139,15 +147,16 @@ Let's imagine we can add an image to a `post`
 
 An image has these columns:
 
+- Id
 - Image url
 - Description
 - Title
 
 
 
-Create the `image` table and create a foreign key in the `post` database so that an post can reference an image
+Create the `image` table and create a foreign key in the `post` table so that a post can reference an image.
 
-
+Now insert a few images and create some posts that are connected to an image
 
 
 
@@ -225,10 +234,64 @@ RIGHT JOIN DEPT ON EMP.DEPTNO = DEPT.DEPTNO;
 
 
 
+## Reading an ER diagram
+
+Create an ER diagram in MySQL workench
+
+`database -> Reverse engineer -> continue -> continue -> Select the database then continue -> continue -> execute -> continue -> exit` 
+
+
+
+![Screenshot 2021-03-17 at 13.36.52](assets/er-diagram.png)
+
+
+
 ## Exercises
 
-We will be working with this database for today
+We will be working with the coffee-database for today's exercises
+
+First study the diagram and get an overview of the data that is stored in the database. Take a look at the rows in the different table. 
+
+Try and answer these questions:
+
+- Can i create a customer without creating an order?
+- If i wanted to create a new order how could i do that?
+- How are the product table and the order table connected?
+- How do i connect a country with a product?
+- Does a product has to have a country?
+- How can i get from the product table to the customer?
 
 
 
-![Screenshot 2021-03-17 at 10.07.15](assets/er-diagram.png)
+![Screenshot 2021-03-17 at 14.23.55](assets/er-diagram.png)
+
+
+
+### Join exercises
+
+- Select the order id and the customers phone number for all orders of product id 3
+- Select product names and order time for the filter coffees sold between January 15th 2017 and February 14th 2017
+- Select the product name and price and order time for all orders from females in January 2017
+- From the customers table, select the first name and phone number of all the females who have a last name of Bluth ([sheeeeiiittt](https://www.youtube.com/watch?v=l1dnqKGuezo) this exercise is a little creppy 😮) I did not come up with this one!
+- From the products table, select the name for all products that have a price greater than 3.00 or a coffee origin of Sri Lanka
+- How many male customers don't have a phone number entered into the customers table
+- From the products table, select the name and price of all produts with a coffee origin equal to Colombia or indonesia. Ordered by name from A-Z
+- From the orders table, select all the orders from February 2017 for customers with id's or 2, 4, 6 or 8
+- From the customers tabl, select the firs name and phone number of all customers who's last anem contains the pattern "ar"
+- From the customers table, select the distinct last names and order alphabetically from A-Z
+- From the orders table, select the first 3 orders placed by customer with id 1 in February 2017
+- From the products table, select the name, price and cofee origin but rename the price to retail_price in the results set
+
+
+
+
+
+
+
+
+
+
+
+## Mangler
+
+- Social media sql script with the post table and some rows

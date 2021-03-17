@@ -23,118 +23,118 @@ USE coffee_database;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `countries`
+-- Table structure for table `country`
 --
 
-DROP TABLE IF EXISTS `countries`;
+DROP TABLE IF EXISTS `country`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `countries` (
-  `countryid` int NOT NULL,
-  `country` varchar(100) NOT NULL,
-  PRIMARY KEY (`countryid`),
-  UNIQUE KEY `country_UNIQUE` (`country`),
-  UNIQUE KEY `countryid_UNIQUE` (`countryid`)
+CREATE TABLE `country` (
+                             `country_id` int NOT NULL,
+                             `country` varchar(100) NOT NULL,
+                             PRIMARY KEY (`country_id`),
+                             UNIQUE KEY `country_UNIQUE` (`country`),
+                             UNIQUE KEY `country_id_UNIQUE` (`country_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `countries`
+-- Dumping data for table `country`
 --
 
-LOCK TABLES `countries` WRITE;
-/*!40000 ALTER TABLE `countries` DISABLE KEYS */;
-INSERT INTO `countries` VALUES (5,'Columbia'),(1,'Danmark'),(4,'Finland'),(3,'Norge'),(6,'Sri Lanka'),(2,'Sverige');
-/*!40000 ALTER TABLE `countries` ENABLE KEYS */;
+LOCK TABLES `country` WRITE;
+/*!40000 ALTER TABLE `country` DISABLE KEYS */;
+INSERT INTO `country` VALUES (5,'Columbia'),(1,'Danmark'),(4,'Finland'),(3,'Norge'),(6,'Sri Lanka'),(2,'Sverige');
+/*!40000 ALTER TABLE `country` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `customers`
+-- Table structure for table `customer`
 --
 
-DROP TABLE IF EXISTS `customers`;
+DROP TABLE IF EXISTS `customer`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `customers` (
-  `customerid` int NOT NULL AUTO_INCREMENT,
-  `firstname` varchar(100) DEFAULT NULL,
-  `lastname` varchar(100) DEFAULT NULL,
-  `gender` enum('M','F') DEFAULT NULL,
-  `phonenum` varchar(20) DEFAULT NULL,
-  PRIMARY KEY (`customerid`),
-  UNIQUE KEY `customerid_UNIQUE` (`customerid`)
+CREATE TABLE `customer` (
+                             `customer_id` int NOT NULL AUTO_INCREMENT,
+                             `firstname` varchar(100) DEFAULT NULL,
+                             `lastname` varchar(100) DEFAULT NULL,
+                             `gender` enum('M','F') DEFAULT NULL,
+                             `phone_number` varchar(20) DEFAULT NULL,
+                             PRIMARY KEY (`customer_id`),
+                             UNIQUE KEY `customer_id_UNIQUE` (`customer_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `customers`
+-- Dumping data for table `customer`
 --
 
-LOCK TABLES `customers` WRITE;
-/*!40000 ALTER TABLE `customers` DISABLE KEYS */;
-INSERT INTO `customers` VALUES (1,'Chris','Martin','M','01123147789'),(2,'Emma','Law','F','01123439899'),(3,'Mark','Watkins','M','01174592013'),(4,'Daniel','Williams','M','2323'),(5,'Sarah','Taylor','F','01176348290'),(6,'Katie','Armstrong','F','01145787353'),(7,'Michael','Bluth','M','01980289282'),(8,'Kat','Nash','F','01176987789'),(9,'Buster','Bluth','M','01173456782'),(10,'Charlie',NULL,'F','01139287883'),(11,'Lindsay','Bluth','F','01176923804'),(12,'Harry','Johnson','M',NULL),(13,'John','Smith','M','01174987221'),(14,'John','Taylor','M',NULL),(15,'Emma','Smith','F','01176984116'),(16,'Gob','Bluth','M','01176985498'),(17,'George','Bluth','M','01176984303'),(18,'Lucille','Bluth','F','01198773214'),(19,'George','Evans','M','01174502933'),(20,'Emily','Simmonds','F','01899284352'),(21,'John','Smith','M','01144473330'),(22,'Jennifer',NULL,'F',NULL),(23,'Toby','West','M','01176009822'),(24,'Paul','Edmonds','M','01966947113');
-/*!40000 ALTER TABLE `customers` ENABLE KEYS */;
+LOCK TABLES `customer` WRITE;
+/*!40000 ALTER TABLE `customer` DISABLE KEYS */;
+INSERT INTO `customer` VALUES (1,'Chris','Martin','M','01123147789'),(2,'Emma','Law','F','01123439899'),(3,'Mark','Watkins','M','01174592013'),(4,'Daniel','Williams','M','2323'),(5,'Sarah','Taylor','F','01176348290'),(6,'Katie','Armstrong','F','01145787353'),(7,'Michael','Bluth','M','01980289282'),(8,'Kat','Nash','F','01176987789'),(9,'Buster','Bluth','M','01173456782'),(10,'Charlie',NULL,'F','01139287883'),(11,'Lindsay','Bluth','F','01176923804'),(12,'Harry','Johnson','M',NULL),(13,'John','Smith','M','01174987221'),(14,'John','Taylor','M',NULL),(15,'Emma','Smith','F','01176984116'),(16,'Gob','Bluth','M','01176985498'),(17,'George','Bluth','M','01176984303'),(18,'Lucille','Bluth','F','01198773214'),(19,'George','Evans','M','01174502933'),(20,'Emily','Simmonds','F','01899284352'),(21,'John','Smith','M','01144473330'),(22,'Jennifer',NULL,'F',NULL),(23,'Toby','West','M','01176009822'),(24,'Paul','Edmonds','M','01966947113');
+/*!40000 ALTER TABLE `customer` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `orders`
+-- Table structure for table `order`
 --
 
-DROP TABLE IF EXISTS `orders`;
+DROP TABLE IF EXISTS `order`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `orders` (
-  `orderid` int NOT NULL AUTO_INCREMENT,
-  `productid` int NOT NULL,
-  `customerid` int NOT NULL,
-  `qty` smallint DEFAULT NULL,
-  `orderdttm` datetime DEFAULT NULL,
-  PRIMARY KEY (`orderid`),
-  UNIQUE KEY `orderid_UNIQUE` (`orderid`),
-  KEY `ordercustpk_idx` (`customerid`),
-  KEY `orderprodfk_idx` (`productid`),
-  CONSTRAINT `ordercustfk` FOREIGN KEY (`customerid`) REFERENCES `customers` (`customerid`),
-  CONSTRAINT `orderprodfk` FOREIGN KEY (`productid`) REFERENCES `products` (`productid`)
+CREATE TABLE `order` (
+                          `order_id` int NOT NULL AUTO_INCREMENT,
+                          `product_id` int NOT NULL,
+                          `customer_id` int NOT NULL,
+                          `qty` smallint DEFAULT NULL,
+                          `order_datetime` datetime DEFAULT NULL,
+                          PRIMARY KEY (`order_id`),
+                          UNIQUE KEY `order_id_UNIQUE` (`order_id`),
+                          KEY `ordercustpk_idx` (`customer_id`),
+                          KEY `orderprodfk_idx` (`product_id`),
+                          CONSTRAINT `ordercustfk` FOREIGN KEY (`customer_id`) REFERENCES `customer` (`customer_id`),
+                          CONSTRAINT `orderprodfk` FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `orders`
+-- Dumping data for table `order`
 --
 
-LOCK TABLES `orders` WRITE;
-/*!40000 ALTER TABLE `orders` DISABLE KEYS */;
-INSERT INTO `orders` VALUES (1,1,1,2,'2021-02-05 14:10:20'),(2,2,1,2,'2021-02-05 15:30:10'),(3,3,1,3,'2021-02-06 16:30:10'),(4,1,2,3,'2021-02-06 16:40:10'),(5,1,1,3,'2021-02-06 14:40:10'),(6,3,3,2,'2021-02-08 12:30:10'),(7,18,3,2,'2021-01-02 13:10:10'),(8,20,4,3,'2021-01-02 14:10:09'),(9,20,2,1,'2021-02-10 15:10:10'),(10,20,2,2,'2021-02-02 14:10:10'),(11,20,3,1,'2021-02-07 13:00:00'),(12,3,4,2,'2021-03-01 00:00:01'),(13,3,2,2,'2021-02-01 13:30:01');
-/*!40000 ALTER TABLE `orders` ENABLE KEYS */;
+LOCK TABLES `order` WRITE;
+/*!40000 ALTER TABLE `order` DISABLE KEYS */;
+INSERT INTO `order` VALUES (1,1,1,2,'2021-02-05 14:10:20'),(2,2,1,2,'2021-02-05 15:30:10'),(3,3,1,3,'2021-02-06 16:30:10'),(4,1,2,3,'2021-02-06 16:40:10'),(5,1,1,3,'2021-02-06 14:40:10'),(6,3,3,2,'2021-02-08 12:30:10'),(7,18,3,2,'2021-01-02 13:10:10'),(8,20,4,3,'2021-01-02 14:10:09'),(9,20,2,1,'2021-02-10 15:10:10'),(10,20,2,2,'2021-02-02 14:10:10'),(11,20,3,1,'2021-02-07 13:00:00'),(12,3,4,2,'2021-03-01 00:00:01'),(13,3,2,2,'2021-02-01 13:30:01');
+/*!40000 ALTER TABLE `order` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `products`
+-- Table structure for table `product`
 --
 
-DROP TABLE IF EXISTS `products`;
+DROP TABLE IF EXISTS `product`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `products` (
-  `productid` int NOT NULL AUTO_INCREMENT,
-  `name` varchar(100) NOT NULL,
-  `price` decimal(5,2) DEFAULT NULL,
-  `countryid` int DEFAULT NULL,
-  PRIMARY KEY (`productid`),
-  CONSTRAINT `countryproductid` FOREIGN KEY (`countryid`) REFERENCES `countries` (`countryid`),
-  UNIQUE KEY `productid_UNIQUE` (`productid`),
-  UNIQUE KEY `name_UNIQUE` (`name`)
+CREATE TABLE `product` (
+                            `product_id` int NOT NULL AUTO_INCREMENT,
+                            `name` varchar(100) NOT NULL,
+                            `price` decimal(5,2) DEFAULT NULL,
+                            `country_id` int DEFAULT NULL,
+                            PRIMARY KEY (`product_id`),
+                            CONSTRAINT `countryproduct_id` FOREIGN KEY (`country_id`) REFERENCES `country` (`country_id`),
+                            UNIQUE KEY `product_id_UNIQUE` (`product_id`),
+                            UNIQUE KEY `name_UNIQUE` (`name`)
 ) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `products`
+-- Dumping data for table `product`
 --
 
-LOCK TABLES `products` WRITE;
-/*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (1,'Espresso',25.00,5),(2,'Latte',30.50,5),(3,'Cappuchino',30.50,5),(18,'Black',24.00,6),(20,'Te',10.00,6),(21,'Saft',7.00,2),(22,'Black Exotic',35.00,6);
-/*!40000 ALTER TABLE `products` ENABLE KEYS */;
+LOCK TABLES `product` WRITE;
+/*!40000 ALTER TABLE `product` DISABLE KEYS */;
+INSERT INTO `product` VALUES (1,'Espresso',25.00,5),(2,'Latte',30.50,5),(3,'Cappuchino',30.50,5),(18,'Black',24.00,6),(20,'Te',10.00,6),(21,'Saft',7.00,2),(22,'Black Exotic',35.00,6);
+/*!40000 ALTER TABLE `product` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 

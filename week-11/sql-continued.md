@@ -13,12 +13,6 @@ Using the relational part of SQL is a big part of working with databases. Having
 
 
 
-## Exercise - 20 min hmm måske ved ikke helt
-
-Different groups. Each group has to prepare a presentation
-
-
-
 ## `UPDATE`
 
 To update an existing row in the database use the `update` SQL command
@@ -61,16 +55,17 @@ Moreover, this identifier will automatically increment every time data is insert
 
 ```sql
 CREATE TABLE product (	
-  id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  id INT NOT NULL AUTO_INCREMENT,
 	price INT, 
 	name VARCHAR(30), 
-	description VARCHAR(255)
+	description VARCHAR(255),
+  PRIMARY KEY (id),
 ); 
 ```
 
-`NOT NULL` - You can add `NOT NULL` after your column. This tells SQL that the column has to be included when a new row is created
+`NOT NULL` - You can add `NOT NULL` after your column. This tells SQL that the column has to be included when a new row is created. Is called a constraint
 
-`PRIMARY KEY` - means that the column called `id` has to be unique
+`PRIMARY KEY (id),` - means that the column called `id` has to be unique
 
 `AUTO_increment` - When creating a new row the `id` does not have to be part of the insert statement. 
 
@@ -86,10 +81,12 @@ Foreign keys are used to tell SQL that a column is connected to another column i
 
 ```sql
 CREATE TABLE product (	
-  id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  id INT NOT NULL AUTO_INCREMENT,
 	price INT, 
 	name VARCHAR(30), 
 	description VARCHAR(255),
+  review_id INT,
+  PRIMARY KEY (id),
   review_id FOREIGN KEY REFERENCES review(id)
 ); 
 ```
@@ -100,8 +97,57 @@ CREATE TABLE product (
 CREATE TABLE review (	
   id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
 	text VARCHAR(255), 
+  PRIMARY KEY (id),
 ); 
 ```
+
+
+
+
+
+ ### Exercises - 40 min
+
+Jeg vil rigtig gerne have noget feedback på min undervisning, så brug lige 5 - 10 min på at udfylde den her form (2 spørgsmål): https://forms.office.com/r/CMKckUQQwD
+
+
+
+#### `UPDATE`
+
+Brug jeres social media database fra sidste uge til at opdatere nogle af jeres rækker. Prøv både at opdatere enkelte rækker, og flere rækker med en SQL command
+
+
+
+#### `DELETE`
+
+Prøv at slette nogle rækker i social media databasen. Prøv både at slette enkelte rækker og flere rækker med en SQL command
+
+
+
+#### `PRIMARY KEY` og `FOREIGN KEY`
+
+I den her opgave skal i ændre i databasen. Derfor bliver i nødt til at slette database og lave den på ny (med de ændringer jeg beskriver herunder)
+
+I skal ændre `post` tabellen fra sidste uge sådan at:
+
+-  `id` skal være `PRIMARY KEY`, 
+- Gør sådan at man **skal have** et `id` når man tilføjer en ny række i `post` databasen
+-  gør sådan at databasen automatisk incrementerer `id`'et i `post` tabellen
+
+
+
+Let's imagine we can add an image to a `post`
+
+An image has these columns:
+
+- Image url
+- Description
+- Title
+
+
+
+Create the `image` table and create a foreign key in the `post` database so that an post can reference an image
+
+
 
 
 
@@ -185,4 +231,4 @@ We will be working with this database for today
 
 
 
-![Screenshot 2021-03-16 at 11.22.13](assets/ap-database.png)
+![Screenshot 2021-03-17 at 10.07.15](assets/er-diagram.png)

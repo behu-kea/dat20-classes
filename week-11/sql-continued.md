@@ -181,7 +181,7 @@ Using the tables below lets try ourselves manually and make the join table!
 
 **EMP**
 
-![Screenshot 2021-03-16 at 11.07.43](assets/joins-1.png)
+![Screenshot 2021-03-18 at 10.06.09](assets/joins-1.png)
 
 
 

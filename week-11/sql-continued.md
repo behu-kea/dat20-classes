@@ -119,7 +119,7 @@ Jeg vil rigtig gerne have noget feedback på min undervisning, så brug lige 5 -
 
 
 
-Use your social media database from last week for the following exercises
+Use your social media database from last week for the following exercises. Or use [this sql script](https://github.com/behu-kea/dat20-classes/blob/dat20b/week-11/assets/social-media-database.sql) to create the `post` table with some posts
 
 
 
@@ -147,7 +147,7 @@ Try deleting some rows.  Try deleting both a single row and multiple rows with o
 
 #### `PRIMARY KEY` og `FOREIGN KEY`
 
-In the exercise below you have to change the `post` table. So i would encourage you to create a new database called `social-media-database-improved` with the changes i describe below
+In the exercise below you have to change the `post` table. So i would encourage you to create a new table called `post_private_key` with the changes i describe below
 
 Change the `post` table so that
 
@@ -168,7 +168,7 @@ An image has these columns:
 
 
 
-1. Create the `image` table and create a foreign key in the `post` table so that a post can reference an image.
+1. Create the `image` table and create a foreign key in the `post` table so that a post can reference an image (again create a new table)
 
 2. Now insert a few images and create some posts that are connected to an image
 3. What if we wanted to store multiple images for a post? This is a tricky question. Read up on it here: https://stackoverflow.com/questions/7296846/how-to-implement-one-to-one-one-to-many-and-many-to-many-relationships-while-de
@@ -285,7 +285,7 @@ Try and answer these questions:
 ### Join exercises
 
 - Select the order_table id and the customers phone number for all orders of product id 3
-- Select product names and order time for the filter coffees sold between January 15th 2017 and February 14th 2017
+- Select product names and order time for the espresso coffees sold between January 15th 2017 and February 14th 2017
 - Select the product name and price and order time for all orders from females in January 2017
 - From the customers table, select the first name and phone number of all the females who have a last name of Bluth ([sheeeeiiittt](https://www.youtube.com/watch?v=l1dnqKGuezo) this exercise is a little creppy 😮) I did not come up with this one!
 - From the products table, select the name for all products that have a price greater than 3.00 or a coffee origin of Sri Lanka
@@ -297,16 +297,3 @@ Try and answer these questions:
 - From the orders table, select the first 3 orders placed by customer with id 1 in February 2017
 - From the products table, select the name, price and cofee origin but rename the price to retail_price in the results set
 
-
-
-
-
-
-
-
-
-
-
-## Mangler
-
-- Social media sql script with the post table and some rows

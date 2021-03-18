@@ -64,3 +64,25 @@ INSERT INTO review(text) VALUES ("marvellous watch");
 INSERT INTO product_foreign_key(price, name, description, review_id) VALUES (6778, 'watch', "good watch", 4);
 INSERT INTO product_foreign_key(price, name, description, review_id) VALUES (35, 'lasagne', "good lasagne", 2);
 
+
+## JOINS ------------------------
+
+SELECT *
+from EMP
+INNER JOIN DEPT ON EMP.DEPTNO = DEPT.DEPTNO;
+
+
+SELECT EMP.ENAME, DEPT.LOC
+from EMP
+INNER JOIN DEPT ON EMP.DEPTNO = DEPT.DEPTNO;
+
+
+SELECT *
+from EMP
+LEFT JOIN DEPT ON EMP.DEPTNO = DEPT.DEPTNO;
+
+
+
+SELECT *
+from EMP
+RIGHT JOIN DEPT ON EMP.DEPTNO = DEPT.DEPTNO;

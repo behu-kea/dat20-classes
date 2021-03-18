@@ -185,7 +185,7 @@ Lets imagine we have to find out the location for all the employeers workplace. 
 
 
 
-Using the tables below lets try ourselves manually and make the join table!
+Using the tables below lets try ourselves manually and make the join table in excel https://github.com/behu-kea/dat20-classes/blob/master/week-11/assets/join-handmade.numbers
 
 
 

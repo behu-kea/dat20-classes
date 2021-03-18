@@ -1,5 +1,15 @@
 # SQL continued
 
+
+
+## Before we start
+
+- Last class with you
+- Feedback on Social media
+- Cache exercise
+
+
+
 Using the relational part of SQL is a big part of working with databases. Having Reviews connected to Products or employees that belong to a department. 
 
 
@@ -109,11 +119,21 @@ Jeg vil rigtig gerne have noget feedback på min undervisning, så brug lige 5 -
 
 
 
-Use your social media database from last week for the following exercises
+Use your social media database from last week for the following exercises. Or use [this sql script](https://github.com/behu-kea/dat20-classes/blob/dat20b/week-11/assets/social-media-database.sql) to create the `post` table with some posts
 
 
 
 #### `UPDATE`
+
+To make this work use: 
+
+`SET SQL_SAFE_UPDATES = 0;` or 
+
+Hvis i har problemer med updates så
+
+Preferences -> sql-editor -> safe updates skal aftjekkes! Genstart workbench bagefter
+
+
 
 Update some of the rows in the `post` table. Try updating both a single row and multiple rows with one SQL command
 
@@ -171,7 +191,7 @@ Using the tables below lets try ourselves manually and make the join table!
 
 **EMP**
 
-![Screenshot 2021-03-16 at 11.07.43](assets/joins-1.png)
+![Screenshot 2021-03-18 at 10.06.09](assets/joins-1.png)
 
 
 
@@ -264,8 +284,8 @@ Try and answer these questions:
 
 ### Join exercises
 
-- Select the order id and the customers phone number for all orders of product id 3
-- Select product names and order time for the filter coffees sold between January 15th 2017 and February 14th 2017
+- Select the order_table id and the customers phone number for all orders of product id 3
+- Select product names and order time for the espresso coffees sold between January 15th 2017 and February 14th 2017
 - Select the product name and price and order time for all orders from females in January 2017
 - From the customers table, select the first name and phone number of all the females who have a last name of Bluth ([sheeeeiiittt](https://www.youtube.com/watch?v=l1dnqKGuezo) this exercise is a little creppy 😮) I did not come up with this one!
 - From the products table, select the name for all products that have a price greater than 3.00 or a coffee origin of Sri Lanka

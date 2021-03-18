@@ -285,7 +285,7 @@ Try and answer these questions:
 ### Join exercises
 
 - Select the order_table id and the customers phone number for all orders of product id 3
-- Select product names and order time for the filter coffees sold between January 15th 2017 and February 14th 2017
+- Select product names and order time for the espresso coffees sold between January 15th 2017 and February 14th 2017
 - Select the product name and price and order time for all orders from females in January 2017
 - From the customers table, select the first name and phone number of all the females who have a last name of Bluth ([sheeeeiiittt](https://www.youtube.com/watch?v=l1dnqKGuezo) this exercise is a little creppy 😮) I did not come up with this one!
 - From the products table, select the name for all products that have a price greater than 3.00 or a coffee origin of Sri Lanka

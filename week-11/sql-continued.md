@@ -119,7 +119,7 @@ Jeg vil rigtig gerne have noget feedback på min undervisning, så brug lige 5 -
 
 
 
-Use your social media database from last week for the following exercises
+Use your social media database from last week for the following exercises. Or use [this sql script](https://github.com/behu-kea/dat20-classes/blob/dat20b/week-11/assets/social-media-database.sql) to create the `post` table with some posts
 
 
 

@@ -31,9 +31,9 @@ Insert into DEPT (DEPTNO,DNAME,LOC) values (20,'RESEARCH','DALLAS');
 Insert into DEPT (DEPTNO,DNAME,LOC) values (30,'SALES','CHICAGO');
 Insert into DEPT (DEPTNO,DNAME,LOC) values (40,'OPERATIONS','BOSTON');
 
-insert into emp (empno,ename,job,mgr,hiredate,sal,comm,deptno) values (7499,'ALLEN','SALESMAN',7698,'1981-02-20',1600,300,30);
+insert into emp (empno,ename,job,mgr,hiredate,sal,comm,deptno) values (7499,'ALLEN','SALESMAN',7698,'1981-02-20',1600,300,null);
 insert into emp (empno,ename,job,mgr,hiredate,sal,comm,deptno) values (7782,'CLARK','MANAGER',7839,'1981-06-09',2450,null,10);
-insert into emp (empno,ename,job,mgr,hiredate,sal,comm,deptno) values (7369,'SMITH','CLERK',7902,'1980-12-17',800,null,null);
+insert into emp (empno,ename,job,mgr,hiredate,sal,comm,deptno) values (7369,'SMITH','CLERK',7902,'1980-12-17',800,null,30);
 insert into emp (empno,ename,job,mgr,hiredate,sal,comm,deptno) values (7521,'WARD','SALESMAN',7698,'1981-02-22', 1250,500,30);
 insert into emp (empno,ename,job,mgr,hiredate,sal,comm,deptno) values (7654,'MARTIN','SALESMAN',7698,'1981-09-28',1250,1400,40);
 

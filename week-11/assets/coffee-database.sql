@@ -77,35 +77,35 @@ INSERT INTO `customer` VALUES (1,'Chris','Martin','M','01123147789'),(2,'Emma','
 UNLOCK TABLES;
 
 --
--- Table structure for table `order`
+-- Table structure for table `order_table`
 --
 
-DROP TABLE IF EXISTS `order`;
+DROP TABLE IF EXISTS `order_table`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `order` (
-                          `order_id` int NOT NULL AUTO_INCREMENT,
+CREATE TABLE `order_table` (
+                          `order_table_id` int NOT NULL AUTO_INCREMENT,
                           `product_id` int NOT NULL,
                           `customer_id` int NOT NULL,
                           `qty` smallint DEFAULT NULL,
-                          `order_datetime` datetime DEFAULT NULL,
-                          PRIMARY KEY (`order_id`),
-                          UNIQUE KEY `order_id_UNIQUE` (`order_id`),
-                          KEY `ordercustpk_idx` (`customer_id`),
-                          KEY `orderprodfk_idx` (`product_id`),
-                          CONSTRAINT `ordercustfk` FOREIGN KEY (`customer_id`) REFERENCES `customer` (`customer_id`),
-                          CONSTRAINT `orderprodfk` FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`)
+                          `order_table_datetime` datetime DEFAULT NULL,
+                          PRIMARY KEY (`order_table_id`),
+                          UNIQUE KEY `order_table_id_UNIQUE` (`order_table_id`),
+                          KEY `order_tablecustpk_idx` (`customer_id`),
+                          KEY `order_tableprodfk_idx` (`product_id`),
+                          CONSTRAINT `order_tablecustfk` FOREIGN KEY (`customer_id`) REFERENCES `customer` (`customer_id`),
+                          CONSTRAINT `order_tableprodfk` FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `order`
+-- Dumping data for table `order_table`
 --
 
-LOCK TABLES `order` WRITE;
-/*!40000 ALTER TABLE `order` DISABLE KEYS */;
-INSERT INTO `order` VALUES (1,1,1,2,'2021-02-05 14:10:20'),(2,2,1,2,'2021-02-05 15:30:10'),(3,3,1,3,'2021-02-06 16:30:10'),(4,1,2,3,'2021-02-06 16:40:10'),(5,1,1,3,'2021-02-06 14:40:10'),(6,3,3,2,'2021-02-08 12:30:10'),(7,18,3,2,'2021-01-02 13:10:10'),(8,20,4,3,'2021-01-02 14:10:09'),(9,20,2,1,'2021-02-10 15:10:10'),(10,20,2,2,'2021-02-02 14:10:10'),(11,20,3,1,'2021-02-07 13:00:00'),(12,3,4,2,'2021-03-01 00:00:01'),(13,3,2,2,'2021-02-01 13:30:01');
-/*!40000 ALTER TABLE `order` ENABLE KEYS */;
+LOCK TABLES `order_table` WRITE;
+/*!40000 ALTER TABLE `order_table` DISABLE KEYS */;
+INSERT INTO `order_table` VALUES (1,1,1,2,'2021-02-05 14:10:20'),(2,2,1,2,'2021-02-05 15:30:10'),(3,3,1,3,'2021-02-06 16:30:10'),(4,1,2,3,'2021-02-06 16:40:10'),(5,1,1,3,'2021-02-06 14:40:10'),(6,3,3,2,'2021-02-08 12:30:10'),(7,18,3,2,'2021-01-02 13:10:10'),(8,20,4,3,'2021-01-02 14:10:09'),(9,20,2,1,'2021-02-10 15:10:10'),(10,20,2,2,'2021-02-02 14:10:10'),(11,20,3,1,'2021-02-07 13:00:00'),(12,3,4,2,'2021-03-01 00:00:01'),(13,3,2,2,'2021-02-01 13:30:01');
+/*!40000 ALTER TABLE `order_table` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --

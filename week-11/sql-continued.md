@@ -47,7 +47,7 @@ DELETE FROM product WHERE id = 1;
 
 ### Primary key
 
-The `PRIMARY KEY` constraint uniquely identifies each record in a table
+The `PRIMARY KEY` constraint uniquely identifies each record in a table. Hwy do we need that?
 
 Moreover, this identifier will automatically increment every time data is inserted. `id` is called the primary key of the table `product`.
 
@@ -59,7 +59,7 @@ CREATE TABLE product (
 	price INT, 
 	name VARCHAR(30), 
 	description VARCHAR(255),
-  PRIMARY KEY (id),
+  PRIMARY KEY (id)
 ); 
 ```
 
@@ -87,7 +87,7 @@ CREATE TABLE product (
 	description VARCHAR(255),
   review_id INT,
   PRIMARY KEY (id),
-  review_id FOREIGN KEY REFERENCES review(id)
+  FOREIGN KEY (review_id) REFERENCES review(id)
 ); 
 ```
 
@@ -103,13 +103,7 @@ CREATE TABLE review (
 
 
 
-*What if i wanted to have multiple reviews? How could we have multiple orders?*
-
-https://en.wikipedia.org/wiki/Associative_entity junction table
-
-
-
- ### Exercises - 40 min
+ ### Exercises - 40 min with break
 
 Jeg vil rigtig gerne have noget feedback på min undervisning, så brug lige 5 - 10 min på at udfylde den her form (2 spørgsmål): https://forms.office.com/r/CMKckUQQwD
 
@@ -154,9 +148,12 @@ An image has these columns:
 
 
 
-Create the `image` table and create a foreign key in the `post` table so that a post can reference an image.
+1. Create the `image` table and create a foreign key in the `post` table so that a post can reference an image.
 
-Now insert a few images and create some posts that are connected to an image
+2. Now insert a few images and create some posts that are connected to an image
+3. What if we wanted to store multiple images for a post? This is a tricky question. Read up on it here: https://stackoverflow.com/questions/7296846/how-to-implement-one-to-one-one-to-many-and-many-to-many-relationships-while-de
+
+
 
 
 
@@ -186,7 +183,7 @@ Using the tables below lets try ourselves manually and make the join table!
 
 ### Inner join
 
-Only merge the rows where there is a match. In the example below: Only merge rows where the employees `DEPTNO` matches a departments `DEPTNO`.
+Only merge the rows where there is a match. In the example below: Only merge rows where the employees `DEPTNO` matches a departments `DEPTNO`
 
 ```sql
 SELECT EMP.ENAME, DEPT.LOC
@@ -202,7 +199,7 @@ INNER JOIN DEPT ON EMP.DEPTNO = DEPT.DEPTNO;
 
 ### Left join
 
-Keep all the records in the left table (`EMP`). Records that dont match get `null` values.
+Keep all the records in the left table (`EMP`). Records that dont match get `null` values
 
 ```sql
 SELECT EMP.ENAME, DEPT.LOC
@@ -218,7 +215,7 @@ LEFT JOIN DEPT ON EMP.DEPTNO = DEPT.DEPTNO;
 
 ### Right join
 
-Keep all the records in the right table (`DEPT`). Records that dont match get `null` values.
+Keep all the records in the right table (`DEPT`). Records that dont match get `null` values
 
 ```sql
 SELECT EMP.ENAME, DEPT.LOC
@@ -236,6 +233,8 @@ RIGHT JOIN DEPT ON EMP.DEPTNO = DEPT.DEPTNO;
 
 ## Reading an ER diagram
 
+Not too much here, you will have about it later
+
 Create an ER diagram in MySQL workench
 
 `database -> Reverse engineer -> continue -> continue -> Select the database then continue -> continue -> execute -> continue -> exit` 
@@ -248,7 +247,7 @@ Create an ER diagram in MySQL workench
 
 ## Exercises
 
-We will be working with the coffee-database for today's exercises
+We will be working with the coffee-database for today's exercises. Find the script to create the database [here](https://github.com/behu-kea/dat20-classes/blob/master/week-11/assets/coffee-database.sql)
 
 First study the diagram and get an overview of the data that is stored in the database. Take a look at the rows in the different table. 
 
@@ -260,10 +259,6 @@ Try and answer these questions:
 - How do i connect a country with a product?
 - Does a product has to have a country?
 - How can i get from the product table to the customer?
-
-
-
-![Screenshot 2021-03-17 at 14.23.55](assets/er-diagram.png)
 
 
 

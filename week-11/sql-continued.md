@@ -125,6 +125,16 @@ Use your social media database from last week for the following exercises
 
 #### `UPDATE`
 
+To make this work use: 
+
+`SET SQL_SAFE_UPDATES = 0;` or 
+
+Hvis i har problemer med updates så
+
+Preferences -> sql-editor -> safe updates skal aftjekkes! Genstart workbench bagefter
+
+
+
 Update some of the rows in the `post` table. Try updating both a single row and multiple rows with one SQL command
 
 

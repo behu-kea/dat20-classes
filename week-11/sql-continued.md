@@ -1,5 +1,15 @@
 # SQL continued
 
+
+
+## Before we start
+
+- Last class with you
+- Feedback on Social media
+- Cache exercise
+
+
+
 Using the relational part of SQL is a big part of working with databases. Having Reviews connected to Products or employees that belong to a department. 
 
 

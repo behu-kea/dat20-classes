@@ -284,16 +284,16 @@ Try and answer these questions:
 
 ### Join exercises
 
-- Select the order_table id and the customers phone number for all orders of product id 3
-- Select product names and order time for the espresso coffees sold between January 15th 2017 and February 14th 2017
-- Select the product name and price and order time for all orders from females in January 2017
+- Select the order_table id and the customers phone number for all orders of order_table id 3
+- Select product names and order time for the espresso coffees sold between January 15th 2021 and February 14th 2021
+- Select the product name and price and order time for all orders from females in January 2021
 - From the customers table, select the first name and phone number of all the females who have a last name of Bluth ([sheeeeiiittt](https://www.youtube.com/watch?v=l1dnqKGuezo) this exercise is a little creppy 😮) I did not come up with this one!
 - From the products table, select the name for all products that have a price greater than 3.00 or a coffee origin of Sri Lanka
 - How many male customers don't have a phone number entered into the customers table
 - From the products table, select the name and price of all produts with a coffee origin equal to Colombia or indonesia. Ordered by name from A-Z
-- From the orders table, select all the orders from February 2017 for customers with id's or 2, 4, 6 or 8
+- From the orders table, select all the orders from February 2021 for customers with id's or 2, 4, 6 or 8
 - From the customers tabl, select the firs name and phone number of all customers who's last anem contains the pattern "ar"
 - From the customers table, select the distinct last names and order alphabetically from A-Z
-- From the orders table, select the first 3 orders placed by customer with id 1 in February 2017
+- From the orders table, select the first 3 orders placed by customer with id 1 in February 2021
 - From the products table, select the name, price and cofee origin but rename the price to retail_price in the results set
 

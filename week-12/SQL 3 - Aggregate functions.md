@@ -117,7 +117,7 @@ Which will yield the following result:
 
 In the current lecture + next you will be working with the following data-set: 
 
-**LINK**
+https://github.com/nicklasdean/dat20c-temp/blob/master/assets/pokedex.sql
 
 You will be working in the groups, that you are currently already assigned in the UI project.
 
@@ -128,13 +128,15 @@ You will be working in the groups, that you are currently already assigned in th
 ###### 2. What are the semantics (meaning) of the data-set?
 
 ###### Exercises:
+- Create a new database schema for the data
+- Create a table for the data
+- Insert the data
 
 - How many pokemon exists pr. primary type?
 - What are the average defence for all pokemon?
 - What are the average hp for (primary) grass types? 
-- How many pokemon exists pr. primary type?
 - How many fire pokemon has higher hp than the average pokemon?
 - What primary type are the fastest?
 
-**The answers will be publicized later in the semester. You can turn in your guess by Fronter** 
+**The answers will be publicized later in the semester. You can turn in your answers by Fronter** 
 

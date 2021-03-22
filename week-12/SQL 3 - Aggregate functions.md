@@ -79,7 +79,7 @@ E voila - salary average by department:
 
 ## Nested query: Display all employees with a salary above the average
 
-As the results from queries are either or single values, we can utilize the results in queries. 
+As the results from queries are either tables or single-value tables, we can utilize the results in queries. 
 
 We can think of finding the result in a small sequence of steps: 
 

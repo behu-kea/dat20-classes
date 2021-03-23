@@ -14,13 +14,13 @@ Lecture notes & Code examples for aggregate functions
 
 > Remember to `USE` the employees & departments database:
 
-```mysql
+```sql
 USE employees_departments;
 ```
 
 ## **Average salary of all employees**
 
-```mysql
+```sql
 SELECT AVG(sal)
 FROM employees;
 ```
@@ -29,7 +29,7 @@ Will yield the result: 2073.2143
 
 > For a better looking (yet less precise) output, we can round the number with a rounding function
 
-```mysql
+```sql
 SELECT ROUND(AVG(sal))
 FROM employees;
 ```
@@ -42,7 +42,7 @@ Which will yield the result: 2073
 
 To understand the average salary of employees - we need data from both the employee & department tables
 
-```mysql
+```sql
 SELECT *
 FROM employees
 INNER JOIN departments
@@ -61,7 +61,7 @@ Which will yield the result:
 
 > Replace the `*`  with `AVG(sal)`and add `GROUP BY dname`
 
-```mysql
+```sql
 SELECT dname, AVG(sal)
 FROM employees
 INNER JOIN departments
@@ -88,7 +88,7 @@ We can think of finding the result in a small sequence of steps:
 
 Recall the following query:
 
-```mysql
+```sql
 SELECT AVG(sal)
 FROM employees;
 ```
@@ -97,7 +97,7 @@ Yields the result:  2073.2143 - aka the average salary for all employees
 
 This result can be used - nested in another query
 
-```mysql
+```sql
 SELECT ename, sal
 FROM employees
 WHERE sal > (

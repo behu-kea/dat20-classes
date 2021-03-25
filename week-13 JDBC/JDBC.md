@@ -28,7 +28,7 @@ https://github.com/nicklasdean/dat20c-2semester/tree/master/jdbc-spring
 
 #### User stories
 
-###### 1. See all employees
+###### 1. View all employees
 
 The users want a feature, such that they can see all employees in a table, the same way that they can currently view all departments
 

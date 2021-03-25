@@ -6,7 +6,7 @@ Boilerplate:
 
 https://github.com/nicklasdean/dat20c-2semester/tree/master/jdbc-basic
 
-https://github.com/nicklasdean/dat20c-2semester/tree/master/jdbc-spring
+https://github.com/nicklasdean/spring-jdbc
 
 
 
